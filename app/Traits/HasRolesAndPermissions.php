@@ -4,6 +4,7 @@ namespace App\Traits;
 
 use App\Role;
 use App\Permission;
+use App\User;
 
 trait HasRolesAndPermissions
 {
@@ -47,7 +48,7 @@ trait HasRolesAndPermissions
      * @param $permission
      * @return bool
      */
-    protected function hasPermissionTo($permission)
+    public function hasPermissionTo($permission)
     {
         return $this->hasPermissionThroughRole($permission) || $this->hasPermission($permission);
     }
@@ -79,10 +80,12 @@ trait HasRolesAndPermissions
      */
     public function givePermissionsTo(... $permissions)
     {
-        $permissions = $this->getAllPermissions($permissions);
+                $permissions = $this->getAllPermissions($permissions);
+
         if($permissions === null) {
             return $this;
         }
+        $this->permissions();
         $this->permissions()->saveMany($permissions);
         return $this;
     }

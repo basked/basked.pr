@@ -28,8 +28,8 @@ class RolesServiceProvider extends ServiceProvider
         Blade::directive('basket', function ($expression) {
             return "<?php echo ($expression); ?>";
         });
-        Blade::if('role', function ($role){
-            return (auth()->check() && auth()->user()->hasRole($role)) ;
+        Blade::if('role', function ($role) {
+            return (auth()->check() && auth()->user()->hasRole($role));
         });
     }
 }
