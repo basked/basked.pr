@@ -29,10 +29,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
+
 Route::get('/test', function () {
-
-
-
     $user = Auth::user();
 
     // dd($user->hasRole('web-developer')); // вернёт true
@@ -44,5 +42,11 @@ Route::get('/test', function () {
 
     dd($user->can('create-tasks'));
     dd($user->can('manage-users'));
-
 });
+
+Route::group(['middleware' => ['role:project-manager,create-tasks']], function() {
+    Route::get('/dashboard', function() {
+        return 'Добро пожаловать, Менеджер проекта';
+    });
+});
+
