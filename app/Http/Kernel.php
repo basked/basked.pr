@@ -4,6 +4,7 @@ namespace App\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
+
 class Kernel extends HttpKernel
 {
     /**
@@ -36,12 +37,21 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+
         ],
 
         'api' => [
             'throttle:60,1',
             'bindings',
         ],
+        'bas' => [
+            'first' => \Modules\Skill\Http\Middleware\FirstMiddleware::class,
+            'second' => \Modules\Skill\Http\Middleware\SecondMiddleware::class,
+        ],
+        'bas1' => [
+            'second' => \Modules\Skill\Http\Middleware\SecondMiddleware::class,
+            'first' => \Modules\Skill\Http\Middleware\FirstMiddleware::class,
+        ]
     ];
 
     /**
@@ -62,7 +72,10 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-        'role'  =>  \App\Http\Middleware\RoleMiddleware::class, // our role middleware
+        'role' => \App\Http\Middleware\RoleMiddleware::class, // our role middleware
+        'first' => \Modules\Skill\Http\Middleware\FirstMiddleware::class,
+        'second' => \Modules\Skill\Http\Middleware\SecondMiddleware::class,
+
     ];
 
     /**
@@ -80,5 +93,6 @@ class Kernel extends HttpKernel
         \Illuminate\Session\Middleware\AuthenticateSession::class,
         \Illuminate\Routing\Middleware\SubstituteBindings::class,
         \Illuminate\Auth\Middleware\Authorize::class,
+
     ];
 }

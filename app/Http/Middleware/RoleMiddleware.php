@@ -15,12 +15,13 @@ class RoleMiddleware
      */
     public function handle($request, Closure $next, $role, $permission = null)
     {
-        dd($request);
+        echo 'ROLE='.$role.' PERM='.$permission;
+        dd();
         if (auth()->user() == null) {
             echo 'Пользователь не авторизован в системе';
             abort(404);
         }
-         echo 'ROLE='.$role.' PERM='.$permission;
+
         if (auth()->user()->hasRole($role)) {
             echo "Пользователь авторизован, но не имеет роль $role";
             abort(404);

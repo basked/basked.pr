@@ -12,5 +12,21 @@
 */
 
 Route::prefix('skill')->group(function() {
+
+//   with param
+    Route::get('/list', function () {
+       echo "<br>skill/list";
+    })->middleware(['first:1,2','second:3,4']);
+
+
+//    Route::middleware(['bas' ])->group(function(){
+//
+//        Route::get('/list', function () {
+//            "<br>skill/list";
+//        });
+//
+//
+//    });
+
     Route::get('/', 'SkillController@index');
 });

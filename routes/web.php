@@ -44,9 +44,11 @@ Route::get('/test', function () {
     dd($user->can('manage-users'));
 });
 
-Route::group(['middleware' => ['role:project-manager,create-tasks']], function() {
-    Route::get('/dashboard', function() {
+Route::group(['middleware' => ['role:project-manager,create-tasks']], function () {
+    Route::get('/dashboard', function () {
         return 'Добро пожаловать, Менеджер проекта';
     });
 });
+
+
 

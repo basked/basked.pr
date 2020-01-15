@@ -19,6 +19,8 @@ class SkillServiceProvider extends ServiceProvider
         $this->registerViews();
         $this->registerFactories();
         $this->loadMigrationsFrom(module_path('Skill', 'Database/Migrations'));
+
+
     }
 
     /**

@@ -2,7 +2,7 @@
 
 @section('content')
 
-    @basket('asasfasfadfg')
+    @basket('Derictive baket')
 
     <br>
     @role('project-manager')
