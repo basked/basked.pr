@@ -30,12 +30,18 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 Route::get('/test', function () {
-    $user = User::find(3);
+
+
+
+    $user = Auth::user();
+
     // dd($user->hasRole('web-developer')); // вернёт true
     //  dd($user->hasRole('project-manager'));// вернёт false
-    //   dd($user->givePermissionsTo('manage-users'));
-
+    //   dd($user->givePermissy
+    //ionsTo('manage-users'));
     // return view('test');
+    // foreach ($user->)
+
     dd($user->can('create-tasks'));
     dd($user->can('manage-users'));
 
