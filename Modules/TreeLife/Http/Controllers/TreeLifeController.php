@@ -2,6 +2,7 @@
 
 namespace Modules\TreeLife\Http\Controllers;
 
+use Modules\TreeLife\Entities\tl_relationship;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;

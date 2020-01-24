@@ -13,4 +13,5 @@
 
 Route::prefix('treelife')->group(function() {
     Route::get('/', 'TreeLifeController@index');
+
 });

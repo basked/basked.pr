@@ -7,13 +7,13 @@
         <title>Module TreeLife</title>
 
        {{-- Laravel Mix - CSS File --}}
-       {{-- <link rel="stylesheet" href="{{ mix('css/treelife.css') }}"> --}}
+        <link rel="stylesheet" href="{{ mix('css/treelife.css') }}">
 
     </head>
     <body>
         @yield('content')
 
         {{-- Laravel Mix - JS File --}}
-        {{-- <script src="{{ mix('js/treelife.js') }}"></script> --}}
+         <script src="{{ mix('js/treelife.js') }}"></script>
     </body>
 </html>
