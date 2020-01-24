@@ -1,0 +1,13 @@
+{
+    "name": "TreeLife",
+    "alias": "treelife",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Modules\\TreeLife\\Providers\\TreeLifeServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
