@@ -152,15 +152,18 @@
         data() {
             return {
                 columns: [
-                    {dataField: "id", caption:"ID" , width: 70 },
-                    {dataField:"name", caption:'Наименование', width: 150},
-                    {dataField: "slug", caption: "SLUG", width: 150}
+                    {dataField: "id", caption:"ID" },
+                    {dataField:"name", caption:'Наименование'},
+                    {dataField: "slug", caption: "SLUG"},
+                    {dataField: "descr", caption: "Описание"}
+
                   ],
                 dataSource: gridDataSource,
                 select: [
                     'id',
                     'name',
-                    'slug'],
+                    'slug',
+                    'descr'],
                 keyExpr: 'id',
                 key : 'id',
                 remoteOperations: {
@@ -183,8 +186,8 @@
     };
 </script>
 <style>
-    #data-grid-shops {
-        min-height: 700px;
+    #data-grid-relationship {
+        width: 100%;
     }
     .options {
         margin-top: 20px;
@@ -206,6 +209,6 @@
         display: inline-block;
         vertical-align: middle;
         width: 100%;
-        /*max-width: 350px;*/
+       max-width: 100%;
     }
 </style>

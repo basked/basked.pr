@@ -2,6 +2,7 @@
 
 namespace Modules\TreeLife\Entities;
 
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -21,9 +22,20 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\Modules\TreeLife\Entities\tl_relationship whereSlug($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\Modules\TreeLife\Entities\tl_relationship whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property string $descr
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\TreeLife\Entities\tl_relationship findSimilarSlugs($attribute, $config, $slug)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\TreeLife\Entities\tl_relationship whereDescr($value)
  */
 class tl_relationship extends Model
-{
+{   use Sluggable;
     protected $fillable = [];
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'name'
+            ]
+        ];
+    }
 
 }

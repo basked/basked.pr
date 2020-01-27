@@ -73,7 +73,7 @@ class ApiTreeLifeController extends Controller
     {
 
         $model = tl_relationship::class;
-        $fields = ['id', 'name', 'slug'];
+        $fields = ['id', 'name', 'slug', 'descr'];
 
         $res = [];
         $skip = $request->skip;
@@ -222,7 +222,6 @@ class ApiTreeLifeController extends Controller
     }
 
 
-
     /**
      * Show the form for creating a new resource.
      * @return Response
@@ -241,7 +240,8 @@ class ApiTreeLifeController extends Controller
     {
         $relationship = new tl_relationship();
         $relationship->name = $request->name;
-        $relationship->slug = $request->slug;
+        $relationship->descr = $request->descr;
+//        $relationship->slug = $request->slug;
         $relationship->save();
         return $relationship;
     }
@@ -276,11 +276,12 @@ class ApiTreeLifeController extends Controller
     {
         $relationship = tl_relationship::findOrFail($id);
         $relationship->update();
+        $relationship->slug = null;
         if ($request->name) {
             $relationship->name = $request->name;
         };
-        if ($request->slug) {
-            $relationship->slug = $request->slug;
+        if ($request->descr) {
+            $relationship->descr = $request->descr;
         };
         $relationship->save();
     }
@@ -295,7 +296,6 @@ class ApiTreeLifeController extends Controller
         $relationship = tl_relationship::findOrFail($id);
         $relationship->delete();
     }
-
 
 
 }
