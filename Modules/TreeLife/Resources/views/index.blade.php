@@ -2,9 +2,11 @@
 
 @section('content')
     <h1>Hello World</h1>
-    <div id="app">@role('project-manager')
+    <div id="app">
+        @role('project-manager')
         <dev-grid-elationship></dev-grid-elationship>
         @endrole
+        <dev-grid-diagram></dev-grid-diagram>
     </div>
 
     <p>

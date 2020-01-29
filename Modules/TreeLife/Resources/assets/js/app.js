@@ -20,6 +20,7 @@ const axios = require('axios');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('dev-grid-elationship', require('./components/DevGridRelationship.vue').default);
+Vue.component('dev-grid-diagram', require('./components/DevGridDiagram.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
