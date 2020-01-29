@@ -2,62 +2,55 @@
     <DxDiagram
         id="diagram"
         ref="diagram"
-        @onItemClick="okClicked"
-        @itemClick="okClicked"
-
-
     >
-        <DxNodes
-            :data-source="orgItemsDataSource"
-            :image-url-expr="'picture'"
+        <DxContextMenu
+            :enabled="true"
+            :commands="['bringToFront', 'sendToBack' , 'lock' , 'unlock' ]"
+        />
+        <DxPropertiesPanel
+            :enabled="true"
+            :collapsible="false"
         >
-            <DxAutoLayout :orientation="'horizontal'"/>
-        </DxNodes>
-        <DxEdges :data-source="orgLinksDataSource"/>
-        <DxToolbox>
+            <DxGroup :commands="['units']"/>
+            <DxGroup :commands="['pageSize', 'pageOrientation' , 'pageColor' ]"/>
+        </DxPropertiesPanel>
+        <DxToolbar
+            :visible="true"
+            :commands="['undo', 'redo' , 'separator' , 'fontName' , 'fontSize' , 'separator' , 'bold' , 'italic' , 'underline' , 'separator' , 'fontColor' , 'lineColor' , 'fillColor' , 'separator' ]"
+        />
+        <DxToolbox :visible="true">
             <DxGroup
                 :category="'general'"
                 :title="'General'"
             />
             <DxGroup
-                :category="'orgChart'"
-                :title="'Organizational Chart'"
+                :category="'flowchart'"
+                :title="'Flowchart'"
                 :expanded="true"
             />
         </DxToolbox>
     </DxDiagram>
 </template>
 <script>
-    import { DxDiagram, DxNodes, DxAutoLayout, DxEdges, DxToolbox, DxGroup } from 'devextreme-vue/diagram';
-    import 'devextreme/dist/css/dx.common.css';
-    import 'devextreme/dist/css/dx.darkmoon.compact.css';
-    // import 'devextreme/dist/css/dx.diagram.css';
-
-    import ArrayStore from 'devextreme/data/array_store';
-    import service from './data.js';
+    import { DxDiagram, DxContextMenu, DxPropertiesPanel, DxGroup, DxToolbar, DxToolbox } from 'devextreme-vue/diagram';
+    import 'whatwg-fetch';
 
     export default {
         components: {
-            DxDiagram, DxNodes, DxAutoLayout, DxEdges, DxToolbox, DxGroup
+            DxDiagram, DxContextMenu, DxPropertiesPanel, DxGroup, DxToolbar, DxToolbox
         },
-        data() {
-            return {
-                orgItemsDataSource: new ArrayStore({
-                    key: 'this',
-                    data: service.getOrgItems()
-                }),
-                orgLinksDataSource: new ArrayStore({
-                    key: 'this',
-                    data: service.getOrgLinks(),
-                    texts: ["65"],
+        mounted() {
+            var diagram = this.$refs['diagram'].instance;
+            fetch('http://basked.pr/js/data_tree.json')
+                .then(function(response) {
+                    return response.json();
                 })
-            };
-        },
-        methods:{
-
-            okClicked: function(e) {
-                console.log(e);
-            }
+                .then(function(json) {
+                    diagram.import(JSON.stringify(json));
+                })
+                .catch(function() {
+                    throw 'Data Loading Error';
+                });
         }
     };
 </script>
