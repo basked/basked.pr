@@ -5,5 +5,6 @@
 
     <p>
         This view is loaded from module: {!! config('directory.name') !!}
+
     </p>
 @endsection

@@ -12,5 +12,5 @@
 */
 
 Route::prefix('directory')->group(function() {
-    Route::get('/', 'DirectoryController@index');
+    Route::get('/', 'ContinentController@index');
 });
