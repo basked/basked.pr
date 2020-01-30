@@ -1,14 +1,13 @@
 {
     "page": {
         "width": 8391,
-            "height": 11907,
-            "pageWidth":8391,
-            "pageHeight":11906,
-            "pageLandscape":false,
-            "gridSize":180,
-            "snapToGrid": true
-    }
-,
+        "height": 11907,
+        "pageWidth": 8391,
+        "pageHeight": 11906,
+        "pageLandscape": false,
+        "gridSize": 180,
+        "snapToGrid": true
+    },
     "connectors": [
         {
             "key": "116",
@@ -54,14 +53,15 @@
                     "y": 4680
                 },
                 {
-                   "x": 5760,
-                   "y": 4680
+                    "x": 5760,
+                    "y": 4680
                 }
             ],
             "zIndex": 0,
-            "texts": { "0.45": "No"
+            "texts": {
+                "0.45": "No"
             },
-           "beginItemKey": "118",
+            "beginItemKey": "118",
             "beginConnectionPointIndex": 1,
             "endItemKey": "121",
             "endConnectionPointIndex": 3
@@ -241,8 +241,7 @@
             "endConnectionPointIndex": 0
         }
     ],
-        "shapes":
-    [
+    "shapes": [
         {
             "key": "107",
             "type": "terminator",
@@ -250,8 +249,8 @@
             "x": 1440,
             "y": 1080,
             "width": 1440,
-            "height": 720,
-            "zIndex": 0
+            "height": 120,
+            "zIndex": 30
         },
         {
             "key": "108",
@@ -343,7 +342,17 @@
             "width": 7740,
             "height": 360,
             "zIndex": 0
-
+        },
+        {
+            "key": "137",
+            "type": "text",
+            "locked": true,
+            "text": "BASKED.PRO",
+            "x": 360,
+            "y": 360,
+            "width": 7740,
+            "height": 560,
+            "zIndex": 0
         }
     ]
 }

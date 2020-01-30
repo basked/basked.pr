@@ -1,5 +1,6 @@
 {
     "Test": true,
     "Skill": true,
-    "TreeLife": true
+    "TreeLife": true,
+    "Directory": true
 }

@@ -1,0 +1,13 @@
+{
+    "name": "Directory",
+    "alias": "directory",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Modules\\Directory\\Providers\\DirectoryServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
