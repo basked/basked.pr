@@ -25,6 +25,7 @@ class ContinentRepository extends CoreRepository
      */
     public function getEdit($id)
     {
+        dd('asdad');
         return $this->startConditions()->find($id);
     }
 

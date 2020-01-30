@@ -33,6 +33,7 @@ abstract class CoreRepository
     function __construct()
     {
 
+
         $this->model = app($this->getModelClass());
         // то же что и первй способ, но в первом  мы делигируем laravel, функции app
         // если делать через - будет в ры быстрее
