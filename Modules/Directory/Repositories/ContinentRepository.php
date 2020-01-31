@@ -1,41 +1,19 @@
 <?php
 
-
 namespace Modules\Directory\Repositories;
+use Modules\Directory\Entities\Continent;
+use Modules\Directory\Repositories\Interfaces\ContinentRepositoryInterface;
 
-
-use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Model;
-
-class ContinentRepository extends CoreRepository
+class ContinentRepository implements ContinentRepositoryInterface
 {
-    /**
-     * @inheritDoc
-     */
-    protected function getModelClass()
+
+    public function all()
     {
-        return Model::class;
+        return Continent::all();
     }
 
-    /**
-     * Прлучить модель для редактирования
-     *
-     * @param $id
-     * @return mixed
-     */
-    public function getEdit($id)
+    public function getContintnent($id)
     {
-        dd('asdad');
-        return $this->startConditions()->find($id);
-    }
-
-
-    /**
-     * Получить все континенты
-     * @return Collection
-     */
-    public function getAllContinents()
-    {
-        return $this->startConditions()->all();
+        return Continent::find($id);
     }
 }

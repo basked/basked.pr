@@ -6,29 +6,27 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Modules\Directory\Repositories\ContinentRepository;
-use Modules\Directory\Entities\Continent;
+use Modules\Directory\Repositories\Interfaces\ContinentRepositoryInterface;
+
 
 /*
  * Class ContinentController
  * @package Modules\Directory\Http\Controllers
  */
+
 class ContinentController extends Controller
 {
-    /*
-     *  @var Continentrepository
-     * */
-     private   $continentRepository;
-    /**
-     * Display a listing of the resource.
-     * @return Response
-     */
-    public function __construct( )
+    private $continentRepository;
+
+    function __construct(ContinentRepositoryInterface $continentRepository)
     {
-        $this->continentRepository=ContinentRepository::class;
+        // внедряем continentRepository
+        $this->continentRepository = $continentRepository;
     }
 
     public function index()
     {
+        dd($this->continentRepository->getContintnent(1));
         return view('directory::index');
     }
 

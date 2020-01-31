@@ -177,6 +177,10 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\RolesServiceProvider::class,
         App\Providers\PermissionServiceProvider::class,
+        /*MODULES PROVIDERS
+         *
+         * */
+        Modules\Directory\Providers\RepositoryServiceProvider::class,
     ],
 
     /*
