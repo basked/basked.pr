@@ -5,6 +5,7 @@ namespace Modules\Directory\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Modules\Directory\Entities\Continent;
 use Modules\Directory\Repositories\ContinentRepository;
 use Modules\Directory\Repositories\Interfaces\ContinentRepositoryInterface;
 
@@ -26,8 +27,22 @@ class ContinentController extends Controller
 
     public function index()
     {
-        dd($this->continentRepository->getContintnent(1));
-        return view('directory::index');
+
+        //
+        $continents=Continent::all();
+
+        dd($continents);
+        /*   foreach ($continents as $continent) {
+               dd($continent);
+             /* foreach ($continent->attributes() as $attr){
+              echo    $attr->name;*/
+           // $attr->pivot->val;
+
+
+
+
+    // dd($this->continentRepository->getContinentData());
+     //   return view('directory::index');
     }
 
     /**

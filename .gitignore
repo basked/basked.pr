@@ -13,3 +13,4 @@ yarn-error.log
 /.idea/commandlinetools
 /Modules/TreeLife/node_modules/
 /Modules/Skill/node_modules/
+/node_modules/

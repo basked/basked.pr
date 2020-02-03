@@ -16,7 +16,7 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function register()
     {
-       $this->app->bind(ContinentRepositoryInterface::class,ContinentRepositoryApi::class);
+       $this->app->bind(ContinentRepositoryInterface::class,ContinentRepository::class);
     }
 
     /**
