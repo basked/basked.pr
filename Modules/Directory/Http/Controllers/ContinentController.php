@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Modules\Directory\Entities\Continent;
+use Modules\Directory\Entities\ContinentAttr;
 use Modules\Directory\Repositories\ContinentRepository;
 use Modules\Directory\Repositories\Interfaces\ContinentRepositoryInterface;
 
@@ -29,14 +30,16 @@ class ContinentController extends Controller
     {
 
         //
-        $continents=Continent::all();
+        $continents=Continent::find(1)->continent_attributes;
 
-        dd($continents);
-        /*   foreach ($continents as $continent) {
-               dd($continent);
-             /* foreach ($continent->attributes() as $attr){
-              echo    $attr->name;*/
-           // $attr->pivot->val;
+      dd($continents);
+
+        // foreach ($continents as $continent) {
+        //      dd($continent);
+            //  dd($continent->attributes());
+              /* foreach ($continent->attributes() as $attr){
+               echo    $attr->name;*/
+              // $attr->pivot->val;
 
 
 

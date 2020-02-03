@@ -24,13 +24,13 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Directory\Entities\Continent findSimilarSlugs($attribute, $config, $slug)
  * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Directory\Entities\Continent whereUrl($value)
  */
-class Continent extends Model
+class ContinentAttr extends Model
 {
     use Sluggable;
-    protected $table='spr_continents';
+    protected $table='spr_continents_attr';
     protected $fillable=[] ;
 
-     // можем ли выненести в репозиторий
+    // можем ли выненести в репозиторий
     public function sluggable()
     {
         return [
@@ -40,8 +40,8 @@ class Continent extends Model
         ];
     }
 
-    public function continent_attributes(){
-            return $this->belongsToMany('spr_continents_attr', 'spr_continents_attr_val', 'continent_id', 'continent_attr_id');
+    public function continent(){
+        return $this->belongsToMany('spr_continents', 'spr_continents_attr','continent_id', 'continent_attr_id' );
     }
 
 }
