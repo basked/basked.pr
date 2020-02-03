@@ -23,6 +23,14 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $url
  * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Directory\Entities\Continent findSimilarSlugs($attribute, $config, $slug)
  * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Directory\Entities\Continent whereUrl($value)
+ * @property string $type
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Modules\Directory\Entities\Continent[] $continents
+ * @property-read int|null $continents_count
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Directory\Entities\ContinentAttr whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Directory\Entities\ContinentAttr whereType($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Directory\Entities\ContinentAttr whereUpdatedAt($value)
  */
 class ContinentAttr extends Model
 {
@@ -40,8 +48,9 @@ class ContinentAttr extends Model
         ];
     }
 
-    public function continent(){
-        return $this->belongsToMany('spr_continents', 'spr_continents_attr','continent_id', 'continent_attr_id' );
+    public function continents(){
+
+        return $this->belongsToMany('Modules\Directory\Entities\Continent', 'spr_continents_attr_val', 'continent_attr_id' ,'continent_id')->withPivot('val');
     }
 
 }

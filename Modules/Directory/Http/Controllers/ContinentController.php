@@ -18,6 +18,7 @@ use Modules\Directory\Repositories\Interfaces\ContinentRepositoryInterface;
 
 class ContinentController extends Controller
 {
+
     private $continentRepository;
 
     function __construct(ContinentRepositoryInterface $continentRepository)
@@ -26,26 +27,33 @@ class ContinentController extends Controller
         $this->continentRepository = $continentRepository;
     }
 
+
+    public function set_len_print($s, $max_simbol){
+        while(strlen($s)<$max_simbol){
+            $s =$s."     ";
+        }
+        echo $s;
+    }
     public function index()
-    {
+    {   str_repeat('&nbsp;', 5);
+        $continents = Continent::all();
+        foreach ($continents as $continent){
+            echo $continent->name.'|';
 
-        //
-        $continents=Continent::find(1)->continent_attributes;
+        }
+        echo '<hr>';
 
-      dd($continents);
+        $continent_attributes = ContinentAttr::all();
+        foreach ($continent_attributes as $continent_attribut){
+            echo  $this->set_len_print($continent_attribut->name,20);
 
-        // foreach ($continents as $continent) {
-        //      dd($continent);
-            //  dd($continent->attributes());
-              /* foreach ($continent->attributes() as $attr){
-               echo    $attr->name;*/
-              // $attr->pivot->val;
+                foreach ( $continent_attribut->continents as $continent){
+                    echo $continent->pivot->val.'|';
+                }
+                echo '<br>';
+            }
 
 
-
-
-    // dd($this->continentRepository->getContinentData());
-     //   return view('directory::index');
     }
 
     /**

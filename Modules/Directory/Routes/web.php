@@ -13,4 +13,6 @@
 
 Route::prefix('directory')->group(function() {
     Route::get('/', 'ContinentController@index');
+    Route::get('/autor', 'AutorController@index');
+
 });
