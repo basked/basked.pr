@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Directory\Entities;
+namespace Modules\Directory\Entities\Continent;
 
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
@@ -31,8 +31,10 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Directory\Entities\ContinentAttr whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Directory\Entities\ContinentAttr whereType($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Directory\Entities\ContinentAttr whereUpdatedAt($value)
+ * @property string $group
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Directory\Entities\Continent\Attribute whereGroup($value)
  */
-class ContinentAttr extends Model
+class Attribute extends Model
 {
     use Sluggable;
     protected $table='spr_continents_attr';
@@ -49,8 +51,7 @@ class ContinentAttr extends Model
     }
 
     public function continents(){
-
-        return $this->belongsToMany('Modules\Directory\Entities\Continent', 'spr_continents_attr_val', 'continent_attr_id' ,'continent_id')->withPivot('val');
+        return $this->belongsToMany(Continent::class, 'spr_continents_attr_val', 'continent_attr_id' ,'continent_id')->withPivot('val');
     }
 
 }

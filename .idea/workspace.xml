@@ -1,23 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d799cace-1740-4802-8bc4-5a852e7fee40" name="Default Changelist" comment="Commit on work&#10;Repository version 2 &#10;see&#10;https://laravel.demiart.ru/repository-design-pattern/">
-      <change beforePath="$PROJECT_DIR$/.idea/commandlinetools/Composer_15_01_2020__10_53_c.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/commandlinetools/Tool_based_on_Symfony_Console_15_01_2020__11_42_a.xml" beforeDir="false" />
+    <list default="true" id="d799cace-1740-4802-8bc4-5a852e7fee40" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Modules/Directory/Database/Migrations/2020_02_04_210020_create_spr_continents_details_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Directory/Database/Migrations/2020_02_04_210605_add_group_to_spr_continents_attr_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Directory/Database/Migrations/2020_02_04_212716_create_spr_countries_details_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Directory/Database/Migrations/2020_02_04_212746_create_spr_countries_attr_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Directory/Database/Migrations/2020_02_04_213523_create_spr_countries_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Directory/Database/Migrations/2020_02_04_214358_create_spr_countries_attr_val_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Directory/Entities/Continent/Details.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Directory/Entities/Country/Attribute.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Directory/Entities/Country/Details.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Directory/Http/Controllers/CountryController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Directory/Repositories/CountryRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Directory/Repositories/Interfaces/CountryRepositoryInterface.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a5f6867-1aa7-456d-bd33-b73daca010d4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6a5f6867-1aa7-456d-bd33-b73daca010d4.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Directory/Entities/Continent.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Entities/Continent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Directory/Entities/ContinentAttr.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Entities/ContinentAttr.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Directory/Entities/Country.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Entities/Country.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Directory/Entities/Locality.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Entities/Locality.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Directory/Entities/Region.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Entities/Region.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Directory/Entities/State.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Entities/State.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Directory/Entities/Continent.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Entities/Continent/Continent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Directory/Entities/ContinentAttr.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Entities/Continent/Attribute.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Directory/Entities/Country.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Entities/Country/Country.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Directory/Http/Controllers/ContinentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Http/Controllers/ContinentController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Directory/Routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bootstrap/cache/packages.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/packages.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bootstrap/cache/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/services.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,7 +33,7 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="DONT_SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
-      <phar pharPath="D:\Soft\PROGRAMMING\WEB\WebServer\domains\basked.pr\composer.phar" interpreterId="3875214d-93e6-469f-8b4d-a2cabce42aed" />
+      <phar pharPath="C:\WebServer\domains\basked.pr\composer.phar" interpreterId="3591e53c-719e-45fe-9f50-caeb770676f5" />
     </execution>
   </component>
   <component name="DatabaseView">
@@ -280,6 +287,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -289,12 +297,14 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2019.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Soft\PROGRAMMING\WEB\WebServer\domains\basked.pr\Modules\Directory\Repositories" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Soft\PROGRAMMING\WEB\WebServer\domains\basked.pr\public\js" />
       <recent name="D:\Soft\PROGRAMMING\WEB\WebServer\domains\basked.pr\Modules\TreeLife\Resources\assets\js\components" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\WebServer\domains\basked.pr\Modules\Directory\Entities\Country" />
+      <recent name="C:\WebServer\domains\basked.pr\Modules\Directory\Entities\Continent" />
+      <recent name="D:\Soft\PROGRAMMING\WEB\WebServer\domains\basked.pr\Modules\Directory\Repositories" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -351,12 +361,31 @@
       <command value="a module:make-model autor_book Directory" />
       <command value="a module:make-controller AutorController Directory" />
       <command value="c dump-autoload" />
-      <command value="a config:clear" />
       <command value="a module:make-migration add_count_spr_autor__booktable Directory" />
       <command value="a module:make-migration add_count_spr_autor_book_table Directory" />
       <command value="a module:make-migration add_count_to_spr_autor_book_table Directory" />
-      <command value="a module:migrate Directory" />
+      <command value="a module:make-model autor_book Directory\Continent\Detail" />
+      <command value="a module:make-model autor_book Directory\Continent\Details Directory" />
+      <command value="a module:make-model Continent\Details Directory" />
+      <command value="a module:make-migration create_spr_spr_details_table Directory" />
+      <command value="a module:make-migration create_spr_continent_details_table Directory" />
+      <command value="a module:make-migration create_spr_continents_details_table Directory" />
+      <command value="a module:make-migration add_group_spr_continents_attr_table Directory" />
+      <command value="a module:make-migration add_group_to_spr_continents_attr_table Directory" />
+      <command value="a module:make-migration create_spr_counties_atrr_table Directory" />
+      <command value="a module:make-migration create_spr_countries_details_table Directory" />
+      <command value="a module:make-migration create_spr_countries_atrr_table Directory" />
+      <command value="a module:make-model Continent\Details, Continent\Details Directory" />
+      <command value="a module:make-model Country\Details, Countryt\Details Directory" />
+      <command value="a module:make-model Country\Attribute Directory" />
+      <command value="a module:make-model Country\Details Directory" />
       <command value="a ide-helper:models" />
+      <command value="a module:make-model Country\Country Directory" />
+      <command value="a module:make-migration create_spr_countries_table Directory" />
+      <command value="a module:make-migration create_spr_countries_atrr_val_table Directory" />
+      <command value="a config:clear" />
+      <command value="a module:migrate Directory" />
+      <command value="a module:make-controller CountryController Directory" />
     </option>
   </component>
   <component name="RunDashboard">
@@ -426,6 +455,7 @@
       <workItem from="1580151455211" duration="814000" />
       <workItem from="1580211801954" duration="11278000" />
       <workItem from="1580303532079" duration="42702000" />
+      <workItem from="1580844446162" duration="8936000" />
     </task>
     <task id="LOCAL-00001" summary="Commit on work">
       <created>1579082528866</created>
@@ -518,18 +548,45 @@
       <option name="project" value="LOCAL" />
       <updated>1580456874658</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Add belongToMany to model Continent and ContinentdAttr">
+      <created>1580765517361</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1580765517361</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Add belongToMany to model Continent and ContinentdAttr">
+      <created>1580765575596</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1580765575596</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Commit on work" />
     <MESSAGE value="Commit on work&#10;Diagram data" />
     <MESSAGE value="Commit on work&#10;Repository" />
     <MESSAGE value="Commit on work&#10;Repository version 2 &#10;see&#10;https://laravel.demiart.ru/repository-design-pattern/" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit on work&#10;Repository version 2 &#10;see&#10;https://laravel.demiart.ru/repository-design-pattern/" />
+    <MESSAGE value="Add belongToMany to model Continent and ContinentdAttr" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add belongToMany to model Continent and ContinentdAttr" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="129" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579867959777">

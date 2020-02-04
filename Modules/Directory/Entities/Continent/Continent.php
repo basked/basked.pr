@@ -1,9 +1,10 @@
 <?php
 
-namespace Modules\Directory\Entities;
+namespace Modules\Directory\Entities\Continent;
 
-//use Cviebrock\EloquentSluggable\Sluggable;
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
+
 /**
  * Modules\Directory\Entities\Continent
  *
@@ -24,28 +25,30 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Directory\Entities\Continent whereUrl($value)
  * @property-read \Illuminate\Database\Eloquent\Collection|\Modules\Directory\Entities\ContinentAttr[] $c_attributes
  * @property-read int|null $c_attributes_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Modules\Directory\Entities\Continent\Attribute[] $attributes
+ * @property-read int|null $attributes_count
  */
 class Continent extends Model
 {
-//    use Sluggable;
- protected $fillable = [];
-    protected $table='spr_continents';
+    use Sluggable;
 
-   //protected $with='attribs';
+    protected $fillable = [];
+    protected $table = 'spr_continents';
 
 
-     // можем ли выненести в репозиторий
-//    public function sluggable()
-//    {
-//        return [
-//            'slug' => [
-//                'source' => 'name'
-//            ]
-//        ];
-//    }
-    public function continent_attributes(){
-        return $this->belongsToMany('Modules\Directory\Entities\ContinentAttr', 'spr_continents_attr_val','continent_id','continent_attr_id')->withPivot('val');
-        //           return $this->belongsToMany('spr_books', 'spr_autor_book','autor_id','book_id');
+    // можем ли выненести в репозиторий
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'name'
+            ]
+        ];
+    }
+
+    public function attributes()
+    {
+        return $this->belongsToMany(Attribute::class, 'spr_continents_attr_val', 'continent_id', 'continent_attr_id')->withPivot('val');
     }
 
 }

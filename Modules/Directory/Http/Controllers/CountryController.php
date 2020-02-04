@@ -5,58 +5,28 @@ namespace Modules\Directory\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
-use Modules\Directory\Entities\Continent\Continent;
-use Modules\Directory\Entities\Continent\Attribute;
-use Modules\Directory\Repositories\ContinentRepository;
-use Modules\Directory\Repositories\Interfaces\ContinentRepositoryInterface;
+use Modules\Directory\Repositories\Interfaces\CountryRepositoryInterface;
 
-
-/*
- * Class ContinentController
- * @package Modules\Directory\Http\Controllers
- */
-
-class ContinentController extends Controller
+class CountryController extends Controller
 {
 
-    private $continentRepository;
+    private $countryRepository;
 
-    function __construct(ContinentRepositoryInterface $continentRepository)
+    function __construct(CountryRepositoryInterface $countryRepository)
     {
         // внедряем continentRepository
-        $this->continentRepository = $continentRepository;
+        $this->countryRepository = $countryRepository;
     }
 
 
-    public function set_len_print($s, $max_simbol)
-    {
-        while (strlen($s) < $max_simbol) {
-            $s = $s . "     ";
-        }
-        echo $s;
-    }
 
+    /**
+     * Display a listing of the resource.
+     * @return Response
+     */
     public function index()
     {
-        str_repeat('&nbsp;', 5);
-        $continents = Continent::all();
-        foreach ($continents as $continent) {
-            echo $continent->name . '|';
-
-        }
-        echo '<hr>';
-
-        $attributes = Attribute::all();
-        foreach ($attributes as $attribute) {
-            echo $this->set_len_print($attribute->name, 20);
-
-            foreach ($attribute->continents as $continent) {
-                echo $continent->pivot->val . '|';
-            }
-            echo '<br>';
-        }
-
-
+        return view('directory::index');
     }
 
     /**
@@ -121,7 +91,7 @@ class ContinentController extends Controller
 
     public function test()
     {
-        dd('df');
-        dd($this->continentRepository->getContinentData());
+        dd($this->countryRepository->getCountryData());
     }
+
 }

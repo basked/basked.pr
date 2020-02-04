@@ -13,6 +13,11 @@
 
 Route::prefix('directory')->group(function() {
     Route::get('/', 'ContinentController@index');
+
     Route::get('/autor', 'AutorController@index');
+
+//  функции тестирования
+    Route::get('/test-continent', 'ContinentController@test');
+    Route::get('/test-country', 'CountryController@test');
 
 });
