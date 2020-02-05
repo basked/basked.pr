@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
+use Modules\Directory\Entities\Country\Attribute;
 use Modules\Directory\Entities\Country\Country;
+use Modules\Directory\Entities\Country\Details;
 use Modules\Directory\Repositories\Interfaces\CountryRepositoryInterface;
 
 class CountryController extends Controller
@@ -92,18 +94,44 @@ class CountryController extends Controller
 
     public function test()
     {
+        Country::reloadDataSite();
+        // TODO: Парсинг атрибутов по id модели страны
+        $countries = Country::all();
+        foreach ($countries as $country) {
+            $atrrtibutes = Country::getAttributesDataSite($country);
+            foreach ($atrrtibutes as $atrrtibute) {
+                if (!empty($atrrtibute)) {
+                    if (Attribute::where('key', $atrrtibute['content_key'])->count() == 0) {
+                        $attr = new Attribute([
+                            'key' => $atrrtibute['content_key'],
+                            'name' => $atrrtibute['label'],
+                            'type' => 'string',
+                            'group' => 'basic_info'
+                        ]);
+                        $attr->save();
+                    } else {
+                        $attr = Attribute::where('key', $atrrtibute['content_key'])->first();
+                    }
+                    $country->attributes()->attach($attr->id, ['val' => $atrrtibute['content_val']]);
+                }
+            }
+        }
 
-        $detail = Country::find(1)->attributes()->attach(1);
 
+//        foreach ($countries as $country){
+//            echo '<h1>'.$country->name.'</h1>';
+//            echo '<pre>';
+//            print_r(Country::getAttributesDataSite($country));
+//            echo '</pre>';
+//        }
 
+        // TODO: Перегрузка дпнных по странам
+//          if( Country::reloadDataSite()){
+//              echo 'reload';
+//          } else {
+//              echo 'NO reload';
+//          };
 
-        /*
-        if( Country::reloadDataSite()){
-            echo 'reload';
-        } else {
-            echo 'NO reload';
-        };
- */
         /*     dd( Country::getDataSite()->where('name','Россия')->sortBy('name')->all());
             dd( Country::getDataSite());
             dd( Country::getByNameDataSite('Беларусь')->toArray());*/

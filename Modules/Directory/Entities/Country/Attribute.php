@@ -2,6 +2,7 @@
 
 namespace Modules\Directory\Entities\Country;
 
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -14,5 +15,21 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Attribute extends Model
 {
-    protected $fillable = [];
+    use Sluggable;
+    protected $fillable = ['key', 'name','type','group'];
+    protected $table = 'spr_countries_attr';
+
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'name'
+            ]
+        ];
+    }
+
+    public function countries()
+    {
+        return $this->belongsToMany(Country:: class, 'spr_countries_attr_val', 'country_attr_id', 'country_id')->withPivot('val');
+    }
 }

@@ -23,7 +23,7 @@ class Country extends Model
 {
     use Sluggable;
     protected $table = 'spr_countries';
-    protected $fillable = [];
+    protected $fillable = ['name'];
 
     public function sluggable()
     {
@@ -39,7 +39,7 @@ class Country extends Model
      *  Relationship on spr_countries_details
      *
      **/
-    public function detail(){
+    public function details(){
         return $this->hasOne(Details::class,'country_id','id');
     }
 
@@ -49,7 +49,7 @@ class Country extends Model
     **/
     public function attributes()
     {
-        return $this->belongsToMany(Attribute:: class, 'spr_continents_attr_val', 'continent_id', 'continent_attr_id')->withPivot('val');
+        return $this->belongsToMany(Attribute:: class, 'spr_countries_attr_val', 'country_id', 'country_attr_id')->withPivot('val');
     }
 
     /**
@@ -80,6 +80,11 @@ class Country extends Model
     {
         $countries = self::getDataSite();
         return $countries->whereIn('name', [$name]);
+    }
+
+    //
+    public static function  getAttributesDataSite(Country $country){
+        return CountryRepository::getCountryAttributesData($country);
     }
 
 }
