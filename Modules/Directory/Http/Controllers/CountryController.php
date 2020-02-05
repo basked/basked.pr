@@ -93,8 +93,8 @@ class CountryController extends Controller
     public function test()
     {
 
-        $detail = Country::find(1)->detail->descr . '=>' . Country::find(1)->detail->url;
-        dd($detail);
+        $detail = Country::find(1)->attributes()->attach(1);
+
 
 
         /*
