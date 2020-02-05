@@ -6,6 +6,7 @@ use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Modules\Directory\Entities\Country\Attribute;
+use Modules\Directory\Entities\Country\Details;
 use Modules\Directory\Repositories\CountryRepository;
 use Modules\Directory\Repositories\Interfaces\CountryRepositoryInterface;
 
@@ -33,6 +34,19 @@ class Country extends Model
         ];
     }
 
+
+    /**
+     *  Relationship on spr_countries_details
+     *
+     **/
+    public function detail(){
+        return $this->hasOne(Details::class,'country_id','id');
+    }
+
+    /**
+     *  Relationship on spr_countries_attr
+     *
+    **/
     public function attributes()
     {
         return $this->belongsToMany(Attribute:: class, 'spr_continents_attr_val', 'continent_id', 'continent_attr_id')->withPivot('val');

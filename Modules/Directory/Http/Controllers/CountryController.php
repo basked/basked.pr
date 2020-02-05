@@ -92,12 +92,18 @@ class CountryController extends Controller
 
     public function test()
     {
-       if( Country::reloadDataSite()){
-           echo 'reload';
-       } else {
-           echo 'NO reload';
-       };
 
+        $detail = Country::find(1)->detail->descr . '=>' . Country::find(1)->detail->url;
+        dd($detail);
+
+
+        /*
+        if( Country::reloadDataSite()){
+            echo 'reload';
+        } else {
+            echo 'NO reload';
+        };
+ */
         /*     dd( Country::getDataSite()->where('name','Россия')->sortBy('name')->all());
             dd( Country::getDataSite());
             dd( Country::getByNameDataSite('Беларусь')->toArray());*/
