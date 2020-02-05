@@ -2,9 +2,11 @@
 
 namespace Modules\Directory\Http\Controllers;
 
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Modules\Directory\Entities\Country\Attribute;
 use Modules\Directory\Entities\Country\Country;
@@ -29,7 +31,9 @@ class CountryController extends Controller
      */
     public function index()
     {
-        return view('directory::index');
+        $countries = Country::all();
+
+        return view('directory::index', ['countries' => $countries]);
     }
 
     /**
@@ -94,28 +98,39 @@ class CountryController extends Controller
 
     public function test()
     {
-        Country::reloadDataSite();
-        // TODO: Парсинг атрибутов по id модели страны
-        $countries = Country::all();
+        // TODO: Уникальные значения атрибута РЕГИОН
+        $col = new Collection;
+        $countries = Attribute::find(5)->countries;
         foreach ($countries as $country) {
-            $atrrtibutes = Country::getAttributesDataSite($country);
-            foreach ($atrrtibutes as $atrrtibute) {
-                if (!empty($atrrtibute)) {
-                    if (Attribute::where('key', $atrrtibute['content_key'])->count() == 0) {
-                        $attr = new Attribute([
-                            'key' => $atrrtibute['content_key'],
-                            'name' => $atrrtibute['label'],
-                            'type' => 'string',
-                            'group' => 'basic_info'
-                        ]);
-                        $attr->save();
-                    } else {
-                        $attr = Attribute::where('key', $atrrtibute['content_key'])->first();
-                    }
-                    $country->attributes()->attach($attr->id, ['val' => $atrrtibute['content_val']]);
-                }
-            }
+            $col->push($country->pivot->val.'=>'.$country->name);
+
+            // echo  $country->pivot->val.'<br>';
         }
+        dd($col->unique()->sort()->all());
+
+
+// TODO: Парсинг атрибутов по id модели страны
+//        Country::reloadDataSite();
+//        $countries = Country::all();
+//        foreach ($countries as $country) {
+//            $atrrtibutes = Country::getAttributesDataSite($country);
+//            foreach ($atrrtibutes as $atrrtibute) {
+//                if (!empty($atrrtibute)) {
+//                    if (Attribute::where('key', $atrrtibute['content_key'])->count() == 0) {
+//                        $attr = new Attribute([
+//                            'key' => $atrrtibute['content_key'],//?'':Sluggable::get('name'),
+//                            'name' => $atrrtibute['label'],
+//                            'type' => 'string',
+//                            'group' => 'basic_info'
+//                        ]);
+//                        $attr->save();
+//                    } else {
+//                        $attr = Attribute::where('key', $atrrtibute['content_key'])->first();
+//                    }
+//                    $country->attributes()->attach($attr->id, ['val' => $atrrtibute['content_val']]);
+//                }
+//            }
+//        }
 
 
 //        foreach ($countries as $country){

@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d799cace-1740-4802-8bc4-5a852e7fee40" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Modules/Directory/Database/Migrations/2020_02_05_171213_add_key_to_spr_countries_attr_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Directory/Database/Migrations/2020_02_05_181630_edit_name_spr_countries_attr_val_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a5f6867-1aa7-456d-bd33-b73daca010d4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6a5f6867-1aa7-456d-bd33-b73daca010d4.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Directory/Entities/Country/Attribute.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Entities/Country/Attribute.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Directory/Entities/Country/Country.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Entities/Country/Country.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Directory/Entities/Country/Details.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Entities/Country/Details.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Directory/Http/Controllers/CountryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Http/Controllers/CountryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Directory/Repositories/CountryRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Repositories/CountryRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Directory/Resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Resources/views/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Directory/Routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,6 +46,13 @@
         <item name="MySQL for 5.1 - bas_db@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="basked_db: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL for 5.1 - bas_db@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="basked_db: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="spr_countries_attr: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -371,7 +373,7 @@
       <workItem from="1580211801954" duration="11278000" />
       <workItem from="1580303532079" duration="42702000" />
       <workItem from="1580844446162" duration="8936000" />
-      <workItem from="1580918287128" duration="8527000" />
+      <workItem from="1580918287128" duration="16879000" />
     </task>
     <task id="LOCAL-00001" summary="Commit on work">
       <created>1579082528866</created>
@@ -492,7 +494,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580910559940</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Country, Attributes, Details relationshipsfor Country model">
+      <created>1580927135529</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1580927135530</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
