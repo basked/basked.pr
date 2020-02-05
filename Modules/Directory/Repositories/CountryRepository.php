@@ -4,15 +4,18 @@
 namespace Modules\Directory\Repositories;
 
 use Curl\Curl;
+use Exception;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\DB;
 use Modules\Directory\Entities\Country\Country;
 use Modules\Directory\Repositories\Interfaces\CountryRepositoryInterface;
 use Symfony\Component\DomCrawler\Crawler;
 
 class CountryRepository implements CountryRepositoryInterface
 {
-    const BASE_URL = 'https://gtmarket.ru/';
+    private const BASE_URL = 'https://gtmarket.ru/';
 
-    static public function setProxy(Curl $curl)
+    private static function setProxy(Curl $curl)
     {
         $curl->setProxy('172.16.15.33', '3128', 'gt-asup6', 'teksab');
     }
@@ -27,7 +30,11 @@ class CountryRepository implements CountryRepositoryInterface
         return Country::find($id)->toArray();
     }
 
-    public function getCountryData()
+    /**
+     * Return collection data from site
+     * @return Collection
+     * */
+    public static function getCountryData(): Collection
     {
         $curl = new Curl();
         if (gethostname() == 'gt-asup6nv') {
@@ -44,9 +51,33 @@ class CountryRepository implements CountryRepositoryInterface
                     'url' => $node->filter('a')->attr('href'),
                 ];
             });
-            return $data;
+            return collect($data);
         }
 
     }
 
+
+    /**
+     * Return collection data from site
+     * @return bool
+     **/
+    public static function reloadCountryData():bool
+    {
+        try {
+            // Delete all records
+            DB::table('spr_countries')->delete();
+            // Begin value generator with 1
+            DB::statement('ALTER TABLE spr_countries AUTO_INCREMENT = 1');
+            $countries = Country::getDataSite()->sortBy('name');
+            $countries->each(function ($item, $key) {
+                $country = new Country();
+                $country->name = $item['name'];
+                $country->save();
+            });
+        } catch (Exception $e) {
+            echo 'Выброшено исключение при перегрузке данных сайта: ', $e->getMessage(), "<br>";
+            return false;
+        }
+        return true;
+    }
 }

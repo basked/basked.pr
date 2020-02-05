@@ -16,7 +16,7 @@ class CreateSprCountriesDetailsTable extends Migration
         Schema::create('spr_countries_details', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('country_id');
-            $table->foreign('country_id')->references('id')->on('spr_countries');
+            $table->foreign('country_id')->references('id')->on('spr_countries')->onDelete('cascade');
             $table->string('name')->nullable();
             $table->text('descr')->nullable();
             $table->timestamps();

@@ -18,8 +18,8 @@ class CreateSprCountriesAttrValTable extends Migration
             $table->unsignedBigInteger('country_id');
             $table->unsignedBigInteger('country_attr_id');
             $table->string('val')->nullable();
-            $table->foreign('country_id')->references('id')->on('spr_countries');
-            $table->foreign('country_attr_id')->references('id')->on('spr_countries_attr');
+            $table->foreign('country_id')->references('id')->on('spr_countries')->onDelete('cascade');
+            $table->foreign('country_attr_id')->references('id')->on('spr_countries_attr')->onDelete('cascade');
             $table->timestamps();
         });
     }

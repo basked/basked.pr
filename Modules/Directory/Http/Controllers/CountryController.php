@@ -5,6 +5,8 @@ namespace Modules\Directory\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\DB;
+use Modules\Directory\Entities\Country\Country;
 use Modules\Directory\Repositories\Interfaces\CountryRepositoryInterface;
 
 class CountryController extends Controller
@@ -17,7 +19,6 @@ class CountryController extends Controller
         // внедряем continentRepository
         $this->countryRepository = $countryRepository;
     }
-
 
 
     /**
@@ -91,7 +92,16 @@ class CountryController extends Controller
 
     public function test()
     {
-        dd($this->countryRepository->getCountryData());
+       if( Country::reloadDataSite()){
+           echo 'reload';
+       } else {
+           echo 'NO reload';
+       };
+
+        /*     dd( Country::getDataSite()->where('name','Россия')->sortBy('name')->all());
+            dd( Country::getDataSite());
+            dd( Country::getByNameDataSite('Беларусь')->toArray());*/
     }
+
 
 }

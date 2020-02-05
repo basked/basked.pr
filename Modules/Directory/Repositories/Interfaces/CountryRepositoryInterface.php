@@ -2,7 +2,7 @@
 
 
 namespace Modules\Directory\Repositories\Interfaces;
-
+use Illuminate\Support\Collection;
 
 interface CountryRepositoryInterface
 {
@@ -12,5 +12,7 @@ interface CountryRepositoryInterface
      * Данные из интернета по континентам
      *
      * */
-    public function getCountryData();
+    public static function getCountryData() :Collection;
+    public static function reloadCountryData() :bool ;
+
 }
