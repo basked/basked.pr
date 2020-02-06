@@ -12,7 +12,15 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+//
+//Route::middleware('auth:api')->get('/directory', function (Request $request) {
+//    return $request->user();
+//});
 
-Route::middleware('auth:api')->get('/directory', function (Request $request) {
-    return $request->user();
-});
+
+
+
+Route::get('/directory/unit/{patams?}', 'ApiUnitController@index');
+Route::post('/directory/unit/', 'ApiUnitController@store');
+Route::put('/directory/unit/{id}', 'ApiUnitController@update');
+Route::delete('/directory/unit/{id}', 'ApiUnitController@destroy');

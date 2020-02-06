@@ -8,6 +8,8 @@ use Modules\Directory\Repositories\ContinentRepositoryApi;
 use Modules\Directory\Repositories\CountryRepository;
 use Modules\Directory\Repositories\Interfaces\ContinentRepositoryInterface;
 use Modules\Directory\Repositories\Interfaces\CountryRepositoryInterface;
+use Modules\Directory\Repositories\Interfaces\UnitRepositoryInterface;
+use Modules\Directory\Repositories\UnitRepository;
 
 class RepositoryServiceProvider extends ServiceProvider
 {
@@ -20,6 +22,7 @@ class RepositoryServiceProvider extends ServiceProvider
     {
        $this->app->bind(ContinentRepositoryInterface::class,ContinentRepository::class);
        $this->app->bind(CountryRepositoryInterface::class,CountryRepository::class);
+       $this->app->bind(UnitRepositoryInterface::class,UnitRepository::class);
     }
 
     /**

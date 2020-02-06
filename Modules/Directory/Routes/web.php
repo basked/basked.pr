@@ -12,6 +12,15 @@
 */
 
 Route::prefix('directory')->group(function() {
+
+
+    /*UNIT ROUTERS*/
+
+    Route::get('/unit', 'UnitController@index');
+
+
+
+
     Route::get('/', 'CountryController@index');
 
     Route::get('/autor', 'AutorController@index');
@@ -19,5 +28,7 @@ Route::prefix('directory')->group(function() {
 //  функции тестирования
     Route::get('/test-continent', 'ContinentController@test');
     Route::get('/test-country', 'CountryController@test');
+    Route::get('/test-unit', 'UnitController@test');
+
 
 });

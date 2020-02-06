@@ -35,9 +35,12 @@ class CountryRepository implements CountryRepositoryInterface
      * Return collection data from site
      * @return Collection
      * */
-    public static function getCountryData(): Collection
+    public static function getDataSite(): Collection
     {
+        ini_set('max_execution_time', 1200);
         $curl = new Curl();
+        $curl->setTimeout(1200);
+       // $curl->setConcurrency(20);
         if (gethostname() == 'gt-asup6nv') {
             self::setProxy($curl);
         };
@@ -62,9 +65,12 @@ class CountryRepository implements CountryRepositoryInterface
      * @Country $country
      * @return Collection
      * */
-    public static function getCountryAttributesData(Country $country): Collection
+    public static function getAttributesDataSite(Country $country): Collection
     {
+        ini_set('max_execution_time', 1200);
         $curl = new Curl();
+        $curl->setTimeout(1200);
+      //  $curl->setConcurrency(20);
         if (gethostname() == 'gt-asup6nv') {
             self::setProxy($curl);
         };
@@ -92,7 +98,7 @@ class CountryRepository implements CountryRepositoryInterface
      * Return collection data from site
      * @return bool
      **/
-    public static function reloadCountryData(): bool
+    public static function reloadDataSite(): bool
     {
         try {
             // Delete all records
@@ -107,7 +113,7 @@ class CountryRepository implements CountryRepositoryInterface
             DB::statement('ALTER TABLE spr_countries_attr AUTO_INCREMENT = 1');
             DB::statement('ALTER TABLE spr_countries_attr_val AUTO_INCREMENT = 1');
 
-            $countries = Country::getDataSite()->sortBy('name');
+            $countries = Country::getCountriesSite()->sortBy('name');
             $countries->each(function ($item, $key) {
                 $country = new Country(['name' => $item['name']]);
                 $country->save();

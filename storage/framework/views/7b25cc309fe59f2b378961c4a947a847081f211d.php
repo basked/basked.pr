@@ -1,4 +1,16 @@
 <?php $__env->startSection('content'); ?>
+
+    <div id="app">
+        <dev-grid-spr-unit></dev-grid-spr-unit>
+    </div>
+
+
+
+
+
+
+
+
     <h1>Hello World</h1>
 
     <p>

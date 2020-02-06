@@ -7,13 +7,13 @@
         <title>Module Directory</title>
 
        {{-- Laravel Mix - CSS File --}}
-       {{-- <link rel="stylesheet" href="{{ mix('css/directory.css') }}"> --}}
+        <link rel="stylesheet" href="{{ mix('css/directory.css') }}">
 
     </head>
     <body>
         @yield('content')
 
         {{-- Laravel Mix - JS File --}}
-        {{-- <script src="{{ mix('js/directory.js') }}"></script> --}}
+         <script src="{{ mix('js/directory.js') }}"></script>
     </body>
 </html>

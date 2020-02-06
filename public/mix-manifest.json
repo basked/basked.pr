@@ -1,6 +1,6 @@
 {
-    "/js/app.js": "/js/app.js?id=663d5989db180381cb6c",
-    "/css/app.css": "/css/app.css?id=2a4461fc35df4e8d0a06",
-    "/js/treelife.js": "/js/treelife.js",
-    "/css/treelife.css": "/css/treelife.css"
+    "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css",
+    "/js/directory.js": "/js/directory.js",
+    "/css/directory.css": "/css/directory.css"
 }

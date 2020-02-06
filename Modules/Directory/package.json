@@ -13,5 +13,10 @@
         "cross-env": "^5.1.4",
         "laravel-mix": "^4.0.7",
         "laravel-mix-merge-manifest": "^0.1.2"
+    },
+    "dependencies": {
+        "devextreme": "19.2.6",
+        "devextreme-vue": "19.2.6",
+        "whatwg-fetch": "^3.0.0"
     }
 }

@@ -57,18 +57,18 @@ class Country extends Model
      * @param string $name
      * @return Collection
      */
-    public static function getDataSite()
+    public static function getCountriesSite()
     {
-        return CountryRepository::getCountryData();
+        return CountryRepository::getDataSite();
     }
 
     /**
      *Reload data Country from site
      *  @return bool
      */
-    public static function reloadDataSite()
+    public static function reloadCountriesSite()
     {
-        return CountryRepository::reloadCountryData();
+        return CountryRepository::reloadDataSite();
     }
 
     /**
@@ -76,15 +76,15 @@ class Country extends Model
      * @param string $name
      * @return item Collection
      */
-    public static function getByNameDataSite($name)
+    public static function getCountryByNameSite($name)
     {
-        $countries = self::getDataSite();
+        $countries = self::getCountries();
         return $countries->whereIn('name', [$name]);
     }
 
     //
-    public static function  getAttributesDataSite(Country $country){
-        return CountryRepository::getCountryAttributesData($country);
+    public static function  getCountryAttributesSite(Country $country){
+        return CountryRepository::getAttributesDataSite($country);
     }
 
 }

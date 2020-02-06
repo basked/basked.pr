@@ -19,7 +19,7 @@ const axios = require('axios');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('dev-grid-elationship', require('./components/DevGridRelationship.vue').default);
+Vue.component('dev-grid-relationship', require('./components/DevGridRelationship.vue').default);
 Vue.component('dev-grid-diagram', require('./components/DevGridDiagram.vue').default);
 
 /**

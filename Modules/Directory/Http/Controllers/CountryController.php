@@ -98,39 +98,40 @@ class CountryController extends Controller
 
     public function test()
     {
-        // TODO: Уникальные значения атрибута РЕГИОН
-        $col = new Collection;
-        $countries = Attribute::find(5)->countries;
-        foreach ($countries as $country) {
-            $col->push($country->pivot->val.'=>'.$country->name);
 
-            // echo  $country->pivot->val.'<br>';
-        }
-        dd($col->unique()->sort()->all());
+        // TODO: Уникальные значения атрибута РЕГИОН
+//        $col = new Collection;
+//        $countries = Attribute::find(5)->countries;
+//        foreach ($countries as $country) {
+//            $col->push($country->pivot->val.'=>'.$country->name);
+//
+//            // echo  $country->pivot->val.'<br>';
+//        }
+//        dd($col->unique()->sort()->all());
 
 
 // TODO: Парсинг атрибутов по id модели страны
-//        Country::reloadDataSite();
-//        $countries = Country::all();
-//        foreach ($countries as $country) {
-//            $atrrtibutes = Country::getAttributesDataSite($country);
-//            foreach ($atrrtibutes as $atrrtibute) {
-//                if (!empty($atrrtibute)) {
-//                    if (Attribute::where('key', $atrrtibute['content_key'])->count() == 0) {
-//                        $attr = new Attribute([
-//                            'key' => $atrrtibute['content_key'],//?'':Sluggable::get('name'),
-//                            'name' => $atrrtibute['label'],
-//                            'type' => 'string',
-//                            'group' => 'basic_info'
-//                        ]);
-//                        $attr->save();
-//                    } else {
-//                        $attr = Attribute::where('key', $atrrtibute['content_key'])->first();
-//                    }
-//                    $country->attributes()->attach($attr->id, ['val' => $atrrtibute['content_val']]);
-//                }
-//            }
-//        }
+        Country::reloadCountriesSite();
+        $countries = Country::all();
+        foreach ($countries as $country) {
+            $atrrtibutes = Country::getCountryAttributesSite($country);
+            foreach ($atrrtibutes as $atrrtibute) {
+                if (!empty($atrrtibute)) {
+                    if (Attribute::where('key', $atrrtibute['content_key'])->count() == 0) {
+                        $attr = new Attribute([
+                            'key' => $atrrtibute['content_key'],//?'':Sluggable::get('name'),
+                            'name' => $atrrtibute['label'],
+                            'type' => 'string',
+                            'group' => 'basic_info'
+                        ]);
+                        $attr->save();
+                    } else {
+                        $attr = Attribute::where('key', $atrrtibute['content_key'])->first();
+                    }
+                    $country->attributes()->attach($attr->id, ['val' => $atrrtibute['content_val']]);
+                }
+            }
+        }
 
 
 //        foreach ($countries as $country){
@@ -141,16 +142,13 @@ class CountryController extends Controller
 //        }
 
         // TODO: Перегрузка дпнных по странам
-//          if( Country::reloadDataSite()){
+//          if( Country::reloadCountriesSite()){
 //              echo 'reload';
 //          } else {
 //              echo 'NO reload';
 //          };
 
-        /*     dd( Country::getDataSite()->where('name','Россия')->sortBy('name')->all());
-            dd( Country::getDataSite());
-            dd( Country::getByNameDataSite('Беларусь')->toArray());*/
+// TODO: Поиск страны по наисменованию
+//        dd(Country::getCountryByNameSite('Беларусь')->toArray());
     }
-
-
 }

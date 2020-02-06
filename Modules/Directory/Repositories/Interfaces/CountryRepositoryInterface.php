@@ -12,7 +12,7 @@ interface CountryRepositoryInterface
      * Данные из интернета по континентам
      *
      * */
-    public static function getCountryData() :Collection;
-    public static function reloadCountryData() :bool ;
+    public static function getDataSite() :Collection;
+    public static function reloadDataSite() :bool ;
 
 }
