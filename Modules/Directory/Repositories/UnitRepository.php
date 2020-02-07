@@ -91,7 +91,7 @@ class UnitRepository implements UnitRepositoryInterface
                 }
             });
 //           Международные единицы измерения, не включенные в ОКЕИ
-            $data4 = $crawler->filter('#national4 > table > tbody > tr')->each(function (Crawler $node, $i) use (&$gr) {
+            $data4 = $crawler->filter('#international-non > table > tbody > tr')->each(function (Crawler $node, $i) use (&$gr) {
                 if ($node->filter('td')->eq(0)->attr('class') == 'td-title td-border-top') {
                     $gr = $node->text();
                 } else {

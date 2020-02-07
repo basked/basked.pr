@@ -19,6 +19,10 @@ Route::prefix('directory')->group(function() {
     Route::get('/unit', 'UnitController@index');
 
 
+    /*COUNTRY ROUTERS*/
+    Route::get('/cuntry', 'CountryController@index');
+
+
 
 
     Route::get('/', 'CountryController@index');

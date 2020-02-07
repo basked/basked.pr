@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d799cace-1740-4802-8bc4-5a852e7fee40" name="Default Changelist" comment="Country, Attributes, Details relationshipsfor Country model">
+      <change afterPath="$PROJECT_DIR$/Modules/Directory/Http/Controllers/ApiCountryController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Directory/Resources/assets/components/DevGridSprCountry.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Directory/Resources/views/countries/index.blade.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Modules/Directory/node_modules/@types/events/index.d.ts" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Modules/Directory/node_modules/@types/events/package.json" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Modules/Directory/node_modules/@types/glob/index.d.ts" afterDir="false" />
@@ -3265,15 +3268,15 @@
       <change afterPath="$PROJECT_DIR$/Modules/Directory/node_modules/whatwg-fetch/fetch.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Modules/Directory/node_modules/whatwg-fetch/fetch.js.flow" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Modules/Directory/node_modules/whatwg-fetch/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a5f6867-1aa7-456d-bd33-b73daca010d4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6a5f6867-1aa7-456d-bd33-b73daca010d4.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Directory/Entities/BaseModelApi.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Entities/BaseModelApi.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Directory/Entities/Unit.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Entities/Unit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Directory/Http/Controllers/ApiUnitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Http/Controllers/ApiUnitController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Directory/Entities/Country/Country.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Entities/Country/Country.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Directory/Http/Controllers/CountryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Http/Controllers/CountryController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Directory/Http/Controllers/UnitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Http/Controllers/UnitController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Directory/Repositories/UnitRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Repositories/UnitRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Directory/Resources/assets/components/DevGridSprUnit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Resources/assets/components/DevGridSprUnit.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Directory/Resources/views/units/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Resources/views/units/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Directory/Resources/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Resources/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Directory/Routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Directory/Routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/directory.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/directory.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/44/d1/44d142505dd1a3b497197e2f459d2aec779e9ed6" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/44/d1/44d142505dd1a3b497197e2f459d2aec779e9ed6" afterDir="false" />
@@ -3461,7 +3464,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Modules/Directory/Resources/views/countries" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2019.2.5\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
@@ -3473,6 +3476,8 @@
       <recent name="D:\Soft\PROGRAMMING\WEB\WebServer\domains\basked.pr\Modules\Directory\Repositories" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\WebServer\domains\basked.pr\Modules\Directory\Resources\views\countries" />
+      <recent name="C:\WebServer\domains\basked.pr\Modules\Directory\Resources\assets\components" />
       <recent name="D:\Soft\PROGRAMMING\WEB\WebServer\domains\basked.pr\public\js" />
       <recent name="D:\Soft\PROGRAMMING\WEB\WebServer\domains\basked.pr\Modules\TreeLife\Resources\assets\js\components" />
     </key>
@@ -3530,7 +3535,6 @@
       <command value="a module:make-model book Directory" />
       <command value="a module:make-model autor_book Directory" />
       <command value="a module:make-controller AutorController Directory" />
-      <command value="c dump-autoload" />
       <command value="a module:make-migration add_count_spr_autor__booktable Directory" />
       <command value="a module:make-migration add_count_spr_autor_book_table Directory" />
       <command value="a module:make-migration add_count_to_spr_autor_book_table Directory" />
@@ -3556,11 +3560,13 @@
       <command value="a module:make-controller CountryController Directory" />
       <command value="a tinker" />
       <command value="a module:make-migration add_url_to_spr_countries_details_table Directory" />
-      <command value="a config:clear" />
       <command value="a module:make-migration add_key_to_spr_countries_attr_table Directory" />
       <command value="a module:make-migration modify_name_type_in_spr_countries_attr_val_table Directory" />
       <command value="a module:make-migration edit_name_spr_countries_attr_val_table Directory" />
       <command value="a module:migrate Directory" />
+      <command value="a module:make-controller ApiCountryController Directory" />
+      <command value="a config:clear" />
+      <command value="c dump-autoload" />
     </option>
   </component>
   <component name="RunDashboard">
@@ -3575,19 +3581,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.dev">
-    <configuration name="dev (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/Modules/TreeLife/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="dev" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
+  <component name="RunManager">
+    <configuration name="dev (2)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/Modules/Directory/package.json" />
       <command value="run" />
       <scripts>
         <script value="dev" />
@@ -3601,6 +3597,16 @@
       <command value="run" />
       <scripts>
         <script value="prod" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="production" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/Modules/Directory/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="production" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -3628,11 +3634,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.production" />
+        <item itemvalue="npm.dev (2)" />
         <item itemvalue="npm.prod" />
         <item itemvalue="npm.watch (1)" />
         <item itemvalue="npm.watch" />
-        <item itemvalue="npm.dev (1)" />
-        <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
   </component>
@@ -3654,7 +3660,7 @@
       <workItem from="1580303532079" duration="42702000" />
       <workItem from="1580844446162" duration="8936000" />
       <workItem from="1580918287128" duration="16956000" />
-      <workItem from="1581099651415" duration="10879000" />
+      <workItem from="1581099651415" duration="14159000" />
     </task>
     <task id="LOCAL-00001" summary="Commit on work">
       <created>1579082528866</created>
@@ -3789,7 +3795,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580937731403</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Country, Attributes, Details relationshipsfor Country model">
+      <created>1581110599850</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1581110599850</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

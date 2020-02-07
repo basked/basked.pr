@@ -30,7 +30,7 @@
                 :allowed-page-sizes="pageSizes"
                 :show-page-size-selector="true"
             />
-            <dx-paging :page-size="10"/>
+            <dx-paging :page-size="20"/>
         </dx-data-grid>
         <div class="options">
             <div class="caption">Options</div>
@@ -166,7 +166,7 @@
                     grouping: true,
                     groupPaging: true,
                 },
-                pageSizes: [10, 25, 50],
+                pageSizes: [20, 30, 50],
                 selectTextOnEditStart: true,
                 startEditAction: 'click',
             }

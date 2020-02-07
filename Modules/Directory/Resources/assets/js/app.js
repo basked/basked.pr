@@ -17,6 +17,7 @@ const axios = require('axios');
 
 
  Vue.component('dev-grid-spr-unit', require('../components/DevGridSprUnit.vue').default);
+ Vue.component('dev-grid-spr-country', require('../components/DevGridSprCountry.vue').default);
 
 
 /**

@@ -37,7 +37,17 @@ class Country extends Model
 {
     use Sluggable;
     protected $table = 'spr_countries';
-    protected $fillable = ['name'];
+
+    const captions = [
+        'Наименование',
+        'slug',
+    ];
+
+    protected $fillable = [
+        'name',
+        'slug'
+    ];
+
 
     public function sluggable()
     {
@@ -100,5 +110,34 @@ class Country extends Model
     public static function  getCountryAttributesSite(Country $country){
         return CountryRepository::getAttributesDataSite($country);
     }
+
+
+    /**
+     * Names columms for model
+     * @return array
+     */
+    public static function getColumns()
+    {
+        return self::query()->getModel()->getFillable();
+    }
+
+
+    /**
+     * Names columms with captions for model
+     * @return array|string
+     */
+    public static function getColumnsWithCaptions()
+    {
+        $data = [];
+        $columns = self::query()->getModel()->getFillable();
+        foreach ($columns as $index => $column) {
+            $ar['dataField'] = $column;
+            $ar['caption'] = self::captions[$index];
+            $data[$index] = $ar;
+        }
+        return json_encode($data);
+
+    }
+
 
 }

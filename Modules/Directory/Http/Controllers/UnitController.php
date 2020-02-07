@@ -91,31 +91,8 @@ class UnitController extends Controller
      */
     public function test()
     {
-//         [
-//        {dataField: "id", caption: "ID"},
-//        {dataField: "code", caption: "Код"},
-//        {dataField: "name", caption: "Наименование"},
-//        {dataField: "slug", caption: "SLUG"},
-//        {dataField: "symbol_national", caption: "Национальное симаольное обозначение"},
-//        {dataField: "symbol_intern", caption: "Междунородное симаольное обозначение"},
-//        {dataField: "code_national", caption: "Национальное кодовое обозначение"},
-//        {dataField: "code_intern", caption: "Междунородное кодовое обозначение"},
-//        {dataField: "section", caption: "Раздел"},
-//        {dataField: "unit_group", caption: "Группа"},
-//        ]
-       dd(Unit::getColumnsWithCaptions());
-
-
-//
-//        $collection = collect([
-//            ['dataField' => 'Desk', 'caption' => 'Раздел'],
-//            ['dataField' => 'Desk', 'caption' => 'Раздел'],
-//
-//        ]);
-//
-//       dd( $sorted = $collection->toJson() );
 
        // перегрузка единиц учета
-       // Unit::reloadUnitsSite();
+      Unit::reloadUnitsSite();
     }
 }

@@ -24,3 +24,8 @@ Route::get('/directory/unit/{patams?}', 'ApiUnitController@index');
 Route::post('/directory/unit/', 'ApiUnitController@store');
 Route::put('/directory/unit/{id}', 'ApiUnitController@update');
 Route::delete('/directory/unit/{id}', 'ApiUnitController@destroy');
+
+Route::get('/directory/country/{patams?}', 'ApiCountryController@index');
+Route::post('/directory/country/', 'ApiCountryController@store');
+Route::put('/directory/country/{id}', 'ApiCountryController@update');
+Route::delete('/directory/country/{id}', 'ApiCountryController@destroy');

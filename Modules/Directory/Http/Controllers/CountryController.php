@@ -31,9 +31,9 @@ class CountryController extends Controller
      */
     public function index()
     {
-        $countries = Country::all();
-
-        return view('directory::index', ['countries' => $countries]);
+        $columns = Country::getColumns();
+        $captions = Country::getColumnsWithCaptions();
+        return view('directory::countries.index', ['columns' => $columns,'captions'=>$captions]);
     }
 
     /**
