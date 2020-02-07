@@ -153,7 +153,7 @@
         props: ['propsFields'],
         data() {
             return {
-                columns: this.getM(),
+                columns: this.getFields(),
                 // columns: [
                 //
                 //     {dataField: "id", caption:"ID" },

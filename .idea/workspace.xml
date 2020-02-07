@@ -2,26 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d799cace-1740-4802-8bc4-5a852e7fee40" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Modules/Directory/Entities/BaseModelApi.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Directory/Resources/views/units/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Directory/Entities/Autor.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Entities/Autor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Directory/Entities/Book.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Entities/Book.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Directory/Entities/Continent/Attribute.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Entities/Continent/Attribute.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Directory/Entities/Continent/Continent.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Entities/Continent/Continent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Directory/Entities/Continent/Details.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Entities/Continent/Details.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Directory/Entities/Country/Attribute.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Entities/Country/Attribute.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Directory/Entities/Country/Country.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Entities/Country/Country.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Directory/Entities/Country/Details.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Entities/Country/Details.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Directory/Entities/Unit.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Entities/Unit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Directory/Http/Controllers/ApiUnitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Http/Controllers/ApiUnitController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Directory/Http/Controllers/UnitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Http/Controllers/UnitController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Directory/Resources/assets/components/DevGridSprUnit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Resources/assets/components/DevGridSprUnit.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/TreeLife/Http/Controllers/ApiTreeLifeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/TreeLife/Http/Controllers/ApiTreeLifeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/directory.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/directory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/44/d1/44d142505dd1a3b497197e2f459d2aec779e9ed6" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/44/d1/44d142505dd1a3b497197e2f459d2aec779e9ed6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/c2/4f/c24f92750673b2169c8cb7bfbc999cfa8457dc7c" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/c2/4f/c24f92750673b2169c8cb7bfbc999cfa8457dc7c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -413,7 +395,7 @@
       <workItem from="1580303532079" duration="42702000" />
       <workItem from="1580844446162" duration="8936000" />
       <workItem from="1580918287128" duration="16879000" />
-      <workItem from="1581060385810" duration="20023000" />
+      <workItem from="1581060385810" duration="20378000" />
     </task>
     <task id="LOCAL-00001" summary="Commit on work">
       <created>1579082528866</created>
@@ -548,7 +530,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580997180783</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Переделана модель BaseModelApi.php для DevGridSprUnit.vue&#10;Передан VUE components">
+      <created>1581083681216</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1581083681216</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -576,7 +565,8 @@
     <MESSAGE value="Add belongToMany to model Continent and ContinentdAttr" />
     <MESSAGE value="Reload Method in repository" />
     <MESSAGE value="Country, Attributes, Details relationshipsfor Country model" />
-    <option name="LAST_COMMIT_MESSAGE" value="Country, Attributes, Details relationshipsfor Country model" />
+    <MESSAGE value="Переделана модель BaseModelApi.php для DevGridSprUnit.vue&#10;Передан VUE components" />
+    <option name="LAST_COMMIT_MESSAGE" value="Переделана модель BaseModelApi.php для DevGridSprUnit.vue&#10;Передан VUE components" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="129" key="#Inspections" timestamp="1581070139806">
@@ -607,10 +597,10 @@
       <screen x="0" y="0" width="1920" height="944" />
     </state>
     <state x="689" y="400" width="542" height="367" key="#com.jetbrains.php.framework.ui.FailedToParseDialog/0.0.1920.944@0.0.1920.944" timestamp="1579074858876" />
-    <state x="601" y="70" key="CommitChangelistDialog2" timestamp="1580997177817">
+    <state x="601" y="70" key="CommitChangelistDialog2" timestamp="1581083679079">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
-    <state x="601" y="70" key="CommitChangelistDialog2/0.0.1920.944@0.0.1920.944" timestamp="1580997177817" />
+    <state x="601" y="70" key="CommitChangelistDialog2/0.0.1920.944@0.0.1920.944" timestamp="1581083679079" />
     <state x="684" y="349" key="ComposerCompositePathDialog" timestamp="1579074795917">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
@@ -663,10 +653,10 @@
       <screen x="0" y="0" width="1920" height="944" />
     </state>
     <state x="717" y="317" width="676" height="310" key="SymfonyComponentCompositeDataDialog/0.0.1920.944@0.0.1920.944" timestamp="1579077726300" />
-    <state x="625" y="235" key="Vcs.Push.Dialog.v2" timestamp="1580997184114">
+    <state x="625" y="235" key="Vcs.Push.Dialog.v2" timestamp="1581083796024">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
-    <state x="625" y="235" key="Vcs.Push.Dialog.v2/0.0.1920.944@0.0.1920.944" timestamp="1580997184114" />
+    <state x="625" y="235" key="Vcs.Push.Dialog.v2/0.0.1920.944@0.0.1920.944" timestamp="1581083796024" />
     <state x="800" y="361" width="326" height="238" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1580900347246">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
