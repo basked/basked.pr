@@ -6,6 +6,7 @@ use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Directory\Repositories\UnitRepository;
 
+
 /**
  * Modules\Directory\Entities\Unit
  *
@@ -44,17 +45,28 @@ use Modules\Directory\Repositories\UnitRepository;
 class Unit extends Model
 {
     use Sluggable;
-    protected $fillable = ['code',
-        'name',
+
+    const captions = [
+        'Код',
+        'Наименование',
+        'Национальное симаольное обозначение',
+        'Междунородное симаольное обозначение',
+        'Национальное кодовое обозначение',
+        'Междунородное кодовое обозначение',
+        'Раздел',
+        'Группа',
+    ];
+
+    protected $fillable = [
         'code',
-        'slug',
+        'name',
         'symbol_national',
         'symbol_intern',
         'code_national',
         'code_intern',
         'section',
         'unit_group',
-        'descr'];
+    ];
 
     protected $table = 'spr_units';
 
@@ -73,14 +85,36 @@ class Unit extends Model
         return UnitRepository::getDataSite();
     }
 
-
     public static function reloadUnitsSite()
     {
         return UnitRepository::reloadDataSite();
     }
 
+    /**
+     * Names columms for model
+     * @return array
+     */
+    public static function getColumns()
+    {
+        return self::query()->getModel()->getFillable();
+    }
 
 
+    /**
+     * Names columms with captions for model
+     * @return array|string
+     */
+    public static function getColumnsWithCaptions()
+    {
+        $data = [];
+        $columns = self::query()->getModel()->getFillable();
+        foreach ($columns as $index => $column) {
+            $ar['dataField'] = $column;
+            $ar['caption'] = self::captions[$index];
+            $data[$index] = $ar;
+        }
+        return json_encode($data);
 
+    }
 
 }

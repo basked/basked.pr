@@ -18,8 +18,7 @@ class ApiUnitController extends Controller
      */
     public function index(Request $request)
     {
-      $fields = ['id', 'code', 'name', 'slug', 'symbol_national', 'symbol_intern', 'code_national', 'code_intern', 'section', 'unit_group', 'descr'];
-      $m= new BaseModelApi($request,Unit::class, $fields);
+      $m= new BaseModelApi($request,Unit::class);
       return $m->getApiResponse();
     }
 

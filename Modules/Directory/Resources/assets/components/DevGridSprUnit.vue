@@ -1,5 +1,5 @@
 <template>
-    <div id="data-grid-relationship">
+    <div id="data-grid-units">
         <dx-data-grid
             :data-source="dataSource"
             :remote-operations="remoteOperations"
@@ -150,27 +150,12 @@
             DxFilterRow,
             DxHeaderFilter
         },
-        props: ['propsFields'],
+        props: ['propsColumns', 'propsCaptions'],
         data() {
             return {
-                columns: this.getFields(),
-                // columns: [
-                //
-                //     {dataField: "id", caption:"ID" },
-                //     {dataField: "code", caption:"Код" },
-                //     {dataField: "name", caption:"Наименование" },
-                //     {dataField: "slug", caption:"SLUG" },
-                //     {dataField: "symbol_national", caption:"Национальное симаольное обозначение" },
-                //     {dataField: "symbol_intern", caption:"Междунородное симаольное обозначение" },
-                //     {dataField: "code_national", caption:"Национальное кодовое обозначение" },
-                //     {dataField: "code_intern", caption:"Междунородное кодовое обозначение" },
-                //     {dataField: "section", caption:"Раздел" },
-                //     {dataField: "unit_group", caption:"Группа" },
-                //
-                // ],
                 dataSource: gridDataSource,
-                // columns:this.propsFields,
-                select: this.propsFields,
+                columns: JSON.parse(this.getCaptions()),
+                select: this.getColumns(),
                 keyExpr: 'id',
                 key: 'id',
                 remoteOperations: {
@@ -187,50 +172,19 @@
             }
         },
         mounted() {
-
-            var arr=this.getFields();
-            console.log(JSON.stringify(arr));
-            var arr1=this.getM();
-            console.log(arr1);
-
-            //  console.log(this.propsFields);
-            // var ar = JSON.parse(this.propsFields);
-            // var jsn;
-            // jsn=jsn+'[';
-            // ar.forEach(function (v) {
-            //     jsn=jsn+'{dataField: "'+v+'", caption: "'+v+'"},';
-            // });
-            // jsn=jsn.slice(0, -1)+']';
-            // console.log(jsn);
-            // axios.get(`api/directory/unit/`).then(response => (console.log(response));
-            // console.log(this.categories);
+            // var a=JSON.parse(this.getColumns())
+            // console.log( a);
+            // var a1=JSON.parse(this.getColumns2())
+            // console.log(a1);
         },
         methods: {
-            getFields() {
-                return [
-                    {dataField: "id", caption: "ID"},
-                    {dataField: "code", caption: "Код"},
-                    {dataField: "name", caption: "Наименование"},
-                    {dataField: "slug", caption: "SLUG"},
-                    {dataField: "symbol_national", caption: "Национальное симаольное обозначение"},
-                    {dataField: "symbol_intern", caption: "Междунородное симаольное обозначение"},
-                    {dataField: "code_national", caption: "Национальное кодовое обозначение"},
-                    {dataField: "code_intern", caption: "Междунородное кодовое обозначение"},
-                    {dataField: "section", caption: "Раздел"},
-                    {dataField: "unit_group", caption: "Группа"},
-                ]
-            },
-            getM(){
-                    var ar = JSON.parse(this.propsFields);
-                    var jsn;
-                    jsn=jsn+'[';
-                    ar.forEach(function (v) {
-                        jsn=jsn+'{"dataField":"'+v+', "caption":"'+v+'"},'
-                    });
-                    jsn=jsn.slice(0, -1)+']';
-                    return jsn;
 
-                }
+            getColumns() {
+                return this.propsColumns;
+            },
+            getCaptions() {
+                return JSON.parse(this.propsCaptions);
+            }
         }
     };
 </script>

@@ -8,6 +8,8 @@ use Illuminate\Routing\Controller;
 use Illuminate\Support\Str;
 use Modules\Directory\Entities\Unit;
 use Symfony\Component\Console\Helper\Helper;
+use Illuminate\Database\Eloquent\Builder;
+use  Illuminate\Database\Eloquent\Collection;
 
 class UnitController extends Controller
 {
@@ -17,11 +19,9 @@ class UnitController extends Controller
      */
     public function index()
     {
-
-       $fields = ['id', 'code', 'name', 'slug', 'symbol_national', 'symbol_intern', 'code_national', 'code_intern', 'section', 'unit_group', 'descr'];
-
-
-        return view('directory::units.index',['fields'=>$fields ]);
+        $columns = Unit::getColumns();
+        $captions = Unit::getColumnsWithCaptions();
+        return view('directory::units.index', ['columns' => $columns,'captions'=>$captions]);
     }
 
     /**
@@ -91,6 +91,31 @@ class UnitController extends Controller
      */
     public function test()
     {
-      Unit::reloadUnitsSite();
+//         [
+//        {dataField: "id", caption: "ID"},
+//        {dataField: "code", caption: "Код"},
+//        {dataField: "name", caption: "Наименование"},
+//        {dataField: "slug", caption: "SLUG"},
+//        {dataField: "symbol_national", caption: "Национальное симаольное обозначение"},
+//        {dataField: "symbol_intern", caption: "Междунородное симаольное обозначение"},
+//        {dataField: "code_national", caption: "Национальное кодовое обозначение"},
+//        {dataField: "code_intern", caption: "Междунородное кодовое обозначение"},
+//        {dataField: "section", caption: "Раздел"},
+//        {dataField: "unit_group", caption: "Группа"},
+//        ]
+       dd(Unit::getColumnsWithCaptions());
+
+
+//
+//        $collection = collect([
+//            ['dataField' => 'Desk', 'caption' => 'Раздел'],
+//            ['dataField' => 'Desk', 'caption' => 'Раздел'],
+//
+//        ]);
+//
+//       dd( $sorted = $collection->toJson() );
+
+       // перегрузка единиц учета
+       // Unit::reloadUnitsSite();
     }
 }

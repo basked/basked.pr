@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Modules\Directory\Entities;
-
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
@@ -15,10 +13,10 @@ class BaseModelApi extends Model
     protected $take_default=5;
 
 
-    function __construct(Request $request, $model, $fields = [])
+    function __construct(Request $request, $model)
     {
         $this->model= $model;
-        $this->fields = $fields;
+        $this->fields =$model::query()->getModel()->getFillable();
         $this->request=$request;
     }
 //    -----------------------------------
@@ -89,7 +87,7 @@ class BaseModelApi extends Model
             $take = $this->request->take;
         }
 
-
+//        filter=["!",["symbol_national","=","100 упак"]]&
         $requireTotalCount = $this->request->requireTotalCount;
         $requireGroupCount = $this->request->requireGroupCount;
         $sort = json_decode($this->request->sort);
