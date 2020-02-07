@@ -5,7 +5,9 @@ namespace Modules\Directory\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Str;
 use Modules\Directory\Entities\Unit;
+use Symfony\Component\Console\Helper\Helper;
 
 class UnitController extends Controller
 {
@@ -16,8 +18,10 @@ class UnitController extends Controller
     public function index()
     {
 
+       $fields = ['id', 'code', 'name', 'slug', 'symbol_national', 'symbol_intern', 'code_national', 'code_intern', 'section', 'unit_group', 'descr'];
 
-        return view('directory::index');
+
+        return view('directory::units.index',['fields'=>$fields ]);
     }
 
     /**

@@ -2,41 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d799cace-1740-4802-8bc4-5a852e7fee40" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Modules/Directory/Database/Migrations/2020_02_06_060928_create_spr_units_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Directory/Database/Migrations/2020_02_06_133353_edit_group_spr_unit_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Directory/Entities/Unit.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Directory/Http/Controllers/ApiUnitController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Directory/Http/Controllers/UnitController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Directory/Repositories/Interfaces/UnitRepositoryInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Directory/Repositories/UnitRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Directory/Resources/assets/components/DevGridSprUnit.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Directory/Resources/assets/components/ExampleComponent.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Directory/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/directory.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/directory.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/modules/directory/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/modules/directory/components/DevGridSprUnit.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/modules/directory/js/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/modules/directory/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a5f6867-1aa7-456d-bd33-b73daca010d4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6a5f6867-1aa7-456d-bd33-b73daca010d4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Directory/Entities/BaseModelApi.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Directory/Resources/views/units/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Directory/Entities/Autor.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Entities/Autor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Directory/Entities/Book.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Entities/Book.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Directory/Entities/Continent/Attribute.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Entities/Continent/Attribute.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Directory/Entities/Continent/Continent.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Entities/Continent/Continent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Directory/Entities/Continent/Details.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Entities/Continent/Details.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Directory/Entities/Country/Attribute.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Entities/Country/Attribute.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Directory/Entities/Country/Country.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Entities/Country/Country.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Directory/Http/Controllers/CountryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Http/Controllers/CountryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Directory/Providers/RepositoryServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Providers/RepositoryServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Directory/Repositories/CountryRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Repositories/CountryRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Directory/Repositories/Interfaces/CountryRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Repositories/Interfaces/CountryRepositoryInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Directory/Resources/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Resources/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Directory/Resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Resources/views/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Directory/Resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Resources/views/layouts/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Directory/Routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Directory/Routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Directory/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/TreeLife/Resources/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/TreeLife/Resources/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Directory/Entities/Country/Details.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Entities/Country/Details.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Directory/Entities/Unit.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Entities/Unit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Directory/Http/Controllers/ApiUnitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Http/Controllers/ApiUnitController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Directory/Http/Controllers/UnitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Http/Controllers/UnitController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Directory/Resources/assets/components/DevGridSprUnit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Resources/assets/components/DevGridSprUnit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/TreeLife/Http/Controllers/ApiTreeLifeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/TreeLife/Http/Controllers/ApiTreeLifeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/directory.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/directory.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/44/d1/44d142505dd1a3b497197e2f459d2aec779e9ed6" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/44/d1/44d142505dd1a3b497197e2f459d2aec779e9ed6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/c2/4f/c24f92750673b2169c8cb7bfbc999cfa8457dc7c" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/c2/4f/c24f92750673b2169c8cb7bfbc999cfa8457dc7c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/741631aec524ce5b78ffd81d554ce2a784f783ed.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/741631aec524ce5b78ffd81d554ce2a784f783ed.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/7b25cc309fe59f2b378961c4a947a847081f211d.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/7b25cc309fe59f2b378961c4a947a847081f211d.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -314,7 +298,6 @@
       <command value="a module:make-model Country\Details, Countryt\Details Directory" />
       <command value="a module:make-model Country\Attribute Directory" />
       <command value="a module:make-model Country\Details Directory" />
-      <command value="a ide-helper:models" />
       <command value="a module:make-model Country\Country Directory" />
       <command value="a module:make-migration create_spr_countries_table Directory" />
       <command value="a module:make-migration create_spr_countries_atrr_val_table Directory" />
@@ -330,12 +313,13 @@
       <command value="a module:make-migration create_spr_units_table Directory" />
       <command value="a module:migrate-rollback Directory" />
       <command value="a module:make-controller UnitController Directory" />
-      <command value="a config:clear" />
       <command value="a module:make-controller ApiDirectoryUnitController" />
       <command value="a module:make-controller ApiDirectoryUnitController Directory" />
       <command value="a module:publish Directory" />
       <command value="a module:make-migration edit_group_spr_unit_table Directory" />
       <command value="a module:migrate Directory" />
+      <command value="a config:clear" />
+      <command value="a ide-helper:models" />
     </option>
   </component>
   <component name="RunManager" selected="npm.dev">
@@ -392,8 +376,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.dev (2)" />
-        <item itemvalue="npm.hot" />
         <item itemvalue="npm.watch (1)" />
+        <item itemvalue="npm.hot" />
         <item itemvalue="npm.dev (1)" />
         <item itemvalue="npm.dev" />
       </list>
@@ -404,22 +388,7 @@
       <list>
         <serviceView>
           <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:MySQL for 5.1 - bas_db@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:MySQL for 5.1 - bas_db@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@23c5081" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:MySQL for 5.1 - bas_db@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@2c501b24" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </treeState>
         </serviceView>
@@ -444,6 +413,7 @@
       <workItem from="1580303532079" duration="42702000" />
       <workItem from="1580844446162" duration="8936000" />
       <workItem from="1580918287128" duration="16879000" />
+      <workItem from="1581060385810" duration="20023000" />
     </task>
     <task id="LOCAL-00001" summary="Commit on work">
       <created>1579082528866</created>
@@ -571,7 +541,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580927135530</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Country, Attributes, Details relationshipsfor Country model">
+      <created>1580997180783</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1580997180783</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -602,10 +579,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Country, Attributes, Details relationshipsfor Country model" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="129" key="#Inspections" timestamp="1580900546063">
+    <state x="552" y="129" key="#Inspections" timestamp="1581070139806">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
-    <state x="552" y="129" key="#Inspections/0.0.1920.944@0.0.1920.944" timestamp="1580900546063" />
+    <state x="552" y="129" key="#Inspections/0.0.1920.944@0.0.1920.944" timestamp="1581070139806" />
     <state x="614" y="259" key="#SQL_Dialects" timestamp="1580906954456">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
@@ -630,10 +607,10 @@
       <screen x="0" y="0" width="1920" height="944" />
     </state>
     <state x="689" y="400" width="542" height="367" key="#com.jetbrains.php.framework.ui.FailedToParseDialog/0.0.1920.944@0.0.1920.944" timestamp="1579074858876" />
-    <state x="601" y="70" key="CommitChangelistDialog2" timestamp="1580910559434">
+    <state x="601" y="70" key="CommitChangelistDialog2" timestamp="1580997177817">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
-    <state x="601" y="70" key="CommitChangelistDialog2/0.0.1920.944@0.0.1920.944" timestamp="1580910559434" />
+    <state x="601" y="70" key="CommitChangelistDialog2/0.0.1920.944@0.0.1920.944" timestamp="1580997177817" />
     <state x="684" y="349" key="ComposerCompositePathDialog" timestamp="1579074795917">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
@@ -654,30 +631,30 @@
       <screen x="0" y="0" width="1920" height="944" />
     </state>
     <state x="814" y="360" key="FrameworkEditDialogDimensionKey/0.0.1920.944@0.0.1920.944" timestamp="1580367063661" />
-    <state width="1876" height="293" key="GridCell.Tab.0.bottom" timestamp="1580996450306">
+    <state width="1876" height="189" key="GridCell.Tab.0.bottom" timestamp="1581078098380">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
-    <state width="1876" height="293" key="GridCell.Tab.0.bottom/0.0.1920.944@0.0.1920.944" timestamp="1580996450306" />
-    <state width="1876" height="293" key="GridCell.Tab.0.center" timestamp="1580996450306">
+    <state width="1876" height="189" key="GridCell.Tab.0.bottom/0.0.1920.944@0.0.1920.944" timestamp="1581078098380" />
+    <state width="1876" height="189" key="GridCell.Tab.0.center" timestamp="1581078098379">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
-    <state width="1876" height="293" key="GridCell.Tab.0.center/0.0.1920.944@0.0.1920.944" timestamp="1580996450306" />
-    <state width="1876" height="293" key="GridCell.Tab.0.left" timestamp="1580996450305">
+    <state width="1876" height="189" key="GridCell.Tab.0.center/0.0.1920.944@0.0.1920.944" timestamp="1581078098379" />
+    <state width="1876" height="189" key="GridCell.Tab.0.left" timestamp="1581078098379">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
-    <state width="1876" height="293" key="GridCell.Tab.0.left/0.0.1920.944@0.0.1920.944" timestamp="1580996450305" />
-    <state width="1876" height="293" key="GridCell.Tab.0.right" timestamp="1580996450306">
+    <state width="1876" height="189" key="GridCell.Tab.0.left/0.0.1920.944@0.0.1920.944" timestamp="1581078098379" />
+    <state width="1876" height="189" key="GridCell.Tab.0.right" timestamp="1581078098380">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
-    <state width="1876" height="293" key="GridCell.Tab.0.right/0.0.1920.944@0.0.1920.944" timestamp="1580996450306" />
-    <state x="809" y="457" key="NewPhpClassDialog" timestamp="1580971670471">
+    <state width="1876" height="189" key="GridCell.Tab.0.right/0.0.1920.944@0.0.1920.944" timestamp="1581078098380" />
+    <state x="809" y="457" key="NewPhpClassDialog" timestamp="1581062720299">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
-    <state x="809" y="457" key="NewPhpClassDialog/0.0.1920.944@0.0.1920.944" timestamp="1580971670471" />
-    <state x="795" y="394" key="NewPhpFileDialog" timestamp="1580448513288">
+    <state x="809" y="457" key="NewPhpClassDialog/0.0.1920.944@0.0.1920.944" timestamp="1581062720299" />
+    <state x="795" y="394" key="NewPhpFileDialog" timestamp="1581066941409">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
-    <state x="795" y="394" key="NewPhpFileDialog/0.0.1920.944@0.0.1920.944" timestamp="1580448513288" />
+    <state x="795" y="394" key="NewPhpFileDialog/0.0.1920.944@0.0.1920.944" timestamp="1581066941409" />
     <state x="461" y="103" key="SettingsEditor" timestamp="1580448408134">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
@@ -686,10 +663,10 @@
       <screen x="0" y="0" width="1920" height="944" />
     </state>
     <state x="717" y="317" width="676" height="310" key="SymfonyComponentCompositeDataDialog/0.0.1920.944@0.0.1920.944" timestamp="1579077726300" />
-    <state x="625" y="235" key="Vcs.Push.Dialog.v2" timestamp="1580910564851">
+    <state x="625" y="235" key="Vcs.Push.Dialog.v2" timestamp="1580997184114">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
-    <state x="625" y="235" key="Vcs.Push.Dialog.v2/0.0.1920.944@0.0.1920.944" timestamp="1580910564851" />
+    <state x="625" y="235" key="Vcs.Push.Dialog.v2/0.0.1920.944@0.0.1920.944" timestamp="1580997184114" />
     <state x="800" y="361" width="326" height="238" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1580900347246">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
@@ -702,10 +679,10 @@
       <screen x="0" y="0" width="1920" height="944" />
     </state>
     <state x="540" y="126" key="com.intellij.database.dbimport.ImportDialog/0.0.1920.944@0.0.1920.944" timestamp="1580970936297" />
-    <state x="655" y="294" key="com.intellij.ide.util.TipDialog" timestamp="1580303554990">
+    <state x="655" y="294" key="com.intellij.ide.util.TipDialog" timestamp="1581061378814">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
-    <state x="655" y="294" key="com.intellij.ide.util.TipDialog/0.0.1920.944@0.0.1920.944" timestamp="1580303554990" />
+    <state x="655" y="294" key="com.intellij.ide.util.TipDialog/0.0.1920.944@0.0.1920.944" timestamp="1581061378814" />
     <state x="152" y="270" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1579874013971">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
@@ -714,13 +691,28 @@
       <screen x="0" y="0" width="1920" height="944" />
     </state>
     <state x="769" y="388" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.944@0.0.1920.944" timestamp="1580211804634" />
-    <state x="1074" y="473" width="672" height="677" key="run.anything.popup" timestamp="1580996290367">
+    <state x="1074" y="473" width="672" height="677" key="run.anything.popup" timestamp="1581076765388">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
-    <state x="1074" y="473" width="672" height="677" key="run.anything.popup/0.0.1920.944@0.0.1920.944" timestamp="1580996290367" />
-    <state x="623" y="201" width="672" height="678" key="search.everywhere.popup" timestamp="1580994634407">
+    <state x="1074" y="473" width="672" height="677" key="run.anything.popup/0.0.1920.944@0.0.1920.944" timestamp="1581076765388" />
+    <state x="623" y="201" width="672" height="678" key="search.everywhere.popup" timestamp="1581052561676">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
-    <state x="623" y="201" width="672" height="678" key="search.everywhere.popup/0.0.1920.944@0.0.1920.944" timestamp="1580994634407" />
+    <state x="623" y="201" width="672" height="678" key="search.everywhere.popup/0.0.1920.944@0.0.1920.944" timestamp="1581052561676" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php-line-method">
+          <url>file://$PROJECT_DIR$/Modules/Directory/Entities/BaseModelApi.php</url>
+          <line>17</line>
+          <properties>
+            <option name="className" value="\Modules\Directory\Entities\BaseModelApi" />
+            <option name="methodName" value="__construct" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

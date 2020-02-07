@@ -79,6 +79,7 @@
             throw Error(response.statusText);
         return response;
     }
+
     function isNotEmpty(value) {
         return value !== undefined && value !== null && value !== "";
     }
@@ -149,38 +150,29 @@
             DxFilterRow,
             DxHeaderFilter
         },
+        props: ['propsFields'],
         data() {
             return {
-                columns: [
-
-                    {dataField: "id", caption:"ID" },
-                    {dataField: "code", caption:"Код" },
-                    {dataField: "name", caption:"Наименование" },
-                    {dataField: "slug", caption:"SLUG" },
-                    {dataField: "symbol_national", caption:"Национальное симаольное обозначение" },
-                    {dataField: "symbol_intern", caption:"Междунородное симаольное обозначение" },
-                    {dataField: "code_national", caption:"Национальное кодовое обозначение" },
-                    {dataField: "code_intern", caption:"Междунородное кодовое обозначение" },
-                    {dataField: "section", caption:"Раздел" },
-                    {dataField: "unit_group", caption:"Группа" },
-
-                ],
+                columns: this.getM(),
+                // columns: [
+                //
+                //     {dataField: "id", caption:"ID" },
+                //     {dataField: "code", caption:"Код" },
+                //     {dataField: "name", caption:"Наименование" },
+                //     {dataField: "slug", caption:"SLUG" },
+                //     {dataField: "symbol_national", caption:"Национальное симаольное обозначение" },
+                //     {dataField: "symbol_intern", caption:"Междунородное симаольное обозначение" },
+                //     {dataField: "code_national", caption:"Национальное кодовое обозначение" },
+                //     {dataField: "code_intern", caption:"Междунородное кодовое обозначение" },
+                //     {dataField: "section", caption:"Раздел" },
+                //     {dataField: "unit_group", caption:"Группа" },
+                //
+                // ],
                 dataSource: gridDataSource,
-                select: [
-                    'id',
-                    'code',
-                    'name',
-                    'slug',
-                    'symbol_national',
-                    'symbol_intern',
-                    'code_national',
-                    'code_intern',
-                    'section',
-                    'unit_group',
-                    'descr'
-                ],
+                // columns:this.propsFields,
+                select: this.propsFields,
                 keyExpr: 'id',
-                key : 'id',
+                key: 'id',
                 remoteOperations: {
                     filtering: true,
                     sorting: true,
@@ -195,8 +187,50 @@
             }
         },
         mounted() {
-                 // axios.get(`api/directory/unit/`).then(response => (console.log(response));
-            //    console.log(this.categories);
+
+            var arr=this.getFields();
+            console.log(JSON.stringify(arr));
+            var arr1=this.getM();
+            console.log(arr1);
+
+            //  console.log(this.propsFields);
+            // var ar = JSON.parse(this.propsFields);
+            // var jsn;
+            // jsn=jsn+'[';
+            // ar.forEach(function (v) {
+            //     jsn=jsn+'{dataField: "'+v+'", caption: "'+v+'"},';
+            // });
+            // jsn=jsn.slice(0, -1)+']';
+            // console.log(jsn);
+            // axios.get(`api/directory/unit/`).then(response => (console.log(response));
+            // console.log(this.categories);
+        },
+        methods: {
+            getFields() {
+                return [
+                    {dataField: "id", caption: "ID"},
+                    {dataField: "code", caption: "Код"},
+                    {dataField: "name", caption: "Наименование"},
+                    {dataField: "slug", caption: "SLUG"},
+                    {dataField: "symbol_national", caption: "Национальное симаольное обозначение"},
+                    {dataField: "symbol_intern", caption: "Междунородное симаольное обозначение"},
+                    {dataField: "code_national", caption: "Национальное кодовое обозначение"},
+                    {dataField: "code_intern", caption: "Междунородное кодовое обозначение"},
+                    {dataField: "section", caption: "Раздел"},
+                    {dataField: "unit_group", caption: "Группа"},
+                ]
+            },
+            getM(){
+                    var ar = JSON.parse(this.propsFields);
+                    var jsn;
+                    jsn=jsn+'[';
+                    ar.forEach(function (v) {
+                        jsn=jsn+'{"dataField":"'+v+', "caption":"'+v+'"},'
+                    });
+                    jsn=jsn.slice(0, -1)+']';
+                    return jsn;
+
+                }
         }
     };
 </script>
@@ -204,22 +238,27 @@
     #data-grid-relationship {
         width: 100%;
     }
+
     .options {
         margin-top: 20px;
         padding: 20px;
         /*background: #f5f5f5;*/
     }
+
     .options .caption {
         font-size: 18px;
         font-weight: 500;
     }
+
     .option {
         margin-top: 10px;
     }
+
     .option > span {
         width: 120px;
         display: inline-block;
     }
+
     .option > .dx-widget {
         display: inline-block;
         vertical-align: middle;

@@ -18,6 +18,20 @@ use Modules\Directory\Repositories\Interfaces\CountryRepositoryInterface;
  * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Directory\Entities\Country newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Directory\Entities\Country query()
  * @mixin \Eloquent
+ * @property int $id
+ * @property string $name
+ * @property string $slug
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Modules\Directory\Entities\Country\Attribute[] $attributes
+ * @property-read int|null $attributes_count
+ * @property-read \Modules\Directory\Entities\Country\Details $details
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Directory\Entities\Country\Country findSimilarSlugs($attribute, $config, $slug)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Directory\Entities\Country\Country whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Directory\Entities\Country\Country whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Directory\Entities\Country\Country whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Directory\Entities\Country\Country whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Directory\Entities\Country\Country whereUpdatedAt($value)
  */
 class Country extends Model
 {
