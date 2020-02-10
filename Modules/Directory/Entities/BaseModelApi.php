@@ -4,21 +4,24 @@ namespace Modules\Directory\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use phpDocumentor\Reflection\Types\This;
 
 class BaseModelApi extends Model
 {
     protected $model;
     protected $fields;
     protected $request;
-    protected $take_default=5;
+    protected $take_default = 5;
 
 
     function __construct(Request $request, $model)
     {
-        $this->model= $model;
-        $this->fields =$model::query()->getModel()->getFillable();
-        $this->request=$request;
+        $this->model = $model;
+        $this->fields = $model::query()->getModel()->getFillable();
+        $this->request = $request;
     }
+
 //    -----------------------------------
     private function Escape_win($path)
     {
@@ -73,11 +76,8 @@ class BaseModelApi extends Model
         // return preg_replace($patterns, $replacements, $string);
     }
 
-    public function getApiResponse()
+    public function getApiModel()
     {
-   //     $model = Unit::class;
-   //     $fields = ['id', 'code', 'name', 'slug', 'symbol_national', 'symbol_intern', 'code_national', 'code_intern', 'section', 'unit_group', 'descr'];
-
         $res = [];
         $skip = $this->request->skip;
         // по умолчанию лимит записей сделать 5
@@ -124,7 +124,7 @@ class BaseModelApi extends Model
             $keys = $data->groupBy($group_column)->orderBy($group_column, $group_operator)->get($group_column)->toArray();
             foreach ($keys as $key) {
                 $a = (array)$key;
-                $items =$this->model::where($group_column, '=', $a[$group_column])->orderBy($group_column, $group_operator)->get();
+                $items = $this->model::where($group_column, '=', $a[$group_column])->orderBy($group_column, $group_operator)->get();
                 $data_group[] = ['key' => $a[$group_column], 'items' => $items, 'count' => count($items), 'summary' => [1, 3]];
             }
             $res['data'] = $data_group;
@@ -220,4 +220,10 @@ class BaseModelApi extends Model
         return json_encode($res);
 
     }
+
+    public function destroyApiModel($id)
+    {
+        $this->model::destroy($id);
+    }
+
 }

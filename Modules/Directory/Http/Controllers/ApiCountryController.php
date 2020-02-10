@@ -5,28 +5,22 @@ namespace Modules\Directory\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
-use Modules\Directory\Entities\BaseModelApi;
+use Illuminate\Support\Str;
 use Modules\Directory\Entities\Country\Country;
+use Modules\Directory\Traits\DevModelTrait;
+use Modules\Directory\Traits\TraitDevModel;
+use Illuminate\Support\Facades\Validator;
+
 
 class ApiCountryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     * @return Response
-     */
+    use TraitDevModel;
+    protected $model;
+
+
     public function index(Request $request)
     {
-        $m= new BaseModelApi($request,Country::class);
-        return $m->getApiResponse();
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     * @return Response
-     */
-    public function create()
-    {
-        return view('directory::create');
+        return $this->getApiModel($request, Country::class);
     }
 
     /**
@@ -34,49 +28,50 @@ class ApiCountryController extends Controller
      * @param Request $request
      * @return Response
      */
+
     public function store(Request $request)
     {
-        //
+
+        $v = Validator::make($request->all(), [
+            'name' => 'required|unique:spr_countries,name',
+        ]);
+        if ($v->fails()) {
+            return redirect()->back()->withErrors($v->errors());
+        } else {
+        }
+        $country = new Country;
+        $country->id = $request->id;
+        $country->name = $request->name;
+        $country->slug = $request->slug;
+        $country->save();
     }
 
-    /**
-     * Show the specified resource.
-     * @param int $id
-     * @return Response
-     */
-    public function show($id)
-    {
-        return view('directory::show');
-    }
+/**
+ * Update the specified resource in storage.
+ * @param Request $request
+ * @param int $id
+ * @return Response
+ */
+public
+function update(Request $request, $id)
+{
+    dd('update asdasdf');
+    $country = Country::find($id);
+    $country->update();
+    $country->id = $request->id;
+    $country->name = $request->name;
+    $country->slug = Str::slug($request->name, '-');
+    $country->save();
+}
 
-    /**
-     * Show the form for editing the specified resource.
-     * @param int $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-        return view('directory::edit');
-    }
-
-    /**
-     * Update the specified resource in storage.
-     * @param Request $request
-     * @param int $id
-     * @return Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     * @param int $id
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+/**
+ * Remove the specified resource from storage.
+ * @param int $id
+ * @return Response
+ */
+public
+function destroy($id)
+{
+    Country::destroy([$id]);
+}
 }

@@ -14,18 +14,21 @@ use Illuminate\Http\Request;
 */
 //
 //Route::middleware('auth:api')->get('/directory', function (Request $request) {
-//    return $request->user();
-//});
+Route::prefix('directory')->group(  function () {
+
+    Route::get('/unit/{params?}', 'ApiUnitController@index');
+    Route::post('/unit/', 'ApiUnitController@store');
+    Route::put('/unit/{id}', 'ApiUnitController@update');
+    Route::delete('/unit/{id}', 'ApiUnitController@destroy');
+
+    Route::get( '/country/{params?}', 'ApiCountryController@index');
+    Route::post('/country/', 'ApiCountryController@store');
+    Route::put( '/country/{id}', 'ApiCountryController@update');
+    Route::delete('/country/{id}', 'ApiCountryController@destroy');
+
+});
 
 
 
 
-Route::get('/directory/unit/{patams?}', 'ApiUnitController@index');
-Route::post('/directory/unit/', 'ApiUnitController@store');
-Route::put('/directory/unit/{id}', 'ApiUnitController@update');
-Route::delete('/directory/unit/{id}', 'ApiUnitController@destroy');
 
-Route::get('/directory/country/{patams?}', 'ApiCountryController@index');
-Route::post('/directory/country/', 'ApiCountryController@store');
-Route::put('/directory/country/{id}', 'ApiCountryController@update');
-Route::delete('/directory/country/{id}', 'ApiCountryController@destroy');

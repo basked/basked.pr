@@ -20,7 +20,7 @@ Route::prefix('directory')->group(function() {
 
 
     /*COUNTRY ROUTERS*/
-    Route::get('/cuntry', 'CountryController@index');
+    Route::get('/country', 'CountryController@index');
 
 
 

@@ -105,7 +105,7 @@
                 console.log(params);
                 params = params.slice(0, -1);
 
-                return fetch(`http://basked.pr/api/directory/country${params}`)
+                return fetch(`/api/directory/country${params}`)
                     .then(handleErrors)
                     .then(response => response.json())
                     .then((result) => {
@@ -119,15 +119,13 @@
                     });
             },
             insert: (values) => {
-                return axios.post(`api/directory/country`, values);//.then(handleErrors);
+                return axios.post(`/api/directory/country`, values, {method: "POST"});//.then());
             },
             remove: (key) => {
-                return axios.delete(`api/directory/unit` + encodeURIComponent(key.id), {
-                    method: "DELETE"
-                });//.then(handleErrors);
+                return axios.delete(`/api/directory/country/` + encodeURIComponent(key.id), { method: "DELETE"  });//.then(handleErrors);
             },
             update: (key, values) => {
-                return axios.put(`api/directory/country` + encodeURIComponent(key.id), values);//.then(handleErrors);
+                return axios.put(`/api/directory/country/` + encodeURIComponent(key.id), values);//.then(handleErrors);
             }
         })
     };

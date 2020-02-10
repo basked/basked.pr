@@ -39,11 +39,13 @@ class Country extends Model
     protected $table = 'spr_countries';
 
     const captions = [
+        'ID',
         'Наименование',
         'slug',
     ];
 
     protected $fillable = [
+        'id',
         'name',
         'slug'
     ];
