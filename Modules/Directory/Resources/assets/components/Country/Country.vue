@@ -5,16 +5,23 @@
             :remote-operations="true"
             :show-borders="true"
         >
+            <dx-search-panel
+            :visible="true"
+            :highlight-case-sensitive="true"
+        />
+            <dx-filter-row :visible="true"/>
+            <dx-header-filter :visible="true"/>
             <DxPaging :page-size="50"/>
-            <DxColumn data-field="id"/>
+<!--            <DxColumn data-field="id" visible="false"/>-->
             <DxColumn data-field="name"/>
             <DxColumn data-field="slug"/>
             <DxMasterDetail
                 :enabled="true"
                 template="country-master-detail"
             />
+            <!--            в props дочернего передаем именно так данные из основного грида-->
             <template #country-master-detail="countryMasterDetail">
-                <CountryMasterDetail :master-detail-data="dataCountry"/>
+                <CountryMasterDetail :countryMasterDetailData="countryMasterDetail.data"/>
             </template>
         </DxDataGrid>
     </div>
@@ -29,16 +36,16 @@
         DxDataGrid,
         DxColumn,
         DxPaging,
-        DxMasterDetail
+        DxMasterDetail,
         // DxPager,
         // DxEditing,
         // DxLookup,
         // DxGroupPanel,
         // DxGrouping,
-        // DxScrolling,
-        // DxSearchPanel,
-        // DxFilterRow,
-        // DxHeaderFilter
+        DxScrolling,
+        DxSearchPanel,
+        DxFilterRow,
+        DxHeaderFilter
     } from 'devextreme-vue/data-grid';
     import 'whatwg-fetch';
     import CustomStore from "devextreme/data/custom_store";
@@ -102,17 +109,14 @@
         name: "Country",
         components: {
             CountryMasterDetail,
-            DxDataGrid, DxColumn, DxPaging, DxMasterDetail
+            DxDataGrid, DxColumn, DxPaging, DxMasterDetail, DxScrolling,
+            DxSearchPanel,
+            DxFilterRow,
+            DxHeaderFilter
         },
         data() {
             return {
                 dataSource: gridDataSource,
-                dataCountry:[{"id":"1","name":"Российская Федерация","s":"500"}]
-            }
-        },
-        methods: {
-            getCountries() {
-
             }
         }
     }

@@ -1,21 +1,27 @@
 <template>
-    <DxTabPanel>
-        <DxItem
-            title="Основные сведения"
-            template="country-details-tab"
-        />
-        <CountryDetailsTab slot="country-details-tab">
+    <div class="country-master-details">
+        <DxTabPanel>
+            <DxItem
+                title="Характеристики"
+                template="country-attributes-tab"
+            />
+            <CountryAttributesTab
+                slot="country-attributes-tab"
+                :country-id="countryMasterDetailData.key.id"
+            />
 
-        </CountryDetailsTab>
+            <DxItem
+                title="Основные сведения"
+                template="country-details-tab"
+            />
+            <CountryDetailsTab
+                slot="country-details-tab"
 
-        <DxItem
-            title="Характеристики"
-            template="country-attributes-tab"
-        />
-        <CountryAttributesTab  slot="country-attributes-tab">
+            />
+        </DxTabPanel>
 
-        </CountryAttributesTab>
-    </DxTabPanel>
+    </div>
+
 </template>
 
 <script>
@@ -27,7 +33,18 @@
         name: "CountryMasterDetail",
         components: {
             DxTabPanel, DxItem, CountryDetailsTab, CountryAttributesTab
-        }
+        },
+        props: {
+            countryMasterDetailData: {
+                type: Object,
+                default: () => ({})
+            }
+        },
+       created() {
+            console.log(this.countryMasterDetailData);
+            // console.log(this.masterDetailData.key);
+            // console.log(this.masterDetailData.data);
+       }
     }
 </script>
 
