@@ -69,9 +69,11 @@
         DxSearchPanel,
         DxFilterRow,
         DxHeaderFilter
+
     } from 'devextreme-vue/data-grid';
     import {DxSwitch} from 'devextreme-vue/switch';
     import CustomStore from 'devextreme/data/custom_store';
+
     import 'whatwg-fetch';
 
     function handleErrors(response) {
@@ -125,7 +127,7 @@
                 return axios.delete(`/api/directory/country/` + encodeURIComponent(key.id), { method: "DELETE"  });//.then(handleErrors);
             },
             update: (key, values) => {
-                return axios.put(`/api/directory/country/` + encodeURIComponent(key.id), values);//.then(handleErrors);
+                return axios.put(`/api/directory/country/` + encodeURIComponent(key.id), values,{ method: "PUT"  });//.then(handleErrors);
             }
         })
     };

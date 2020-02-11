@@ -5,21 +5,20 @@ namespace Modules\Directory\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
-use Modules\Directory\Entities\BaseModelApi;
+use Illuminate\Support\Facades\Validator;
 use Modules\Directory\Entities\Unit;
+use Modules\Directory\Traits\TraitDevModel;
 
 class ApiUnitController extends Controller
 {
 
+    use TraitDevModel;
+    protected $model;
 
-    /**
-     * Display a listing of the resource.
-     * @return false|string
-     */
+
     public function index(Request $request)
     {
-      $m= new BaseModelApi($request,Unit::class);
-      return $m->getApiResponse();
+        return $this->getApiModel($request, Unit::class);
     }
 
     /**
@@ -34,11 +33,29 @@ class ApiUnitController extends Controller
     /**
      * Store a newly created resource in storage.
      * @param Request $request
-     * @return Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
-        //
+        $v = Validator::make($request->all(), [
+           // 'name' => 'required|unique:spr_countries,name',
+        ]);
+        if ($v->fails()) {
+            return redirect()->back()->withErrors($v->errors());
+        } else {
+            $unit = new Unit;
+            $unit->id = $request->id;
+            $unit->code = $request->code;
+            $unit->name = $request->name;
+            $unit->symbol_national = $request->symbol_national;
+            $unit->symbol_intern = $request->symbol_intern;
+            $unit->code_national = $request->code_national;
+            $unit->code_intern = $request->code_intern;
+            $unit->section = $request->section;
+            $unit->unit_group = $request->unit_group;
+            $unit->descr = $request->descr;
+            $unit->save();
+        }
     }
 
     /**
@@ -69,7 +86,18 @@ class ApiUnitController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $unit = Unit::find($id);
+        $unit->id = $request->id;
+        $unit->code = $request->code;
+        $unit->name = $request->name;
+        $unit->symbol_national = $request->symbol_national;
+        $unit->symbol_intern = $request->symbol_intern;
+        $unit->code_national = $request->code_national;
+        $unit->code_intern = $request->code_intern;
+        $unit->section = $request->section;
+        $unit->unit_group = $request->unit_group;
+        $unit->descr = $request->descr;
+        $unit->save();
     }
 
     /**
@@ -79,6 +107,6 @@ class ApiUnitController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Unit::destroy([$id]);
     }
 }

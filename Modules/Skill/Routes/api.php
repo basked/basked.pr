@@ -13,6 +13,17 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/skill', function (Request $request) {
-    return $request->user();
+//Route::middleware('auth:api')->get('/skill', function (Request $request) {
+//    return $request->user();
+//});
+
+
+Route::prefix('skill')->group(  function () {
+
+    Route::get('/language/{params?}', 'ApiLanguageController@index');
+    Route::post('/language/', 'ApiLanguageController@store');
+    Route::put('/language/{id}', 'ApiLanguageController@update');
+    Route::delete('/language/{id}', 'ApiLanguageController@destroy');
+
+
 });

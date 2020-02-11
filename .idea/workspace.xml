@@ -1,19 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d799cace-1740-4802-8bc4-5a852e7fee40" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Directory/Traits/TraitDevModel.php" afterDir="false" />
+    <list default="true" id="d799cace-1740-4802-8bc4-5a852e7fee40" name="Default Changelist" comment="Вместо BaseApiModel теперь используется TraitDevModel.php">
+      <change afterPath="$PROJECT_DIR$/Modules/Directory/Resources/assets/components/Country/Country.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Directory/Resources/assets/components/Country/CountryAttributesTab.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Directory/Resources/assets/components/Country/CountryDetailsTab.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Directory/Resources/assets/components/Country/CountryMasterDetail.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Skill/Database/Migrations/2020_02_11_062451_create_sk_languages_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Skill/Entities/Language.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Skill/Http/Controllers/ApiLanguageController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Skill/Http/Controllers/LanguageController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Skill/Repositories/Interafaces/LanguageRepositoryInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Skill/Repositories/LanguageRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Skill/Resources/assets/components/DevGridLanguage.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Skill/Resources/views/languages/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Skill/Traits/TraitSkillDevModel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Skill/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/skill.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/skill.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a5f6867-1aa7-456d-bd33-b73daca010d4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6a5f6867-1aa7-456d-bd33-b73daca010d4.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Directory/Entities/BaseModelApi.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Entities/BaseModelApi.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Directory/Entities/Country/Country.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Entities/Country/Country.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Directory/Entities/Unit.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Entities/Unit.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Directory/Http/Controllers/ApiCountryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Http/Controllers/ApiCountryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Directory/Http/Controllers/ApiUnitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Http/Controllers/ApiUnitController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Directory/Repositories/Interfaces/ContinentRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Repositories/Interfaces/ContinentRepositoryInterface.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Directory/Resources/assets/components/DevGridSprCountry.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Resources/assets/components/DevGridSprCountry.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Directory/Resources/assets/components/DevGridSprUnit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Resources/assets/components/DevGridSprUnit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Directory/Resources/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Resources/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Directory/Resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Resources/views/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Directory/Routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Directory/Routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Directory/Routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Skill/Resources/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Skill/Resources/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Skill/Resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Skill/Resources/views/layouts/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Skill/Routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Skill/Routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Skill/Routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Skill/Routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Skill/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Skill/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/directory.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/directory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/44/d1/44d142505dd1a3b497197e2f459d2aec779e9ed6" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/44/d1/44d142505dd1a3b497197e2f459d2aec779e9ed6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/c2/4f/c24f92750673b2169c8cb7bfbc999cfa8457dc7c" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/c2/4f/c24f92750673b2169c8cb7bfbc999cfa8457dc7c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/7b25cc309fe59f2b378961c4a947a847081f211d.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/7b25cc309fe59f2b378961c4a947a847081f211d.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,13 +79,6 @@
         <item name="MySQL for 5.1 - bas_db@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="basked_db: schema" type="76f4a085:MysqlImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="MySQL for 5.1 - bas_db@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="basked_db: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="spr_units: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -203,21 +222,23 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Modules/Directory/Resources/assets/components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Modules/Skill/Resources/assets/components" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2019.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Soft\PROGRAMMING\WEB\WebServer\domains\basked.pr\Modules\Directory\Resources\assets\components" />
-      <recent name="D:\Soft\PROGRAMMING\WEB\WebServer\domains\basked.pr\public\js" />
-      <recent name="D:\Soft\PROGRAMMING\WEB\WebServer\domains\basked.pr\Modules\TreeLife\Resources\assets\js\components" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\WebServer\domains\basked.pr\Modules\Directory\Entities\Country" />
       <recent name="C:\WebServer\domains\basked.pr\Modules\Directory\Entities\Continent" />
       <recent name="D:\Soft\PROGRAMMING\WEB\WebServer\domains\basked.pr\Modules\Directory\Repositories" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Soft\PROGRAMMING\WEB\WebServer\domains\basked.pr\Modules\Skill\Resources\assets\components" />
+      <recent name="D:\Soft\PROGRAMMING\WEB\WebServer\domains\basked.pr\Modules\Skill\Traits" />
+      <recent name="D:\Soft\PROGRAMMING\WEB\WebServer\domains\basked.pr\Modules\Directory\Resources\assets\components" />
+      <recent name="D:\Soft\PROGRAMMING\WEB\WebServer\domains\basked.pr\public\js" />
+      <recent name="D:\Soft\PROGRAMMING\WEB\WebServer\domains\basked.pr\Modules\TreeLife\Resources\assets\js\components" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -301,7 +322,6 @@
       <command value="a module:make-migration modify_name_type_in_spr_countries_attr_val_table Directory" />
       <command value="a module:make-migration edit_name_spr_countries_attr_val_table Directory" />
       <command value="a module:dump" />
-      <command value="c dump-autoload" />
       <command value="a module:make-model Unit Directory" />
       <command value="a module:make-migration create_spr_units_table Directory" />
       <command value="a module:migrate-rollback Directory" />
@@ -312,20 +332,16 @@
       <command value="a module:make-migration edit_group_spr_unit_table Directory" />
       <command value="a module:migrate Directory" />
       <command value="a ide-helper:models" />
+      <command value="a module:make-migration create_sk_language_table Skill" />
+      <command value="a module:make-model language Skill" />
+      <command value="a module:migrate Skill" />
+      <command value="a module:make-controller LanguageController Skill" />
+      <command value="a module:make-controller ApiLanguageController Skill" />
       <command value="a config:clear" />
+      <command value="c dump-autoload" />
     </option>
   </component>
-  <component name="RunManager" selected="npm.dev">
-    <configuration name="dev (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/Modules/TreeLife/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="dev" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager">
     <configuration name="dev (2)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/Modules/Directory/package.json" />
       <command value="run" />
@@ -336,8 +352,8 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
+    <configuration name="dev (3)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/Modules/Skill/package.json" />
       <command value="run" />
       <scripts>
         <script value="dev" />
@@ -366,13 +382,23 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="watch" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/Modules/Skill/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="watch" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.watch (1)" />
         <item itemvalue="npm.dev (2)" />
+        <item itemvalue="npm.watch" />
+        <item itemvalue="npm.dev (3)" />
+        <item itemvalue="npm.watch (1)" />
         <item itemvalue="npm.hot" />
-        <item itemvalue="npm.dev (1)" />
-        <item itemvalue="npm.dev" />
       </list>
     </recent_temporary>
   </component>
@@ -381,7 +407,12 @@
       <list>
         <serviceView>
           <treeState>
-            <expand />
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:MySQL for 5.1 - bas_db@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+            </expand>
             <select />
           </treeState>
         </serviceView>
@@ -406,7 +437,8 @@
       <workItem from="1580303532079" duration="42702000" />
       <workItem from="1580844446162" duration="8936000" />
       <workItem from="1580918287128" duration="16879000" />
-      <workItem from="1581060385810" duration="47474000" />
+      <workItem from="1581060385810" duration="48439000" />
+      <workItem from="1581397156872" duration="25785000" />
     </task>
     <task id="LOCAL-00001" summary="Commit on work">
       <created>1579082528866</created>
@@ -555,7 +587,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581083936314</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Вместо BaseApiModel теперь используется TraitDevModel.php">
+      <created>1581342388386</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1581342388386</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -584,7 +623,8 @@
     <MESSAGE value="Reload Method in repository" />
     <MESSAGE value="Country, Attributes, Details relationshipsfor Country model" />
     <MESSAGE value="Переделана модель BaseModelApi.php для DevGridSprUnit.vue&#10;Передан VUE components" />
-    <option name="LAST_COMMIT_MESSAGE" value="Переделана модель BaseModelApi.php для DevGridSprUnit.vue&#10;Передан VUE components" />
+    <MESSAGE value="Вместо BaseApiModel теперь используется TraitDevModel.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Вместо BaseApiModel теперь используется TraitDevModel.php" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="129" key="#Inspections" timestamp="1581340752802">
@@ -607,18 +647,18 @@
       <screen x="0" y="0" width="1920" height="944" />
     </state>
     <state x="1027" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.944@0.0.1920.944" timestamp="1580991342669" />
-    <state x="690" y="226" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1581338065974">
+    <state x="690" y="226" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1581410682948">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
-    <state x="690" y="226" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.944@0.0.1920.944" timestamp="1581338065974" />
+    <state x="690" y="226" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.944@0.0.1920.944" timestamp="1581410682948" />
     <state x="689" y="400" width="542" height="367" key="#com.jetbrains.php.framework.ui.FailedToParseDialog" timestamp="1579074858876">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
     <state x="689" y="400" width="542" height="367" key="#com.jetbrains.php.framework.ui.FailedToParseDialog/0.0.1920.944@0.0.1920.944" timestamp="1579074858876" />
-    <state x="601" y="70" key="CommitChangelistDialog2" timestamp="1581083934364">
+    <state x="601" y="70" key="CommitChangelistDialog2" timestamp="1581404568587">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
-    <state x="601" y="70" key="CommitChangelistDialog2/0.0.1920.944@0.0.1920.944" timestamp="1581083934364" />
+    <state x="601" y="70" key="CommitChangelistDialog2/0.0.1920.944@0.0.1920.944" timestamp="1581404568587" />
     <state x="684" y="349" key="ComposerCompositePathDialog" timestamp="1579074795917">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
@@ -639,22 +679,22 @@
       <screen x="0" y="0" width="1920" height="944" />
     </state>
     <state x="814" y="360" key="FrameworkEditDialogDimensionKey/0.0.1920.944@0.0.1920.944" timestamp="1580367063661" />
-    <state width="1876" height="189" key="GridCell.Tab.0.bottom" timestamp="1581339945322">
+    <state width="1876" height="189" key="GridCell.Tab.0.bottom" timestamp="1581421618582">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
-    <state width="1876" height="189" key="GridCell.Tab.0.bottom/0.0.1920.944@0.0.1920.944" timestamp="1581339945322" />
-    <state width="1876" height="189" key="GridCell.Tab.0.center" timestamp="1581339945322">
+    <state width="1876" height="189" key="GridCell.Tab.0.bottom/0.0.1920.944@0.0.1920.944" timestamp="1581421618582" />
+    <state width="1876" height="189" key="GridCell.Tab.0.center" timestamp="1581421618582">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
-    <state width="1876" height="189" key="GridCell.Tab.0.center/0.0.1920.944@0.0.1920.944" timestamp="1581339945322" />
-    <state width="1876" height="189" key="GridCell.Tab.0.left" timestamp="1581339945321">
+    <state width="1876" height="189" key="GridCell.Tab.0.center/0.0.1920.944@0.0.1920.944" timestamp="1581421618582" />
+    <state width="1876" height="189" key="GridCell.Tab.0.left" timestamp="1581421618582">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
-    <state width="1876" height="189" key="GridCell.Tab.0.left/0.0.1920.944@0.0.1920.944" timestamp="1581339945321" />
-    <state width="1876" height="189" key="GridCell.Tab.0.right" timestamp="1581339945322">
+    <state width="1876" height="189" key="GridCell.Tab.0.left/0.0.1920.944@0.0.1920.944" timestamp="1581421618582" />
+    <state width="1876" height="189" key="GridCell.Tab.0.right" timestamp="1581421618582">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
-    <state width="1876" height="189" key="GridCell.Tab.0.right/0.0.1920.944@0.0.1920.944" timestamp="1581339945322" />
+    <state width="1876" height="189" key="GridCell.Tab.0.right/0.0.1920.944@0.0.1920.944" timestamp="1581421618582" />
     <state x="672" y="187" key="MultipleFileMergeDialog" timestamp="1581310898963">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
@@ -663,10 +703,10 @@
       <screen x="0" y="0" width="1920" height="944" />
     </state>
     <state x="809" y="457" key="NewPhpClassDialog/0.0.1920.944@0.0.1920.944" timestamp="1581333346723" />
-    <state x="795" y="394" key="NewPhpFileDialog" timestamp="1581330146889">
+    <state x="795" y="394" key="NewPhpFileDialog" timestamp="1581409711124">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
-    <state x="795" y="394" key="NewPhpFileDialog/0.0.1920.944@0.0.1920.944" timestamp="1581330146889" />
+    <state x="795" y="394" key="NewPhpFileDialog/0.0.1920.944@0.0.1920.944" timestamp="1581409711124" />
     <state x="461" y="103" key="SettingsEditor" timestamp="1580448408134">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
@@ -675,26 +715,30 @@
       <screen x="0" y="0" width="1920" height="944" />
     </state>
     <state x="717" y="317" width="676" height="310" key="SymfonyComponentCompositeDataDialog/0.0.1920.944@0.0.1920.944" timestamp="1579077726300" />
-    <state x="625" y="235" key="Vcs.Push.Dialog.v2" timestamp="1581083940600">
+    <state x="625" y="235" key="Vcs.Push.Dialog.v2" timestamp="1581342844868">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
-    <state x="625" y="235" key="Vcs.Push.Dialog.v2/0.0.1920.944@0.0.1920.944" timestamp="1581083940600" />
-    <state x="800" y="361" width="326" height="238" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1580900347246">
+    <state x="625" y="235" key="Vcs.Push.Dialog.v2/0.0.1920.944@0.0.1920.944" timestamp="1581342844868" />
+    <state x="800" y="361" width="326" height="238" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1581405302682">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
-    <state x="800" y="361" width="326" height="238" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1920.944@0.0.1920.944" timestamp="1580900347246" />
-    <state x="811" y="361" width="298" height="222" key="com.intellij.database.actions.ToolActions$ScriptingActionBase$1" timestamp="1580900785235">
+    <state x="800" y="361" width="326" height="238" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1920.944@0.0.1920.944" timestamp="1581405302682" />
+    <state x="811" y="361" width="298" height="222" key="com.intellij.database.actions.ToolActions$ScriptingActionBase$1" timestamp="1581404541023">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
-    <state x="811" y="361" width="298" height="222" key="com.intellij.database.actions.ToolActions$ScriptingActionBase$1/0.0.1920.944@0.0.1920.944" timestamp="1580900785235" />
+    <state x="811" y="361" width="298" height="222" key="com.intellij.database.actions.ToolActions$ScriptingActionBase$1/0.0.1920.944@0.0.1920.944" timestamp="1581404541023" />
     <state x="540" y="126" key="com.intellij.database.dbimport.ImportDialog" timestamp="1580970936297">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
     <state x="540" y="126" key="com.intellij.database.dbimport.ImportDialog/0.0.1920.944@0.0.1920.944" timestamp="1580970936297" />
-    <state x="655" y="294" key="com.intellij.ide.util.TipDialog" timestamp="1581061378814">
+    <state x="655" y="294" key="com.intellij.ide.util.TipDialog" timestamp="1581397363493">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
-    <state x="655" y="294" key="com.intellij.ide.util.TipDialog/0.0.1920.944@0.0.1920.944" timestamp="1581061378814" />
+    <state x="655" y="294" key="com.intellij.ide.util.TipDialog/0.0.1920.944@0.0.1920.944" timestamp="1581397363493" />
+    <state x="598" y="86" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1581406892167">
+      <screen x="0" y="0" width="1920" height="944" />
+    </state>
+    <state x="598" y="86" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.944@0.0.1920.944" timestamp="1581406892167" />
     <state x="152" y="270" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1579874013971">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
@@ -703,13 +747,24 @@
       <screen x="0" y="0" width="1920" height="944" />
     </state>
     <state x="769" y="388" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.944@0.0.1920.944" timestamp="1581310876523" />
-    <state x="1074" y="473" width="672" height="677" key="run.anything.popup" timestamp="1581339945356">
+    <state x="1074" y="473" width="672" height="677" key="run.anything.popup" timestamp="1581409662448">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
-    <state x="1074" y="473" width="672" height="677" key="run.anything.popup/0.0.1920.944@0.0.1920.944" timestamp="1581339945356" />
+    <state x="1074" y="473" width="672" height="677" key="run.anything.popup/0.0.1920.944@0.0.1920.944" timestamp="1581409662448" />
     <state x="623" y="201" width="672" height="678" key="search.everywhere.popup" timestamp="1581052561676">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
     <state x="623" y="201" width="672" height="678" key="search.everywhere.popup/0.0.1920.944@0.0.1920.944" timestamp="1581052561676" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/Modules/Directory/Repositories/CountryRepository.php</url>
+          <line>14</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

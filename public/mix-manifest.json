@@ -2,5 +2,7 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/js/directory.js": "/js/directory.js",
-    "/css/directory.css": "/css/directory.css"
+    "/css/directory.css": "/css/directory.css",
+    "/js/skill.js": "/js/skill.js",
+    "/css/skill.css": "/css/skill.css"
 }

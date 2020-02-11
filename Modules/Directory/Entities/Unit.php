@@ -47,6 +47,7 @@ class Unit extends Model
     use Sluggable;
 
     const captions = [
+        'ID',
         'Код',
         'Наименование',
         'Национальное симаольное обозначение',
@@ -58,6 +59,7 @@ class Unit extends Model
     ];
 
     protected $fillable = [
+        'id',
         'code',
         'name',
         'symbol_national',

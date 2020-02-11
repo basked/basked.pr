@@ -69,9 +69,11 @@
         DxSearchPanel,
         DxFilterRow,
         DxHeaderFilter
+
     } from 'devextreme-vue/data-grid';
     import {DxSwitch} from 'devextreme-vue/switch';
     import CustomStore from 'devextreme/data/custom_store';
+
     import 'whatwg-fetch';
 
     function handleErrors(response) {
@@ -105,7 +107,7 @@
                 console.log(params);
                 params = params.slice(0, -1);
 
-                return fetch(`http://basked.pr/api/directory/unit${params}`)
+                return fetch(`/api/directory/unit${params}`)
                     .then(handleErrors)
                     .then(response => response.json())
                     .then((result) => {
@@ -119,15 +121,13 @@
                     });
             },
             insert: (values) => {
-                return axios.post(`api/directory/unit`, values);//.then(handleErrors);
+                return axios.post(`/api/directory/unit`, values, {method: "POST"});//.then());
             },
             remove: (key) => {
-                return axios.delete(`api/directory/unit` + encodeURIComponent(key.id), {
-                    method: "DELETE"
-                });//.then(handleErrors);
+                return axios.delete(`/api/directory/unit/` + encodeURIComponent(key.id), { method: "DELETE"  });//.then(handleErrors);
             },
             update: (key, values) => {
-                return axios.put(`api/directory/unit` + encodeURIComponent(key.id), values);//.then(handleErrors);
+                return axios.put(`/api/directory/unit/` + encodeURIComponent(key.id), values,);//.then(handleErrors);
             }
         })
     };
@@ -189,7 +189,7 @@
     };
 </script>
 <style>
-    #data-grid-relationship {
+    #data-grid-units {
         width: 100%;
     }
 

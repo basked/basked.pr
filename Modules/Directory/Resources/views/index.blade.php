@@ -3,7 +3,7 @@
 @section('content')
 
     <div id="app">
-        <dev-grid-spr-unit></dev-grid-spr-unit>
+        <country></country>
     </div>
 {{--    @foreach($countries as $country)--}}
 {{--        <h2><a href="https://gtmarket.ru{{$country->details->url}}">{{$country->name}}</a></h2>--}}

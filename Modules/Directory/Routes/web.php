@@ -22,12 +22,13 @@ Route::prefix('directory')->group(function() {
     /*COUNTRY ROUTERS*/
     Route::get('/country', 'CountryController@index');
 
+    /*DIRECTORY ROUTERS*/
+    Route::get('/', 'DirectoryController@index');
 
-
-
-    Route::get('/', 'CountryController@index');
 
     Route::get('/autor', 'AutorController@index');
+
+
 
 //  функции тестирования
     Route::get('/test-continent', 'ContinentController@test');

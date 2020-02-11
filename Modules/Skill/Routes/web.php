@@ -13,6 +13,12 @@
 
 Route::prefix('skill')->group(function() {
 
+    /*LANGUAGES ROUTERS*/
+
+    Route::get('/languages', 'LanguageController@index');
+
+
+
 //   with param
     Route::get('/list', function () {
        echo "<br>skill/list";
@@ -29,4 +35,7 @@ Route::prefix('skill')->group(function() {
 //    });
 
     Route::get('/', 'SkillController@index');
+    Route::get('/test-language', 'LanguageController@test');
+
+
 });

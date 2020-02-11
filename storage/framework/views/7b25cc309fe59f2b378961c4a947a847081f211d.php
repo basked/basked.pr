@@ -1,7 +1,7 @@
 <?php $__env->startSection('content'); ?>
 
     <div id="app">
-        <dev-grid-spr-unit></dev-grid-spr-unit>
+        <country></country>
     </div>
 
 

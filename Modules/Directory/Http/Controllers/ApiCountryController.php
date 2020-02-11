@@ -46,32 +46,33 @@ class ApiCountryController extends Controller
         $country->save();
     }
 
-/**
- * Update the specified resource in storage.
- * @param Request $request
- * @param int $id
- * @return Response
- */
-public
-function update(Request $request, $id)
-{
-    dd('update asdasdf');
-    $country = Country::find($id);
-    $country->update();
-    $country->id = $request->id;
-    $country->name = $request->name;
-    $country->slug = Str::slug($request->name, '-');
-    $country->save();
-}
+    /**
+     * Update the specified resource in storage.
+     * @param Request $request
+     * @param int $id
+     * @return Response
+     */
+    public function update(Request $request, $id)
+    {
+        $country = Country::find($id);
+        $country->update();
+        $country->id = $request->id;
+        $country->name = $request->name;
+        $country->slug = Str::slug($request->name, '-');
+        $country->save();
+    }
 
-/**
- * Remove the specified resource from storage.
- * @param int $id
- * @return Response
- */
-public
-function destroy($id)
-{
-    Country::destroy([$id]);
-}
+    /**
+     * Remove the specified resource from storage.
+     * @param int $id
+     * @return Response
+     */
+    public function destroy($id)
+    {
+        Country::destroy([$id]);
+    }
+
+    public function attributes($id){
+      return Country::find($id)->attributes->toJson();
+    }
 }
