@@ -2,8 +2,8 @@
     <div id="data-grid-countries">
         <dx-data-grid
             :data-source="dataSource"
-            :remote-operations="remoteOperations"
             :columns="columns"
+            :remote-operations="remoteOperations"
             :show-borders="true"
             :allow-column-resizing="true"
             :allow-column-reordering="true"

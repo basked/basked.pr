@@ -24,10 +24,10 @@ Route::prefix('directory')->group(  function () {
 
     Route::get('/countries/{id}/attributes', 'ApiCountryController@attributes');
     Route::get('/countries/{id}/details', 'ApiCountryController@details');
-    Route::get( '/country/{params?}', 'ApiCountryController@index');
-    Route::post('/country/', 'ApiCountryController@store');
-    Route::put( '/country/{id}', 'ApiCountryController@update');
-    Route::delete('/country/{id}', 'ApiCountryController@destroy');
+    Route::get( '/countries/{params?}', 'ApiCountryController@index');
+    Route::post('/countries/', 'ApiCountryController@store');
+    Route::put( '/countries/{id}', 'ApiCountryController@update');
+    Route::delete('/countries/{id}', 'ApiCountryController@destroy');
 
 
 });

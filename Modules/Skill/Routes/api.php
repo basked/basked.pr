@@ -20,10 +20,11 @@ use Illuminate\Http\Request;
 
 Route::prefix('skill')->group(  function () {
 
-    Route::get('/language/{params?}', 'ApiLanguageController@index');
-    Route::post('/language/', 'ApiLanguageController@store');
-    Route::put('/language/{id}', 'ApiLanguageController@update');
-    Route::delete('/language/{id}', 'ApiLanguageController@destroy');
+    Route::get('/technologies/{params?}', 'ApiTechnologyController@index');
+    Route::get('/technologies/{params?}/types', 'ApiTechnologyController@index');
+    Route::post('/technologies/', 'ApiTechnologyController@store');
+    Route::put('/technologies/{id}', 'ApiTechnologyController@update');
+    Route::delete('/technologies/{id}', 'ApiTechnologyController@destroy');
 
 
 });

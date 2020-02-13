@@ -13,9 +13,11 @@
 
 Route::prefix('skill')->group(function() {
 
-    /*LANGUAGES ROUTERS*/
+    /*TECHNOLOGY ROUTERS*/
 
-    Route::get('/languages', 'LanguageController@index');
+    Route::get('/technologies', 'TechnologyController@index');
+    Route::get('/test-technologies/', 'TechnologyController@test');
+
 
 
 
@@ -35,7 +37,7 @@ Route::prefix('skill')->group(function() {
 //    });
 
     Route::get('/', 'SkillController@index');
-    Route::get('/test-language', 'LanguageController@test');
+
 
 
 });
