@@ -2,6 +2,14 @@
     <div class="country-master-details">
         <DxTabPanel>
             <DxItem
+                title="Основные сведения"
+                template="country-details-tab"
+            />
+            <CountryDetailsTab
+                slot="country-details-tab"
+                :country-id="countryMasterDetailData.key.id"
+            />
+            <DxItem
                 title="Характеристики"
                 template="country-attributes-tab"
             />
@@ -10,14 +18,6 @@
                 :country-id="countryMasterDetailData.key.id"
             />
 
-            <DxItem
-                title="Основные сведения"
-                template="country-details-tab"
-            />
-            <CountryDetailsTab
-                slot="country-details-tab"
-
-            />
         </DxTabPanel>
 
     </div>

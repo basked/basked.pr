@@ -8,8 +8,8 @@
 </template>
 
 <script>
-    import 'devextreme/dist/css/dx.common.css';
-    import 'devextreme/dist/css/dx.darkmoon.compact.css';
+    import 'devextreme/dist/css/dx.material.orange.dark.compact.css';
+ //   import 'devextreme/dist/css/dx.darkmoon.compact.css';
     import CustomStore from 'devextreme/data/custom_store';
     import axios from 'axios';
     import {
@@ -39,7 +39,6 @@
         },
         data() {
             return {
-                countryIdd: this.countryId,
                  dataSource:  new CustomStore({
                      load: (loadOptions) => {
                          let params = "?";
@@ -60,7 +59,7 @@
 
                          params = params.slice(0, -1);
 
-                         return fetch(`/api/directory/country/${this.countryId}/attributes`)
+                         return fetch(`/api/directory/countries/${this.countryId}/attributes`)
                          // return fetch(`/api/directory/country${params}`)
                              .then(handleErrors)
                              .then(response => response.json())

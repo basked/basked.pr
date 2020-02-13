@@ -22,7 +22,8 @@ Route::prefix('directory')->group(  function () {
     Route::delete('/unit/{id}', 'ApiUnitController@destroy');
 
 
-    Route::get('/country/{id}/attributes', 'ApiCountryController@attributes');
+    Route::get('/countries/{id}/attributes', 'ApiCountryController@attributes');
+    Route::get('/countries/{id}/details', 'ApiCountryController@details');
     Route::get( '/country/{params?}', 'ApiCountryController@index');
     Route::post('/country/', 'ApiCountryController@store');
     Route::put( '/country/{id}', 'ApiCountryController@update');

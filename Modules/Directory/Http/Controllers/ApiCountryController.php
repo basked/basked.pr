@@ -74,9 +74,15 @@ class ApiCountryController extends Controller
 
     public function attributes($id)
     {
-        $res = [];
         $res['data'] = Country::find($id)->attributes;
         $res['totalCount'] = Country::find($id)->attributes->count();
-         return json_encode($res);
+        return json_encode($res);
+    }
+
+
+    public function details($id)
+    {
+        $res['data'] = Country::find($id)->details;
+        return json_encode($res);
     }
 }

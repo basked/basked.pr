@@ -88,6 +88,7 @@ class Country extends Model
         return CountryRepository::getDataSite();
     }
 
+
     /**
      *Reload data Country from site
      *  @return bool
@@ -113,7 +114,10 @@ class Country extends Model
         return CountryRepository::getAttributesDataSite($country);
     }
 
-
+    //
+    public static function  getCountryDetailsSite(Country $country){
+        return CountryRepository::getDetailsDataSite($country);
+    }
     /**
      * Names columms for model
      * @return array

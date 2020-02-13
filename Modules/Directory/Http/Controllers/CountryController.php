@@ -98,7 +98,8 @@ class CountryController extends Controller
 
     public function test()
     {
-
+//        $country= Country::find(1);
+//        dd( $country::getCountryDetailsSite($country));
         // TODO: Уникальные значения атрибута РЕГИОН
 //        $col = new Collection;
 //        $countries = Attribute::find(5)->countries;

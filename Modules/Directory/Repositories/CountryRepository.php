@@ -5,6 +5,7 @@ namespace Modules\Directory\Repositories;
 
 use Curl\Curl;
 use Exception;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Modules\Directory\Entities\Country\Country;
@@ -40,7 +41,7 @@ class CountryRepository implements CountryRepositoryInterface
         ini_set('max_execution_time', 1200);
         $curl = new Curl();
         $curl->setTimeout(1200);
-       // $curl->setConcurrency(20);
+        // $curl->setConcurrency(20);
         if (gethostname() == 'gt-asup6nv') {
             self::setProxy($curl);
         };
@@ -65,12 +66,12 @@ class CountryRepository implements CountryRepositoryInterface
      * @Country $country
      * @return Collection
      * */
-    public static function getAttributesDataSite(Country $country): Collection
+    public static function getAttributesDataSite(Model $country): Collection
     {
         ini_set('max_execution_time', 1200);
         $curl = new Curl();
         $curl->setTimeout(1200);
-      //  $curl->setConcurrency(20);
+        //  $curl->setConcurrency(20);
         if (gethostname() == 'gt-asup6nv') {
             self::setProxy($curl);
         };
@@ -84,15 +85,43 @@ class CountryRepository implements CountryRepositoryInterface
             $data = $crawler->filter('#main >   article > div > table > thead > tr')->each(function (Crawler $node, $i) {
                 if ($i > 2) {
                     return [
-                        'label' => str_replace(html_entity_decode('&shy;'), '',  str_replace(':','',trim($node->filter('td.label')->text()))),
-                        'content_key' => str_replace('.','',trim($node->filter('td.content')->attr('id'))),
-                        'content_val' => str_replace('.','',trim($node->filter('td.content')->text())),
+                        'label' => str_replace(html_entity_decode('&shy;'), '', str_replace(':', '', trim($node->filter('td.label')->text()))),
+                        'content_key' => str_replace('.', '', trim($node->filter('td.content')->attr('id'))),
+                        'content_val' => str_replace('.', '', trim($node->filter('td.content')->text())),
                     ];
                 }
             });
             return collect($data);
         }
     }
+
+    /**
+     * Return collection data from site
+     * @Country $country
+     * @return Collection
+     * */
+    public static function getDetailsDataSite($url_detail): Collection
+    {
+        ini_set('max_execution_time', 1200);
+        $curl = new Curl();
+        $curl->setTimeout(1200);
+        //  $curl->setConcurrency(20);
+        if (gethostname() == 'gt-asup6nv') {
+            self::setProxy($curl);
+        };
+        // поиск по County аттрибутов
+        $url = self::BASE_URL . $url_detail;
+        $curl->get($url);
+        if ($curl->error) {
+            echo "Ошибка при парсинге в функции ссылки $url" . $curl->errorCode . ': ' . $curl->errorMessage . "\n";
+        } else {
+            $crawler = new Crawler($curl->response);
+            $data['descr'] = $crawler->filter('#main > article > div > table > thead > tr.intro > td > span')->text();
+            $data['img_flag'] =self::BASE_URL.$crawler->filter('.flag')->attr('src');
+            return collect($data);
+        }
+    }
+
 
     /**
      * Return collection data from site
@@ -117,7 +146,12 @@ class CountryRepository implements CountryRepositoryInterface
             $countries->each(function ($item, $key) {
                 $country = new Country(['name' => $item['name']]);
                 $country->save();
-                $country->details()->save(new Details(['url' => $item['url']]));
+                $details = self::getDetailsDataSite($item['url']);
+                $country->details()->save(new Details([
+                    'url' => $item['url'],
+                    'descr' => $details['descr'],
+                    'img_flag' => $details['img_flag']
+                ]));
             });
         } catch (Exception $e) {
             echo 'Выброшено исключение при перегрузке данных сайта: ', $e->getMessage(), "<br>";
