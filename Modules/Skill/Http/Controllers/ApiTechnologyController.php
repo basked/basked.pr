@@ -93,4 +93,10 @@ class ApiTechnologyController extends Controller
     {
         Technology::destroy([$id]);
     }
+
+
+    public function types($id)
+    {
+        Technology::find($id)->type()->toJson();
+    }
 }

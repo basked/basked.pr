@@ -8,6 +8,20 @@
             :allow-column-resizing="true"
             :allow-column-reordering="true"
         >
+
+            <DxColumn
+                :width="125"
+                data-field="id"/>
+            <DxColumn
+                :width="250"
+                data-field="name"/>
+            <DxColumn
+                :width="250"
+                data-field="slug"/>
+            <DxColumn
+                :width="250"
+                data-field="descr"/>
+
             <DxColumn
                 :width="125"
                 data-field="type_id"
@@ -100,11 +114,16 @@
 
     const gridDataSourceTypes = {
         store: new CustomStore({
+            key:'id',
+            byKey: (key) => {
+                return fetch("/api/skill/technologies/types");
+            },
             load: () => {
-                return fetch(`/api/skill/technologies/${params}/types`)
+                return fetch(`/api/skill/technologies/types`)
                     .then(handleErrors)
                     .then(response => response.json())
                     .then((result) => {
+                        console.log(response)
                         return {
                             key: result.data.id,
                             data: result.data,
@@ -132,7 +151,6 @@
                     if (i in loadOptions && isNotEmpty(loadOptions[i]))
                         params += `${i}=${JSON.stringify(loadOptions[i])}&`;
                 });
-
                 params = params.slice(0, -1);
 
                 return fetch(`/api/skill/technologies${params}`)

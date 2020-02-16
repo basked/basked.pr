@@ -16,7 +16,8 @@ const axios = require('axios');
  */
 
 
-Vue.component('dev-grid-language', require('../components/DevGridTechnology.vue').default);
+Vue.component('dev-grid-technology', require('../components/DevGridTechnology.vue').default);
+Vue.component('dev-grid-type', require('../components/DevGridType.vue').default);
 
 
 

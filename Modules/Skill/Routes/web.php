@@ -19,6 +19,11 @@ Route::prefix('skill')->group(function() {
     Route::get('/test-technologies/', 'TechnologyController@test');
 
 
+    /*TYPE ROUTERS*/
+
+    Route::get('/types', 'TypeController@index');
+    Route::get('/test-types/', 'TypeController@test');
+
 
 
 //   with param

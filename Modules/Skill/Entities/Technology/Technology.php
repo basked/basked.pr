@@ -8,14 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Technology extends Model
 {
-    const captions = ['ID', 'Наименование', 'slug', 'Описание'];
+    const captions = ['ID', 'Наименование', 'slug', 'Описание','Тип'];
 
-    protected $fillable = ['id', 'name', 'slug', 'descr'];
+    protected $fillable = ['id', 'name', 'slug', 'descr','type_id'];
     protected $table = 'sk_technologies';
 
-    public function types()
+    public function type()
     {
-        return $this->belongsToMany(Type::class, 'sk_technology_type', 'technology_id', 'type_id');
+        return $this->belongsTo(Type::class, 'type_id', 'id' );
     }
 
     public static function getTechnologiesSite()

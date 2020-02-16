@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Modules\Skill\Entities\Technology;
+use Modules\Skill\Entities\Technology\Type;
 
 class TechnologyController extends Controller
 {
@@ -88,8 +89,12 @@ class TechnologyController extends Controller
     public function test()
     {
    //   return Technology::getLanguagesSite();
-    //  Technology::reloadTechnologiesSite();
-        dd(Technology::find(1)->name,Technology::find(1)->types->find(1)->name);
+  // Technology::reloadTechnologiesSite();
+        $technologies= Type::find(1)->technologies;
+     foreach ($technologies as $t){
+         echo  $t->name.'<br>';
+     }
+        //   dd(Technology::find(1)->name,Technology::find(1)->types->find(1)->name);
 
     }
 

@@ -26,6 +26,10 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Directory\Entities\Country\Details whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Directory\Entities\Country\Details whereUrl($value)
  * @mixin \Eloquent
+ * @property string|null $img_flag
+ * @property string|null $img_gerb
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Directory\Entities\Country\Details whereImgFlag($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Directory\Entities\Country\Details whereImgGerb($value)
  */
 class Details extends Model
 {
