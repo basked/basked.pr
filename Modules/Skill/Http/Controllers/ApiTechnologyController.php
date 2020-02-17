@@ -41,8 +41,9 @@ class ApiTechnologyController extends Controller
             $technology->id = $request->id;
             $technology->name = $request->name;
             $technology->slug = Str::slug($request->name, '-');
-            $technology->type_id = 1;
+            $technology->type_id = $request->type_id;
             $technology->descr = $request->descr;
+            $technology->technology_id = $request->technology_id;
             $technology->save();
         }
     }
@@ -76,11 +77,12 @@ class ApiTechnologyController extends Controller
     public function update(Request $request, $id)
     {
         $technology = Technology::find($id);
-        $technology ->id = $request->id;
+        $technology->id = $request->id;
         $technology->name = $request->name;
         $technology->slug = Str::slug($request->name, '-');
-        $technology->type_id = 1;
+        $technology->type_id = $request->type_id;
         $technology->descr = $request->descr;
+        $technology->technology_id = $request->technology_id;
         $technology->save();
     }
 
@@ -95,8 +97,10 @@ class ApiTechnologyController extends Controller
     }
 
 
-    public function types($id)
+    public function lookTechnologies()
     {
-        Technology::find($id)->type()->toJson();
+        return Technology::all('id', 'name')->toJson();
     }
+
+
 }

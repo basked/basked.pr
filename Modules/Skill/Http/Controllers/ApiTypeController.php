@@ -14,6 +14,7 @@ class ApiTypeController extends Controller
 {
 
     use TraitSkillDevModel;
+
     /**
      * Display a listing of the resource.
      * @return Response
@@ -83,12 +84,25 @@ class ApiTypeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $type = Type::find($id);
-        $type ->id = $request->id;
-        $type->name = $request->name;
-        $type->slug = Str::slug($request->name, '-');
-        $type->descr = $request->descr;
+        $type = Type::findOrFail($id);
+
+        $type->update();
+
+        if ($request->id) {
+            $type->id = $request->id;
+        }
+
+        if ($request->name) {
+            $type->name = $request->name;
+            $type->slug = Str::slug($request->name, '-');
+        }
+
+        if ($request->descr) {
+            $type->descr = $request->descr;
+        }
+
         $type->save();
+
     }
 
     /**
@@ -99,5 +113,12 @@ class ApiTypeController extends Controller
     public function destroy($id)
     {
         Type::destroy([$id]);
+    }
+
+
+    public function lookTypes()
+    {
+        return  Type::all()->toJson();
+//        return Category::where('active', 1)->orderBy('name')->get(['root_id', 'name'])->toJson();
     }
 }

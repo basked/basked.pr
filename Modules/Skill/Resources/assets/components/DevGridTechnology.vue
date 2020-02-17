@@ -1,5 +1,5 @@
 <template>
-    <div id="data-grid-languages">
+    <div id="data-grid-technology">
         <dx-data-grid
             :data-source="dataSource"
             :remote-operations="remoteOperations"
@@ -22,17 +22,36 @@
                 :width="250"
                 data-field="descr"/>
 
-            <DxColumn
-                :width="125"
-                data-field="type_id"
-                caption="Type"
+
+            <dx-column
+                data-field='type_id'
+                caption="Тип"
+                data-type="number"
+                :allow-grouping="true"
+                :allow-editing="true"
             >
-                <DxLookup
-                    :data-source="dsTypes"
-                    display-expr="Name"
-                    value-expr="ID"
+                <dx-lookup
+                    :data-source="storeType"
+                    value-expr="id"
+                    display-expr="name"
                 />
-            </DxColumn>
+            </dx-column>
+
+            <dx-column
+                data-field='technology_id'
+                caption="Категория"
+                data-type="number"
+                :allow-grouping="true"
+                :allow-editing="true"
+            >
+                <dx-lookup
+                    :data-source="storeTechnology"
+                    value-expr="id"
+                    display-expr="name"
+                />
+            </dx-column>
+
+
             <dx-editing
                 :select-text-on-edit-start="selectTextOnEditStart"
                 :start-edit-action="startEditAction"
@@ -112,27 +131,42 @@
         return value !== undefined && value !== null && value !== "";
     }
 
-    const gridDataSourceTypes = {
-        store: new CustomStore({
-            key:'id',
-            byKey: (key) => {
-                return fetch("/api/skill/technologies/types");
-            },
-            load: () => {
-                return fetch(`/api/skill/technologies/types`)
-                    .then(handleErrors)
-                    .then(response => response.json())
-                    .then((result) => {
-                        console.log(response)
-                        return {
-                            key: result.data.id,
-                            data: result.data,
-                        }
-                    });
-
+    // сравнивает страрые знчения и обновленные - записывает пересечение
+    function dataToUpdate(key,values){
+        let res={};
+        for (let k in key) {
+            if (k in values) {
+                res[k]=values[k]
+            } else {
+                res[k]=key[k]
             }
-        })
-    };
+        }
+        console.log(res);
+        return res;
+    }
+
+    const storeType = new CustomStore({
+        key: 'id',
+        byKey: function (key) {
+            return {id: key};
+        },
+        load: (loadOptions) => {
+            return axios.get(`/api/skill/types/look-types`).then(response => {
+                return response.data
+            });
+        }
+    });
+    const storeTechnology = new CustomStore({
+        key: 'id',
+        byKey: function (key) {
+            return {id: key};
+        },
+        load: (loadOptions) => {
+            return axios.get(`/api/skill/technologies/look-technologies`).then(response => {
+                return response
+            });
+        }
+    });
     const gridDataSource = {
         store: new CustomStore({
             load: (loadOptions) => {
@@ -173,12 +207,18 @@
                 return axios.delete(`/api/skill/technologies/` + encodeURIComponent(key.id), {method: "DELETE"});//.then(handleErrors);
             },
             update: (key, values) => {
-                return axios.put(`/api/skill/technologies/` + encodeURIComponent(key.id), values, {method: "PUT"});//.then(handleErrors);
+                return axios.put(`/api/skill/technologies/` + encodeURIComponent(key.id), dataToUpdate(key,values) , {method: "PUT"});//.then(handleErrors);
+            },
+            onUpdating: function (key, values) {
+                console.log('onUpdating');
+            },
+            onUpdated: function (key, values) {
+                console.log('onUpdated');
             }
         })
     };
     export default {
-        name: "DevGridLanguage",
+        name: "DevGridTechnology",
         components: {
             DxSwitch,
             DxDataGrid,
@@ -199,8 +239,11 @@
         props: ['propsColumns', 'propsCaptions'],
         data() {
             return {
+                // gridDataSourceTypes,
+                storeType,
+                storeTechnology,
                 dataSource: gridDataSource,
-                dsTypes: gridDataSourceTypes,
+                // dsTypes: gridDataSourceTypes,
                 columns: JSON.parse(this.getCaptions()),
                 select: this.getColumns(),
                 keyExpr: 'id',
@@ -225,7 +268,6 @@
             // console.log(a1);
         },
         methods: {
-
             getColumns() {
                 return this.propsColumns;
             },

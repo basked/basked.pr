@@ -8,15 +8,30 @@ use Illuminate\Database\Eloquent\Model;
 
 class Technology extends Model
 {
-    const captions = ['ID', 'Наименование', 'slug', 'Описание','Тип'];
+    const captions = ['ID', 'Наименование', 'slug', 'Описание','Тип', 'Главная категория'];
 
-    protected $fillable = ['id', 'name', 'slug', 'descr','type_id'];
+    protected $fillable = ['id', 'name', 'slug', 'descr','type_id', 'technology_id' ];
     protected $table = 'sk_technologies';
 
+    /**
+     * Тип технологии
+     * @return type
+     **/
     public function type()
     {
         return $this->belongsTo(Type::class, 'type_id', 'id' );
     }
+
+    // Each category may have one parent
+    public function parent() {
+        return $this->belongsToOne(static::class, 'technology_id');
+    }
+
+    // Each category may have multiple children
+    public function children() {
+        return $this->hasMany(static::class, 'technology_id');
+    }
+
 
     public static function getTechnologiesSite()
     {
