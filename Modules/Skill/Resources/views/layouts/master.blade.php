@@ -11,6 +11,13 @@
 
     </head>
     <body>
+
+<div class="skill-menu">
+  <skill-menu></skill-menu>
+
+</div>
+
+
         @yield('content')
 
         {{-- Laravel Mix - JS File --}}

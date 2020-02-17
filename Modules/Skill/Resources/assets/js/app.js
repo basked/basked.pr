@@ -3,6 +3,7 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
+import 'bootstrap'
 
 
 window.Vue = require('vue');
@@ -15,9 +16,10 @@ const axios = require('axios');
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-
+Vue.component('skill-menu', require('../components/SkillMenu.vue').default);
 Vue.component('dev-grid-technology', require('../components/DevGridTechnology.vue').default);
 Vue.component('dev-grid-type', require('../components/DevGridType.vue').default);
+
 
 
 

@@ -34,6 +34,9 @@
                     :data-source="storeType"
                     value-expr="id"
                     display-expr="name"
+                    searchEnabled="true"
+                    :search-mode="contains"
+                    :show-popup-title="false"
                 />
             </dx-column>
 
@@ -48,6 +51,10 @@
                     :data-source="storeTechnology"
                     value-expr="id"
                     display-expr="name"
+                    :search-enabled="true"
+                    :grouped="true"
+                    :close-on-outside-click="true"
+                    :show-popup-title="false"
                 />
             </dx-column>
 
@@ -97,7 +104,7 @@
 </template>
 <script>
     import 'devextreme/dist/css/dx.common.css';
-    import 'devextreme/dist/css/dx.darkmoon.compact.css';
+    import 'devextreme/dist/css/dx.darkmoon.css';
     import {DxCheckBox, DxSelectBox} from 'devextreme-vue';
     import axios from 'axios';
     import {

@@ -53,7 +53,7 @@
 </template>
 <script>
     import 'devextreme/dist/css/dx.common.css';
-    import 'devextreme/dist/css/dx.darkmoon.compact.css';
+    import 'devextreme/dist/css/dx.material.orange.dark.compact.css';
     import {DxCheckBox, DxSelectBox} from 'devextreme-vue';
     import axios from 'axios';
     import {
