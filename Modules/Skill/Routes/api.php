@@ -19,6 +19,7 @@ use Illuminate\Http\Request;
 
 
 Route::prefix('skill')->group(  function () {
+
     /*TECHNOLOGY API ROUTERS*/
     Route::get('/technologies/look-technologies/', 'ApiTechnologyController@lookTechnologies');
     Route::get('/technologies/{params?}', 'ApiTechnologyController@index');
@@ -29,11 +30,19 @@ Route::prefix('skill')->group(  function () {
     Route::put('/technologies/reset-category/{id}','ApiTechnologyController@resetCategory');
 
     /*TYPE API ROUTERS*/
-
+    Route::get('/types/look-types', 'ApiTypeController@lookTypes');
     Route::get('/types/{params?}', 'ApiTypeController@index');
     Route::post('/types/', 'ApiTypeController@store');
     Route::put('/types/{id}', 'ApiTypeController@update');
     Route::delete('/types/{id}', 'ApiTypeController@destroy');
-    Route::get('/types/look-types', 'ApiTechnologyController@lookTypes');
+
+
+    /*DEVELOPE API ROUTERS*/
+    Route::get('/developers/{params?}', 'ApiDeveloperController@index');
+    Route::post('/developers/', 'ApiDeveloperController@store');
+    Route::put('/developers/{id}', 'ApiDeveloperController@update');
+    Route::delete('/developers/{id}', 'ApiDeveloperController@destroy');
+
+
 
 });

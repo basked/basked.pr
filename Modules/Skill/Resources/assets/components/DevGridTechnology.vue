@@ -1,14 +1,14 @@
 <template>
     <div id="data-grid-technology">
-        <dx-data-grid
+        <DxDataGrid
             :data-source="dataSource"
             :remote-operations="remoteOperations"
             :columns="columns"
             :show-borders="true"
             :allow-column-resizing="true"
             :allow-column-reordering="true"
-            @initialized="saveGridInstance">
-            >
+            @initialized="saveGridInstance"
+        >
 
             <DxColumn
                 :width="125"
@@ -31,12 +31,10 @@
                 :allow-grouping="true"
                 :allow-editing="true"
             >
-                <dx-lookup
+               <DxLookup
                     :data-source="storeType"
                     value-expr="id"
                     display-expr="name"
-                    searchEnabled="true"
-                    :show-popup-title="false"
                 />
             </DxColumn>
 
@@ -47,15 +45,12 @@
                 data-type="number"
                 :allow-grouping="true"
                 :allow-editing="true"
+
             >
-                <dx-lookup
+                <DxLookup
                     :data-source="storeTechnology"
                     value-expr="id"
                     display-expr="name"
-                    :search-enabled="true"
-                    :grouped="true"
-                    :close-on-outside-click="true"
-                    :show-popup-title="false"
                 />
             </DxColumn>
             <DxColumn
@@ -63,50 +58,31 @@
                 :buttons="editButtons"
                 type="buttons"
             >
-
             </DxColumn>
 
-
-            <dx-editing
-                :select-text-on-edit-start="selectTextOnEditStart"
-                :start-edit-action="startEditAction"
+            <DxEditing
                 :allow-updating="true"
                 :allow-adding="true"
                 :allow-deleting="true"
                 mode="batch"/>
-            <dx-search-panel
+            <DxSearchPanel
                 :visible="true"
                 :highlight-case-sensitive="true"
             />
-            <dx-filter-row :visible="true"/>
-            <dx-header-filter :visible="true"/>
-            <dx-group-panel :visible="true"/>
-            <dx-grouping :auto-expand-all="false"
-                         :context-menu-enabled="true"
-                         expand-mode="rowClick"
+            <DxFilterRow :visible="true"/>
+            <DxHeaderFilter :visible="true"/>
+            <DxGroupPanel :visible="true"/>
+            <DxGrouping :auto-expand-all="false"
+                        :context-menu-enabled="true"
+                        expand-mode="rowClick"
             />
-            <dx-pager
+            <DxPager
                 :allowed-page-sizes="pageSizes"
                 :show-page-size-selector="true"
             />
-            <dx-paging :page-size="20"/>
-        </dx-data-grid>
-        <div class="options">
-            <div class="caption">Options</div>
-            <div class="option">
-                <dx-check-box
-                    v-model="selectTextOnEditStart"
-                    text="Поиск..."
-                />
-            </div>
-            <div class="option">
-                <span>Start Edit Action</span>
-                <dx-select-box
-                    :items="['click', 'dblClick']"
-                    v-model="startEditAction"
-                />
-            </div>
-        </div>
+            <DxPaging :page-size="20"/>
+        </DxDataGrid>
+
     </div>
 
 </template>
@@ -134,8 +110,9 @@
     } from 'devextreme-vue/data-grid';
     import {DxSwitch} from 'devextreme-vue/switch';
     import CustomStore from 'devextreme/data/custom_store';
-
     import 'whatwg-fetch';
+
+    const url = 'http://basked.pr/api/skill';
 
     function handleErrors(response) {
         if (!response.ok)
@@ -157,9 +134,10 @@
                 res[k] = key[k]
             }
         }
-        console.log(res);
         return res;
     }
+
+
 
     const storeType = new CustomStore({
         key: 'id',
@@ -167,22 +145,24 @@
             return {id: key};
         },
         load: (loadOptions) => {
-            return axios.get(`/api/skill/types/look-types`).then(response => {
+            return axios.get(`${url}/types/look-types`).then(response => {
                 return response.data
             });
         }
     });
+
     const storeTechnology = new CustomStore({
         key: 'id',
         byKey: function (key) {
             return {id: key};
         },
         load: (loadOptions) => {
-            return axios.get(`/api/skill/technologies/look-technologies`).then(response => {
-                return response
+            return axios.get(`${url}/technologies/look-technologies`).then(response => {
+                return response.data
             });
-        }
+        },
     });
+
     const gridDataSource = {
         store: new CustomStore({
             load: (loadOptions) => {
@@ -203,7 +183,7 @@
                 });
                 params = params.slice(0, -1);
 
-                return fetch(`/api/skill/technologies${params}`)
+                return fetch(`${url}/technologies${params}`)
                     .then(handleErrors)
                     .then(response => response.json())
                     .then((result) => {
@@ -217,13 +197,13 @@
                     });
             },
             insert: (values) => {
-                return axios.post(`/api/skill/technologies`, values, {method: "POST"});//.then());
+                return axios.post(`${url}/technologies`, values, {method: "POST"});//.then());
             },
             remove: (key) => {
-                return axios.delete(`/api/skill/technologies/` + encodeURIComponent(key.id), {method: "DELETE"});//.then(handleErrors);
+                return axios.delete(`${url}/technologies/` + encodeURIComponent(key.id), {method: "DELETE"});//.then(handleErrors);
             },
             update: (key, values) => {
-                return axios.put(`/api/skill/technologies/` + encodeURIComponent(key.id), dataToUpdate(key, values), {method: "PUT"});//.then(handleErrors);
+                return axios.put(`${url}/technologies/` + encodeURIComponent(key.id), dataToUpdate(key, values), {method: "PUT"});//.then(handleErrors);
             },
             onUpdating: function (key, values) {
                 console.log('onUpdating');
@@ -272,15 +252,13 @@
                     grouping: true,
                     groupPaging: true,
                 },
-                pageSizes: [20, 30, 50],
-                selectTextOnEditStart: true,
-                startEditAction: 'click',
-                editButtons: [{
+                pageSizes: [15, 30, 50],
+                editButtons: ['delete','|',{
                     hint: 'Reset type',
                     icon: 'fa fa-minus-circle',
                     // visible: this.isCloneIconVisible,
                     onClick: this.resetTypeClick
-                },
+                },'|',
                     {
                         hint: 'Reset category',
                         icon: 'fa fa-minus-square',
@@ -306,7 +284,7 @@
             },
             // Обнуляем тип
             resetTypeClick(e) {
-                return axios.put(`/api/skill/technologies/reset-type/` + encodeURIComponent(e.row.key.id), {method: "PUT"}).then(
+                return axios.put(`${url}/technologies/reset-type/` + encodeURIComponent(e.row.key.id), {method: "PUT"}).then(
                     // обновляем таблицу
                     this.refresh
                 );
@@ -314,7 +292,7 @@
             },
             // Обнуляем категорию
             resetCategoryClick(e) {
-                return axios.put(`/api/skill/technologies/reset-category/` + encodeURIComponent(e.row.key.id), {method: "PUT"}).then(
+                return axios.put(`${url}/technologies/reset-category/` + encodeURIComponent(e.row.key.id), {method: "PUT"}).then(
                     // обновляем таблицу
                     this.refresh
                 );

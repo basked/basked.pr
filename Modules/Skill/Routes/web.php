@@ -20,9 +20,12 @@ Route::prefix('skill')->group(function() {
 
 
     /*TYPE ROUTERS*/
-
     Route::get('/types', 'TypeController@index');
     Route::get('/test-types/', 'TypeController@test');
+
+    /*DEVELOPER ROUTERS*/
+    Route::get('/developers', 'DeveloperController@index');
+    Route::get('/test-developers/', 'DeveloperController@test');
 
 
 

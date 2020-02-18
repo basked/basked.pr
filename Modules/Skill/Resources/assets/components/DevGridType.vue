@@ -1,6 +1,6 @@
 <template>
-    <div id="data-grid-units">
-        <dx-data-grid
+    <div id="data-grid-types">
+        <DxDataGrid
             :data-source="dataSource"
             :remote-operations="remoteOperations"
             :columns="columns"
@@ -8,46 +8,30 @@
             :allow-column-resizing="true"
             :allow-column-reordering="true"
         >
-            <dx-editing
+            <DxEditing
                 :select-text-on-edit-start="selectTextOnEditStart"
                 :start-edit-action="startEditAction"
                 :allow-updating="true"
                 :allow-adding="true"
                 :allow-deleting="true"
                 mode="batch"/>
-            <dx-search-panel
+            <DxSearchPanel
                 :visible="true"
                 :highlight-case-sensitive="true"
             />
-            <dx-filter-row :visible="true"/>
-            <dx-header-filter :visible="true"/>
-            <dx-group-panel :visible="true"/>
-            <dx-grouping :auto-expand-all="false"
+            <DxFilterRow :visible="true"/>
+            <DxHeaderFilter :visible="true"/>
+            <DxGroupPanel :visible="true"/>
+            <DxGrouping :auto-expand-all="false"
                          :context-menu-enabled="true"
                          expand-mode="rowClick"
             />
-            <dx-pager
+            <DxPager
                 :allowed-page-sizes="pageSizes"
                 :show-page-size-selector="true"
             />
-            <dx-paging :page-size="20"/>
-        </dx-data-grid>
-        <div class="options">
-            <div class="caption">Options</div>
-            <div class="option">
-                <dx-check-box
-                    v-model="selectTextOnEditStart"
-                    text="Поиск..."
-                />
-            </div>
-            <div class="option">
-                <span>Start Edit Action</span>
-                <dx-select-box
-                    :items="['click', 'dblClick']"
-                    v-model="startEditAction"
-                />
-            </div>
-        </div>
+            <DxPaging :page-size="20"/>
+        </DxDataGrid>
     </div>
 
 </template>
@@ -167,8 +151,6 @@
                     groupPaging: true,
                 },
                 pageSizes: [20, 30, 50],
-                selectTextOnEditStart: true,
-                startEditAction: 'click',
             }
         },
         mounted() {

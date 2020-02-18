@@ -99,7 +99,8 @@ class ApiTechnologyController extends Controller
 
     public function lookTechnologies()
     {
-        return Technology::all('id', 'name')->toJson();
+        $data['data']=Technology::all('id', 'name')->toArray();
+        return  $data;
     }
 
     public function resetType($id)

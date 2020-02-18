@@ -118,7 +118,7 @@ class ApiTypeController extends Controller
 
     public function lookTypes()
     {
-        return  Type::all()->toJson();
-//        return Category::where('active', 1)->orderBy('name')->get(['root_id', 'name'])->toJson();
+        $data['data']= Type::all('id','name')->toArray();
+        return $data;
     }
 }

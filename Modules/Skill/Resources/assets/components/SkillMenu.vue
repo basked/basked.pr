@@ -11,6 +11,7 @@
                     <a class="nav-item nav-link active" href="http://basked.pr/skill/">Home <span class="sr-only">(current)</span></a>
                     <a class="nav-item nav-link" href="http://basked.pr/skill/types">Types technologies</a>
                     <a class="nav-item nav-link" href="http://basked.pr/skill/technologies">Technologies</a>
+                    <a class="nav-item nav-link" href="http://basked.pr/skill/developers">Developers</a>
 
                 </div>
             </div>
