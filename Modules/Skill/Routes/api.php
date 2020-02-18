@@ -25,7 +25,8 @@ Route::prefix('skill')->group(  function () {
     Route::post('/technologies/', 'ApiTechnologyController@store');
     Route::put('/technologies/{id}', 'ApiTechnologyController@update');
     Route::delete('/technologies/{id}', 'ApiTechnologyController@destroy');
-
+    Route::put('/technologies/reset-type/{id}','ApiTechnologyController@resetType');
+    Route::put('/technologies/reset-category/{id}','ApiTechnologyController@resetCategory');
 
     /*TYPE API ROUTERS*/
 

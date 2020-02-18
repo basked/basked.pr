@@ -102,5 +102,17 @@ class ApiTechnologyController extends Controller
         return Technology::all('id', 'name')->toJson();
     }
 
+    public function resetType($id)
+    {
+        $technology=Technology::find($id);
+        $technology->type_id=null;
+        $technology->save();
+    }
 
+    public function resetCategory($id)
+    {
+        $technology=Technology::find($id);
+        $technology->technology_id=null;
+        $technology->save();
+    }
 }

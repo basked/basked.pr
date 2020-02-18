@@ -7,7 +7,8 @@
             :show-borders="true"
             :allow-column-resizing="true"
             :allow-column-reordering="true"
-        >
+            @initialized="saveGridInstance">
+            >
 
             <DxColumn
                 :width="125"
@@ -23,7 +24,7 @@
                 data-field="descr"/>
 
 
-            <dx-column
+            <DxColumn
                 data-field='type_id'
                 caption="Тип"
                 data-type="number"
@@ -35,12 +36,12 @@
                     value-expr="id"
                     display-expr="name"
                     searchEnabled="true"
-                    :search-mode="contains"
                     :show-popup-title="false"
                 />
-            </dx-column>
+            </DxColumn>
 
-            <dx-column
+            <
+            <DxColumn
                 data-field='technology_id'
                 caption="Категория"
                 data-type="number"
@@ -56,7 +57,14 @@
                     :close-on-outside-click="true"
                     :show-popup-title="false"
                 />
-            </dx-column>
+            </DxColumn>
+            <DxColumn
+                :width="210"
+                :buttons="editButtons"
+                type="buttons"
+            >
+
+            </DxColumn>
 
 
             <dx-editing
@@ -105,6 +113,7 @@
 <script>
     import 'devextreme/dist/css/dx.common.css';
     import 'devextreme/dist/css/dx.darkmoon.css';
+    import "font-awesome/css/font-awesome.css";
     import {DxCheckBox, DxSelectBox} from 'devextreme-vue';
     import axios from 'axios';
     import {
@@ -139,13 +148,13 @@
     }
 
     // сравнивает страрые знчения и обновленные - записывает пересечение
-    function dataToUpdate(key,values){
-        let res={};
+    function dataToUpdate(key, values) {
+        let res = {};
         for (let k in key) {
             if (k in values) {
-                res[k]=values[k]
+                res[k] = values[k]
             } else {
-                res[k]=key[k]
+                res[k] = key[k]
             }
         }
         console.log(res);
@@ -214,7 +223,7 @@
                 return axios.delete(`/api/skill/technologies/` + encodeURIComponent(key.id), {method: "DELETE"});//.then(handleErrors);
             },
             update: (key, values) => {
-                return axios.put(`/api/skill/technologies/` + encodeURIComponent(key.id), dataToUpdate(key,values) , {method: "PUT"});//.then(handleErrors);
+                return axios.put(`/api/skill/technologies/` + encodeURIComponent(key.id), dataToUpdate(key, values), {method: "PUT"});//.then(handleErrors);
             },
             onUpdating: function (key, values) {
                 console.log('onUpdating');
@@ -266,6 +275,20 @@
                 pageSizes: [20, 30, 50],
                 selectTextOnEditStart: true,
                 startEditAction: 'click',
+                editButtons: [{
+                    hint: 'Reset type',
+                    icon: 'fa fa-minus-circle',
+                    // visible: this.isCloneIconVisible,
+                    onClick: this.resetTypeClick
+                },
+                    {
+                        hint: 'Reset category',
+                        icon: 'fa fa-minus-square',
+                        // visible: this.isCloneIconVisible,
+                        onClick: this.resetCategoryClick
+                    }
+                ],
+
             }
         },
         mounted() {
@@ -275,6 +298,28 @@
             // console.log(a1);
         },
         methods: {
+            saveGridInstance: function (e) {
+                this.dataGridInstance = e.component;
+            },
+            refresh: function () {
+                this.dataGridInstance.refresh();
+            },
+            // Обнуляем тип
+            resetTypeClick(e) {
+                return axios.put(`/api/skill/technologies/reset-type/` + encodeURIComponent(e.row.key.id), {method: "PUT"}).then(
+                    // обновляем таблицу
+                    this.refresh
+                );
+
+            },
+            // Обнуляем категорию
+            resetCategoryClick(e) {
+                return axios.put(`/api/skill/technologies/reset-category/` + encodeURIComponent(e.row.key.id), {method: "PUT"}).then(
+                    // обновляем таблицу
+                    this.refresh
+                );
+            },
+
             getColumns() {
                 return this.propsColumns;
             },
