@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6f788dab-3701-43fb-b5b5-774d748e6479" name="Default Changelist" comment="Add params, withModel for  SkillTrait&#10;Change SkillMenu.vue&#10;ApiDeveloperController.php&#10;DeveloperController.php&#10;backup folder">
+    <list default="true" id="6f788dab-3701-43fb-b5b5-774d748e6479" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/Modules/Skill/Database/Migrations/2020_02_18_114223_create_sk_developers_table.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Modules/Skill/Entities/Developer.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Modules/Skill/Http/Controllers/ApiDeveloperController.php" afterDir="false" />
@@ -614,7 +614,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582120734636</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Add params, withModel for  SkillTrait&#10;Change SkillMenu.vue&#10;ApiDeveloperController.php&#10;DeveloperController.php&#10;backup folder">
+      <created>1582130978403</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1582130978403</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -657,7 +664,8 @@
     <MESSAGE value="В DevGridTechnology.vue &#10;    -добавлен метод обнуления категории (для lookup)&#10;    -добавлен метод обнуления типа (для lookup)&#10;    -метод обновления данных после обнуления refresh()&#10;    -кастомная калонка с действиям над записью &#10;    -иконки awesome для действий&#10; ApiTechnologyController.php&#10;    - endpoints для работы с actions (обнуление данных)" />
     <MESSAGE value="Developer model" />
     <MESSAGE value="Add params, withModel for  SkillTrait&#10;Change SkillMenu.vue&#10;ApiDeveloperController.php&#10;DeveloperController.php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add params, withModel for  SkillTrait&#10;Change SkillMenu.vue&#10;ApiDeveloperController.php&#10;DeveloperController.php" />
+    <MESSAGE value="Add params, withModel for  SkillTrait&#10;Change SkillMenu.vue&#10;ApiDeveloperController.php&#10;DeveloperController.php&#10;backup folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add params, withModel for  SkillTrait&#10;Change SkillMenu.vue&#10;ApiDeveloperController.php&#10;DeveloperController.php&#10;backup folder" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="129" key="#Inspections" timestamp="1582023798271">
@@ -689,11 +697,11 @@
       <screen x="0" y="0" width="1920" height="944" />
     </state>
     <state x="689" y="400" width="542" height="367" key="#com.jetbrains.php.framework.ui.FailedToParseDialog/0.0.1920.944@0.0.1920.944" timestamp="1579074858876" />
-    <state x="655" y="30" key="CommitChangelistDialog2" timestamp="1582130810749">
+    <state x="655" y="30" key="CommitChangelistDialog2" timestamp="1582130977426">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
     <state x="123" y="21" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1581974280974" />
-    <state x="655" y="30" key="CommitChangelistDialog2/0.0.1920.944@0.0.1920.944" timestamp="1582130810749" />
+    <state x="655" y="30" key="CommitChangelistDialog2/0.0.1920.944@0.0.1920.944" timestamp="1582130977426" />
     <state x="684" y="349" key="ComposerCompositePathDialog" timestamp="1579074795917">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
@@ -755,10 +763,10 @@
       <screen x="0" y="0" width="1920" height="944" />
     </state>
     <state x="717" y="317" width="676" height="310" key="SymfonyComponentCompositeDataDialog/0.0.1920.944@0.0.1920.944" timestamp="1579077726300" />
-    <state x="625" y="235" key="Vcs.Push.Dialog.v2" timestamp="1582130867171">
+    <state x="625" y="235" key="Vcs.Push.Dialog.v2" timestamp="1582130988088">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
-    <state x="625" y="235" key="Vcs.Push.Dialog.v2/0.0.1920.944@0.0.1920.944" timestamp="1582130867171" />
+    <state x="625" y="235" key="Vcs.Push.Dialog.v2/0.0.1920.944@0.0.1920.944" timestamp="1582130988088" />
     <state x="800" y="361" width="326" height="238" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1581596623412">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
