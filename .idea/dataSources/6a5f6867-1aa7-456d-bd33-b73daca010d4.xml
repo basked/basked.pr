@@ -917,27 +917,26 @@
     <table id="232" parent="2" name="permissions"/>
     <table id="233" parent="2" name="roles"/>
     <table id="234" parent="2" name="roles_permissions"/>
-    <table id="235" parent="2" name="sk_developers"/>
-    <table id="236" parent="2" name="sk_technologies"/>
-    <table id="237" parent="2" name="sk_technology_type"/>
-    <table id="238" parent="2" name="sk_types"/>
-    <table id="239" parent="2" name="spr_autor_book"/>
-    <table id="240" parent="2" name="spr_autors"/>
-    <table id="241" parent="2" name="spr_books"/>
-    <table id="242" parent="2" name="spr_continents"/>
-    <table id="243" parent="2" name="spr_continents_attr"/>
-    <table id="244" parent="2" name="spr_continents_attr_val"/>
-    <table id="245" parent="2" name="spr_continents_details"/>
-    <table id="246" parent="2" name="spr_countries"/>
-    <table id="247" parent="2" name="spr_countries_attr"/>
-    <table id="248" parent="2" name="spr_countries_attr_val"/>
-    <table id="249" parent="2" name="spr_countries_details"/>
-    <table id="250" parent="2" name="spr_units"/>
-    <table id="251" parent="2" name="tl_relationships"/>
-    <table id="252" parent="2" name="users"/>
-    <table id="253" parent="2" name="users_permissions"/>
-    <table id="254" parent="2" name="users_roles"/>
-    <column id="255" parent="229" name="id">
+    <table id="235" parent="2" name="sk_technologies"/>
+    <table id="236" parent="2" name="sk_technology_type"/>
+    <table id="237" parent="2" name="sk_types"/>
+    <table id="238" parent="2" name="spr_autor_book"/>
+    <table id="239" parent="2" name="spr_autors"/>
+    <table id="240" parent="2" name="spr_books"/>
+    <table id="241" parent="2" name="spr_continents"/>
+    <table id="242" parent="2" name="spr_continents_attr"/>
+    <table id="243" parent="2" name="spr_continents_attr_val"/>
+    <table id="244" parent="2" name="spr_continents_details"/>
+    <table id="245" parent="2" name="spr_countries"/>
+    <table id="246" parent="2" name="spr_countries_attr"/>
+    <table id="247" parent="2" name="spr_countries_attr_val"/>
+    <table id="248" parent="2" name="spr_countries_details"/>
+    <table id="249" parent="2" name="spr_units"/>
+    <table id="250" parent="2" name="tl_relationships"/>
+    <table id="251" parent="2" name="users"/>
+    <table id="252" parent="2" name="users_permissions"/>
+    <table id="253" parent="2" name="users_roles"/>
+    <column id="254" parent="229" name="id">
       <Position>1</Position>
       <DataType>bigint(20) unsigned|0s</DataType>
       <NotNull>1</NotNull>
