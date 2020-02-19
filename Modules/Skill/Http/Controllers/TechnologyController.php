@@ -2,14 +2,18 @@
 
 namespace Modules\Skill\Http\Controllers;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Modules\Skill\Entities\Technology;
 use Modules\Skill\Entities\Technology\Type;
+use Modules\Skill\Traits\TraitSkillDevModel;
 
 class TechnologyController extends Controller
 {
+    use TraitSkillDevModel;
+
     /**
      * Display a listing of the resource.
      * @return Response
@@ -18,7 +22,7 @@ class TechnologyController extends Controller
     {
         $columns = Technology::getColumns();
         $captions = Technology::getColumnsWithCaptions();
-        return view('skill::technologies.index', ['columns' => $columns,'captions'=>$captions]);
+        return view('skill::technologies.index', ['columns' => $columns, 'captions' => $captions]);
     }
 
     /**
@@ -83,19 +87,57 @@ class TechnologyController extends Controller
 
 
     /**
-     * Test data
+     *  Print tree structure in blade template
+     * @return \View
+     */
+    public function printTreeTemplate()
+    {
+        $technologies = Technology::whereTypeId(7)->with('childrenTechnologies')->get();
+        return view('skill::technologies.technologies', compact('technologies'));
+    }
+
+
+    /**
+     * Print custom parent tree structure
      *
      */
-    public function test()
+    public function printTree(Request $request)
     {
-   //   return Technology::getLanguagesSite();
-  // Technology::reloadTechnologiesSite();
-        $technologies= Type::find(1)->technologies;
-     foreach ($technologies as $t){
-         echo  $t->name.'<br>';
-     }
-        //   dd(Technology::find(1)->name,Technology::find(1)->types->find(1)->name);
+        $sep = '-';
+        $params = [
+            ['column' => 'type_id', 'op' => '=', 'val' => 7],
+            ['column' => 'name', 'op' => 'like', 'val' => "%Android%"],
+        ];
+        $technogies = $this->getApiModel($request, Technology::class, $params, true)['model'];
+        $technologies = $technogies->with('childrenTechnologies')->get();
+        foreach ($technologies as $technology) {
+            echo '<b>' . $technology->name . '</b><br>';
+            foreach ($technology->childrenTechnologies as $childTechnology) {
+                $this->printTreeChild($childTechnology, $sep);
+            }
+        }
+    }
 
+    /**
+     * Print custom child tree structure
+     * @param Model $child_technology
+     * @param string $sep
+     *
+     */
+    public function printTreeChild($child_technology, $sep)
+    {
+        $sep = $sep . '----';
+        echo $sep . $child_technology->name . '<br>';;
+        if ($child_technology->technologies) {
+            foreach ($child_technology->technologies as $childTechnology)
+                $this->printTreeChild($childTechnology, $sep);
+        }
+    }
+
+    public function treeData()
+    {
+
+      return json_decode(Technology::getTreeData())->data;
     }
 
 }

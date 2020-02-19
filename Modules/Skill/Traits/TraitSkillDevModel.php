@@ -2,7 +2,9 @@
 
 namespace Modules\Skill\Traits;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use phpDocumentor\Reflection\DocBlock\Tags\Param;
 
 trait TraitSkillDevModel
 {
@@ -66,9 +68,20 @@ trait TraitSkillDevModel
     }
 
 //    public function getApiModel()
-    public function getApiModel(Request $request, $model)
+/**
+ *  Get API model with parametr
+ *@param Request $id
+ *@param Model $model
+ *@param array $params
+ *@param boolean withModel
+ *
+ *
+ * @return mixed
+ *
+ **/
+    public function getApiModel(Request $request, $model, $params = [], bool $withModel = false)
     {
-        $this->request =$request;
+        $this->request = $request;
         $this->model = $model;
         $this->fields = $model::query()->getModel()->getFillable();
 
@@ -88,7 +101,22 @@ trait TraitSkillDevModel
         $totalSummary = $this->request->totalSummary;
         $group = json_decode($this->request->group);
         $groupSummary = $this->request->groupSummary;
-        $data = $this->model::take($take)->skip($skip);
+        $data = $this->model;
+        $c = 0;
+        if (!empty($params)) {
+            foreach ($params as $key => $v) {
+                if ($c == 0) {
+
+                    $data = $data::where($v['column'],$v['op'],$v['val']);
+                } else {
+                    $data = $data->where($v['column'],$v['op'],$v['val']);
+                }
+                $c++;
+            }
+            $data = $data->take($take)->skip($skip);
+        } else {
+            $data = $data::take($take)->skip($skip);
+        }
 
 
 //1) только при обычном отображении таблицы
@@ -206,11 +234,18 @@ trait TraitSkillDevModel
                 $items = $this->model::where($group_column, '=', $a[$group_column])->whereRaw($this->JsonToSQL(json_encode($filters)))->orderBy($sort_column, $sort_operator)->get();
                 $data_group[] = ['key' => $a[$group_column], 'items' => $items, 'count' => count($items), 'summary' => [1, 3]];
             }
+
             $res['data'] = $data_group;
             $res['groupCount'] = $data->groupBy($group_column)->count();
             $res['totalCount'] = $data->count();
-        }
-        return json_encode($res);
 
+        }
+        if ($withModel) {
+            $res['model']=$data;
+            return $res;
+        } else
+        return json_encode($res);
     }
+
+
 }

@@ -1,6 +1,8 @@
 <?php
+
 namespace Modules\Skill\Repositories;
 
+use Illuminate\Http\Request;
 use Modules\Skill\Repositories\Interfaces\TechnologyRepositoryInterface;
 use Curl\Curl;
 use Symfony\Component\DomCrawler\Crawler;
@@ -38,8 +40,8 @@ class TechnologyRepository implements TechnologyRepositoryInterface
             $data = $crawler->filter('body > section > section > section > article > ul')->eq(5)->filter('li')->each(function (Crawler $node, $i) {
                 return [
                     'name' => trim($node->filter('li')->text()),
-                    'slug' =>Str::slug(trim($node->filter('li')->text())),
-                    'descr'=>'Description for '. trim($node->filter('li')->text())
+                    'slug' => Str::slug(trim($node->filter('li')->text())),
+                    'descr' => 'Description for ' . trim($node->filter('li')->text())
                 ];
             });
             return collect($data);
@@ -54,11 +56,11 @@ class TechnologyRepository implements TechnologyRepositoryInterface
             DB::table('sk_types')->delete();
             // Begin value generator with 1
             DB::statement('ALTER TABLE sk_technologies AUTO_INCREMENT = 1');
-              $technologies= Technology::getTechnologiesSite()->sortBy('name');
+            $technologies = Technology::getTechnologiesSite()->sortBy('name');
             $technologies->each(function ($item, $key) {
                 $technology = new Technology([
                     'name' => $item['name'],
-                    'slug' => Str::slug( $item['name']),
+                    'slug' => Str::slug($item['name']),
                     'descr' => $item['descr'],
                 ]);
                 $technology->save();
@@ -69,4 +71,12 @@ class TechnologyRepository implements TechnologyRepositoryInterface
         }
         return true;
     }
+
+    public static function treeData()
+    {
+      $data=  DB::table('sk_technologies')->select(['id','technology_id','name'])->whereNotNull('technology_id');
+      $data1['data']=  DB::table('sk_technologies')->select(['id','technology_id','name'])->where('type_id','=',7)->union($data)->get();
+     return json_encode( $data1);
+    }
+
 }
