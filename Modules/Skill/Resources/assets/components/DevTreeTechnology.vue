@@ -2,22 +2,21 @@
     <div>
         <DxTreeList
             id="tree-list"
-            :data-source="tasksData"
-            :expanded-row-keys="[1, 2]"
+            :data-source="dataSource"
             :show-row-lines="true"
             :show-borders="true"
             :column-auto-width="true"
             :word-wrap-enabled="true"
-            key-expr="Task_ID"
-            parent-id-expr="Task_Parent_ID"
-            has-items-expr="Has_Items"
+            key-expr="id"
+            parent-id-expr="technology_id"
+            has-items-expr="true"
             @initNewRow="initNewRow($event)"
         >
-            <DxRemoteOperations
-                :filtering="true"
-                :sorting="true"
-                :grouping="true"
-            />
+            <!--            <DxRemoteOperations-->
+            <!--                :filtering="true"-->
+            <!--                :sorting="true"-->
+            <!--                :grouping="true"-->
+            <!--            />-->
             <DxSearchPanel :visible="true"/>
             <DxHeaderFilter :visible="true"/>
             <DxEditing
@@ -26,48 +25,47 @@
                 :allow-deleting="true"
                 mode="row"
             />
+            <DxSelection
+                :recursive="true"
+                mode="multiple"
+            />
+
             <DxColumn
-                :min-width="250"
-                data-field="Task_Subject"
-            >
-                <DxRequiredRule/>
-            </DxColumn>
+                data-field="name"
+            />
+
+            <!--            <DxColumn-->
+            <!--                :min-width="250"-->
+            <!--                data-field="Task_Subject"-->
+            <!--            >-->
+            <!--                <DxRequiredRule/>-->
+            <!--            </DxColumn>-->
+
+
+
             <DxColumn
-                :min-width="120"
-                data-field="Task_Assigned_Employee_ID"
-                caption="Assigned"
+                data-field='type_id'
+                caption="Тип"
+                data-type="number"
+                :allow-grouping="true"
+                :allow-editing="true"
             >
                 <DxLookup
-                    :data-source="employeesData"
-                    value-expr="ID"
-                    display-expr="Name"
+                    :data-source="storeType"
+                    value-expr="id"
+                    display-expr="name"
                 />
                 <DxRequiredRule/>
             </DxColumn>
-            <DxColumn
-                :min-width="120"
-                data-field="Task_Status"
-                caption="Status"
-            >
-                <DxLookup :data-source="statusesData"/>
-            </DxColumn>
-            <DxColumn
-                data-field="Task_Start_Date"
-                caption="Start Date"
-                data-type="date"
-            />
-            <DxColumn
-                data-field="Task_Due_Date"
-                caption="Due Date"
-                data-type="date"
-            />
         </DxTreeList>
     </div>
 </template>
 <script>
+
+
     import {
         DxTreeList,
-        DxRemoteOperations,
+        DxSelection,
         DxColumn,
         DxSearchPanel,
         DxHeaderFilter,
@@ -77,10 +75,34 @@
     } from 'devextreme-vue/tree-list';
     import CustomStore from "devextreme/data/custom_store";
     import axios from "axios";
+
     const url = 'http://basked.pr/api/skill';
+
+    function handleErrors(response) {
+        if (!response.ok)
+            throw Error(response.statusText);
+        return response;
+    }
+
+    function isNotEmpty(value) {
+        return value !== undefined && value !== null && value !== "";
+    }
+
+    function dataToUpdate(key, values) {
+        let res = {};
+        for (let k in key) {
+            if (k in values) {
+                res[k] = values[k]
+            } else {
+                res[k] = key[k]
+            }
+        }
+        return res;
+    }
 
     const treeDataSource = {
         store: new CustomStore({
+            key: 'id',
             load: (loadOptions) => {
                 let params = "?";
                 [
@@ -99,16 +121,17 @@
                 });
                 params = params.slice(0, -1);
 
-                return fetch(`${url}/technologies${params}`)
+                return fetch(`${url}/technologies/print-tree-data${params}`)
                     .then(handleErrors)
                     .then(response => response.json())
                     .then((result) => {
+                        console.log(result)
                         return {
-                            key: result.data.id,
+                            // key: result.data.id,
                             data: result.data,
-                            totalCount: result.totalCount,
-                            summary: result.summary,
-                            groupCount: result.groupCount
+                            // totalCount: result.totalCount,
+                            // summary: result.summary,
+                            // groupCount: result.groupCount
                         }
                     });
             },
@@ -116,28 +139,51 @@
                 return axios.post(`${url}/technologies`, values, {method: "POST"});//.then());
             },
             remove: (key) => {
-                return axios.delete(`${url}/technologies/` + encodeURIComponent(key.id), {method: "DELETE"});//.then(handleErrors);
+                return axios.delete(`${url}/technologies/` + encodeURIComponent(key), {method: "DELETE"});//.then(handleErrors);
             },
+
             update: (key, values) => {
-                return axios.put(`${url}/technologies/` + encodeURIComponent(key.id), dataToUpdate(key, values), {method: "PUT"});//.then(handleErrors);
-            },
+                return fetch(`${url}/technologies/${encodeURIComponent(key)}`, {
+                    method: "PUT",
+                    body: JSON.stringify(values),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }).then(handleErrors);
+            } ,
+
+
+            // update: (key, values) => {
+            //     return axios.put(`${url}/technologies/` + encodeURIComponent(key), dataToUpdate(values, values), {method: "PUT"});//.then(handleErrors);
+            // },
             onUpdating: function (key, values) {
+                console.log(key, values);
                 console.log('onUpdating');
             },
             onUpdated: function (key, values) {
+                console.log(key, values);
                 console.log('onUpdated');
             }
         })
     };
-
-
+    const storeType = new CustomStore({
+        key: 'id',
+        byKey: function (key) {
+            return {id: key};
+        },
+        load: (loadOptions) => {
+            return axios.get(`${url}/types/look-types`).then(response => {
+                return response.data
+            });
+        }
+    });
 
 
     export default {
         name: "DevTreeTechnology",
         components: {
             DxTreeList,
-            DxRemoteOperations,
+            DxSelection,
             DxColumn,
             DxSearchPanel,
             DxHeaderFilter,
@@ -147,35 +193,15 @@
         },
         data() {
             return {
-                dataSource : treeDataSource,
-                // tasksData: AspNetData.createStore({
-                //     key: 'Task_ID',
-                //     loadUrl: `${url}/Tasks`,
-                //     insertUrl: `${url}/InsertTask`,
-                //     updateUrl: `${url}/UpdateTask`,
-                //     deleteUrl: `${url}/DeleteTask`,
-                //     onBeforeSend: function(method, ajaxOptions) {
-                //         ajaxOptions.xhrFields = { withCredentials: true };
-                //     }
-                // }),
-                // employeesData: AspNetData.createStore({
-                //     key: 'ID',
-                //     loadUrl: `${url}/TaskEmployees`
-                // }),
-                // statusesData: [
-                //     'Not Started',
-                //     'Need Assistance',
-                //     'In Progress',
-                //     'Deferred',
-                //     'Completed'
-                // ]
+                storeType,
+                dataSource: treeDataSource,
             };
         },
         methods: {
             initNewRow(e) {
-                e.data.Task_Status = 'Not Started';
-                e.data.Task_Start_Date = new Date();
-                e.data.Task_Due_Date = new Date();
+                // e.data.Task_Status = 'Not Started';
+                // e.data.Task_Start_Date = new Date();
+                // e.data.Task_Due_Date = new Date();
             }
         }
     };

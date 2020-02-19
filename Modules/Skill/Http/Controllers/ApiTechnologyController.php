@@ -121,4 +121,11 @@ class ApiTechnologyController extends Controller
         $technology->save();
     }
 
+
+    public function treeData()
+    {
+//        return json_decode(Technology::getTreeData())->data;
+        return Technology::getTreeData() ;
+    }
+
 }

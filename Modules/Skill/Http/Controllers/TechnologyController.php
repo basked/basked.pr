@@ -136,8 +136,8 @@ class TechnologyController extends Controller
 
     public function treeData()
     {
-
-      return json_decode(Technology::getTreeData())->data;
+        $columns = Technology::getColumns();
+        $captions = Technology::getColumnsWithCaptions();
+        return view('skill::technologies.tree_techologies', ['columns' => $columns, 'captions' => $captions]);
     }
-
 }

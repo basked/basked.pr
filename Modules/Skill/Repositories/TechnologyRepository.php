@@ -74,8 +74,8 @@ class TechnologyRepository implements TechnologyRepositoryInterface
 
     public static function treeData()
     {
-      $data=  DB::table('sk_technologies')->select(['id','technology_id','name'])->whereNotNull('technology_id');
-      $data1['data']=  DB::table('sk_technologies')->select(['id','technology_id','name'])->where('type_id','=',7)->union($data)->get();
+      $data=  DB::table('sk_technologies')->select(['id','technology_id','name','type_id'])->whereNotNull('technology_id');
+      $data1['data']=  DB::table('sk_technologies')->select(['id','technology_id','name','type_id'])->where('type_id','=',7)->union($data)->get();
      return json_encode( $data1);
     }
 

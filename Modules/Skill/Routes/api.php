@@ -21,6 +21,7 @@ use Illuminate\Http\Request;
 Route::prefix('skill')->group(  function () {
 
     /*TECHNOLOGY API ROUTERS*/
+    Route::get('/technologies/print-tree-data/', 'ApiTechnologyController@treeData');
     Route::get('/technologies/look-technologies/', 'ApiTechnologyController@lookTechnologies');
     Route::get('/technologies/{params?}', 'ApiTechnologyController@index');
     Route::post('/technologies/', 'ApiTechnologyController@store');
