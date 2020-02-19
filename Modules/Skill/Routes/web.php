@@ -14,7 +14,9 @@
 Route::prefix('skill')->group(function() {
 
     /*TECHNOLOGY ROUTERS*/
-
+    Route::get('/technologies/print-tree/', 'TechnologyController@printTree');
+    Route::get('/technologies/print-tree-data/', 'TechnologyController@treeData');
+    Route::get('/technologies/print-tree-template/', 'TechnologyController@printTreeTemplate');
     Route::get('/technologies', 'TechnologyController@index');
     Route::get('/test-technologies/', 'TechnologyController@test');
 

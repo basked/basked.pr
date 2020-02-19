@@ -21,7 +21,7 @@ class ApiTypeController extends Controller
      */
     public function index(Request $request)
     {
-        return $this->getApiModel($request, Type::class);
+        return $this->getApiModel($request, Type::class,[]);
     }
 
     /**

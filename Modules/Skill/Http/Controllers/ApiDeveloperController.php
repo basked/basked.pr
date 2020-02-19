@@ -19,7 +19,7 @@ class ApiDeveloperController extends Controller
      */
     public function index(Request $request)
     {
-        return $this->getApiModel($request, Developer::class);
+        return $this->getApiModel($request, Developer::class,[]);
     }
 
 

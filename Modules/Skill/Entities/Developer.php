@@ -4,6 +4,26 @@ namespace Modules\Skill\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Modules\Skill\Entities\Developer
+ *
+ * @property int $id
+ * @property string $name
+ * @property string|null $slug
+ * @property string|null $descr
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Skill\Entities\Developer newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Skill\Entities\Developer newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Skill\Entities\Developer query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Skill\Entities\Developer whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Skill\Entities\Developer whereDescr($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Skill\Entities\Developer whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Skill\Entities\Developer whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Skill\Entities\Developer whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Skill\Entities\Developer whereUpdatedAt($value)
+ * @mixin \Eloquent
+ */
 class Developer extends Model
 {
     const captions = ['ID', 'Наименование', 'slug', 'Описание'];

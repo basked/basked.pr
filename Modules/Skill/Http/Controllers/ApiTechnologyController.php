@@ -14,6 +14,10 @@ class ApiTechnologyController extends Controller
 {
 
     use TraitSkillDevModel;
+    protected $model;
+    protected $fields;
+    protected $request;
+    protected $take_default = 5;
 
     /**
      * Display a listing of the resource.
@@ -21,7 +25,7 @@ class ApiTechnologyController extends Controller
      */
     public function index(Request $request)
     {
-        return $this->getApiModel($request, Technology::class);
+        return $this->getApiModel($request, Technology::class, []);
     }
 
     /**
@@ -99,21 +103,22 @@ class ApiTechnologyController extends Controller
 
     public function lookTechnologies()
     {
-        $data['data']=Technology::all('id', 'name')->toArray();
-        return  $data;
+        $data['data'] = Technology::all('id', 'name')->toArray();
+        return $data;
     }
 
     public function resetType($id)
     {
-        $technology=Technology::find($id);
-        $technology->type_id=null;
+        $technology = Technology::find($id);
+        $technology->type_id = null;
         $technology->save();
     }
 
     public function resetCategory($id)
     {
-        $technology=Technology::find($id);
-        $technology->technology_id=null;
+        $technology = Technology::find($id);
+        $technology->technology_id = null;
         $technology->save();
     }
+
 }
