@@ -23,12 +23,24 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Skill\Entities\Developer whereSlug($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Skill\Entities\Developer whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property-read \Modules\Skill\Entities\Roadmap $roadmap
  */
 class Developer extends Model
 {
     const captions = ['ID', 'Наименование', 'slug', 'Описание'];
     protected $fillable = ['id', 'name', 'slug', 'descr'];
     protected $table = 'sk_developers';
+
+
+    /** Related on Roadmap
+     *
+     *
+     * **/
+    public function roadmap()
+    {
+        return $this->hasOne(Roadmap::class, 'developer_id', 'id');
+    }
+
     /**
      * Names columms for model
      * @return array

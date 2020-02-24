@@ -20,7 +20,7 @@ use Illuminate\Http\Request;
 
 Route::prefix('skill')->group(  function () {
 
-    /*TECHNOLOGY API ROUTERS*/
+    /*TECHNOLOGIES API ROUTERS*/
     Route::get('/technologies/print-tree-data/', 'ApiTechnologyController@treeData');
     Route::get('/technologies/look-technologies/', 'ApiTechnologyController@lookTechnologies');
     Route::get('/technologies/{params?}', 'ApiTechnologyController@index');
@@ -30,7 +30,7 @@ Route::prefix('skill')->group(  function () {
     Route::put('/technologies/reset-type/{id}','ApiTechnologyController@resetType');
     Route::put('/technologies/reset-category/{id}','ApiTechnologyController@resetCategory');
 
-    /*TYPE API ROUTERS*/
+    /*TYPES API ROUTERS*/
     Route::get('/types/look-types', 'ApiTypeController@lookTypes');
     Route::get('/types/{params?}', 'ApiTypeController@index');
     Route::post('/types/', 'ApiTypeController@store');
@@ -38,12 +38,20 @@ Route::prefix('skill')->group(  function () {
     Route::delete('/types/{id}', 'ApiTypeController@destroy');
 
 
-    /*DEVELOPE API ROUTERS*/
+    /*DEVELOPERS API ROUTERS*/
     Route::get('/developers/{params?}', 'ApiDeveloperController@index');
     Route::post('/developers/', 'ApiDeveloperController@store');
     Route::put('/developers/{id}', 'ApiDeveloperController@update');
     Route::delete('/developers/{id}', 'ApiDeveloperController@destroy');
 
+
+    /*ROADMAPS API ROUTERS*/
+    Route::get('/roadmaps/look-developers', 'ApiRoadmapController@lookDevelopers');
+    Route::get('/roadmaps/{params?}', 'ApiRoadmapController@index');
+    Route::post('/roadmaps/', 'ApiRoadmapController@store');
+    Route::put('/roadmaps/{id}', 'ApiRoadmapController@update');
+    Route::delete('/roadmaps/{id}', 'ApiRoadmapController@destroy');
+    Route::put('/roadmaps/reset-developer/{id}','ApiRoadmapController@resetDeveloper');
 
 
 });

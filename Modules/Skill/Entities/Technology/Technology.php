@@ -50,6 +50,14 @@ class Technology extends Model
     {
         return $this->belongsTo(Type::class, 'type_id', 'id' );
     }
+    /**
+     *  Relationship on sk_technology_roadmap
+     *
+     **/
+    public function roadmaps()
+    {
+        return $this->belongsToMany(Roadmap::class, 'sk_technology_roadmap', 'technology_id','roadmap_id');
+    }
 
     // Each category may have one parent
     public function technologies() {

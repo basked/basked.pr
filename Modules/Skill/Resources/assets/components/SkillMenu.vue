@@ -29,6 +29,7 @@
                         </div>
                     </li>
                     <a class="nav-item nav-link" href="http://basked.pr/skill/developers">Developers</a>
+                    <a class="nav-item nav-link" href="http://basked.pr/skill/roadmaps">Roadmaps</a>
                 </div>
             </div>
         </nav>

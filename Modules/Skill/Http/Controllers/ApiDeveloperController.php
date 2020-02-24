@@ -100,4 +100,7 @@ class ApiDeveloperController extends Controller
     {
         Developer::destroy([$id]);
     }
+
+
+
 }

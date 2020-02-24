@@ -9,8 +9,6 @@
             :allow-column-reordering="true"
         >
             <DxEditing
-                :select-text-on-edit-start="selectTextOnEditStart"
-                :start-edit-action="startEditAction"
                 :allow-updating="true"
                 :allow-adding="true"
                 :allow-deleting="true"

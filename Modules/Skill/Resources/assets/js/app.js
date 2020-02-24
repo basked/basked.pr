@@ -20,7 +20,9 @@ Vue.component('skill-menu', require('../components/SkillMenu.vue').default);
 Vue.component('dev-grid-technology', require('../components/DevGridTechnology.vue').default);
 Vue.component('dev-grid-type', require('../components/DevGridType.vue').default);
 Vue.component('dev-grid-developer', require('../components/DevGridDeveloper.vue').default);
+Vue.component('dev-grid-roadmap', require('../components/DevGridRoadmap.vue').default);
 Vue.component('dev-tree-technology', require('../components/DevTreeTechnology.vue').default);
+
 
 
 
