@@ -13,13 +13,14 @@ use Validator;
 class ApiDeveloperController extends Controller
 {
     use TraitSkillDevModel;
+
     /**
      * Display a listing of the resource.
      * @return Response
      */
     public function index(Request $request)
     {
-        return $this->getApiModel($request, Developer::class,[]);
+        return $this->getApiModel($request, Developer::class, []);
     }
 
 
@@ -82,12 +83,12 @@ class ApiDeveloperController extends Controller
      */
     public function update(Request $request, $id)
     {
-            $developer = Developer::find($id);
-            $developer->id = $request->id;
-            $developer->name = $request->name;
-            $developer->slug = Str::slug($request->name, '-');
-            $developer->descr = $request->descr;
-            $developer->save();
+        $developer = Developer::find($id);
+        $developer->id = is_null($request->id) ? $developer->id : $request->id;
+        $developer->name = is_null($request->name) ? $developer->name : $request->name;
+        $developer->slug = Str::slug(is_null($request->name) ? $developer->name : $request->name, '-');
+        $developer->descr = is_null($request->descr) ? $developer->descr : $request->descr;
+        $developer->save();
     }
 
     /**

@@ -80,13 +80,14 @@ class ApiTechnologyController extends Controller
      */
     public function update(Request $request, $id)
     {
+//        dd($request->all());
         $technology = Technology::find($id);
-        $technology->id = $request->id;
-        $technology->name = $request->name;
-        $technology->slug = Str::slug($request->name, '-');
-        $technology->type_id = $request->type_id;
-        $technology->descr = $request->descr;
-        $technology->technology_id = $request->technology_id;
+        $technology->id = is_null($request->id) ? $technology->id : $request->id;
+        $technology->name = is_null($request->name) ? $technology->name : $request->name;
+        $technology->slug = Str::slug(is_null($request->name) ? $technology->slug : $request->name, '-');
+        $technology->type_id = is_null($request->type_id) ? $technology->type_id : $request->type_id;
+        $technology->descr = is_null($request->descr) ? $technology->descr : $request->descr;
+        $technology->technology_id = is_null($request->technology_id) ? $technology->technology_id : $request->technology_id;
         $technology->save();
     }
 
@@ -125,7 +126,7 @@ class ApiTechnologyController extends Controller
     public function treeData()
     {
 //        return json_decode(Technology::getTreeData())->data;
-        return Technology::getTreeData() ;
+        return Technology::getTreeData();
     }
 
 }

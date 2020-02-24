@@ -21,7 +21,7 @@ class ApiTypeController extends Controller
      */
     public function index(Request $request)
     {
-        return $this->getApiModel($request, Type::class,[]);
+        return $this->getApiModel($request, Type::class, []);
     }
 
     /**
@@ -85,24 +85,12 @@ class ApiTypeController extends Controller
     public function update(Request $request, $id)
     {
         $type = Type::findOrFail($id);
-
         $type->update();
-
-        if ($request->id) {
-            $type->id = $request->id;
-        }
-
-        if ($request->name) {
-            $type->name = $request->name;
-            $type->slug = Str::slug($request->name, '-');
-        }
-
-        if ($request->descr) {
-            $type->descr = $request->descr;
-        }
-
+        $type->id = is_null($request->id) ? $type->id : $request->id;
+        $type->name = is_null($request->name) ? $type->name : $request->id;
+        $type->slug = Str::slug(is_null($request->name) ? $type->name : $request->id, '-');
+        $type->descr = is_null($request->descr) ? $type->descr : $request->descr;
         $type->save();
-
     }
 
     /**
@@ -118,7 +106,7 @@ class ApiTypeController extends Controller
 
     public function lookTypes()
     {
-        $data['data']= Type::all('id','name')->toArray();
+        $data['data'] = Type::all('id', 'name')->toArray();
         return $data;
     }
 }

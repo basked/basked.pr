@@ -56,9 +56,9 @@ class ApiCountryController extends Controller
     {
         $country = Country::find($id);
         $country->update();
-        $country->id = $request->id;
-        $country->name = $request->name;
-        $country->slug = Str::slug($request->name, '-');
+        $country->id = is_null($request->id) ? $country->id : $request->id;
+        $country->name = is_null($request->name) ? $country->name : $request->name;
+        $country->slug = Str::slug(s_null($request->name) ? $country->name : $request->name, '-');
         $country->save();
     }
 

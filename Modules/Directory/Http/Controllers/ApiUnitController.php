@@ -38,7 +38,7 @@ class ApiUnitController extends Controller
     public function store(Request $request)
     {
         $v = Validator::make($request->all(), [
-           // 'name' => 'required|unique:spr_countries,name',
+            // 'name' => 'required|unique:spr_countries,name',
         ]);
         if ($v->fails()) {
             return redirect()->back()->withErrors($v->errors());
@@ -86,17 +86,19 @@ class ApiUnitController extends Controller
      */
     public function update(Request $request, $id)
     {
+        /////////!!!!!!!!!!!!!!!!!!!!
         $unit = Unit::find($id);
-        $unit->id = $request->id;
-        $unit->code = $request->code;
-        $unit->name = $request->name;
-        $unit->symbol_national = $request->symbol_national;
-        $unit->symbol_intern = $request->symbol_intern;
-        $unit->code_national = $request->code_national;
-        $unit->code_intern = $request->code_intern;
-        $unit->section = $request->section;
-        $unit->unit_group = $request->unit_group;
-        $unit->descr = $request->descr;
+        $unit->update();
+        $unit->id = is_null($request->id) ? $unit->id : $request->id;
+        $unit->code = is_null($request->code) ? $unit->code : $request->code;
+        $unit->name = is_null($request->name) ? $unit->name : $request->name;
+        $unit->symbol_national = is_null($request->symbol_national) ? $unit->symbol_national : $request->symbol_national;
+        $unit->symbol_intern = is_null($request->symbol_intern) ? $unit->symbol_intern : $request->symbol_intern;
+        $unit->code_national = is_null($request->code_national) ? $unit->code_national : $request->code_national;
+        $unit->code_intern = is_null($request->code_intern) ? $unit->code_intern : $request->code_intern;
+        $unit->section = is_null($request->section) ? $unit->section : $request->section;
+        $unit->unit_group = is_null($request->unit_group) ? $unit->unit_group : $request->unit_group;
+        $unit->descr = is_null($request->descr) ? $unit->descr : $request->descr;
         $unit->save();
     }
 
