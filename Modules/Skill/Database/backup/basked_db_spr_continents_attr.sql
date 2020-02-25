@@ -1,0 +1,1 @@
+INSERT INTO basked_db.spr_continents_attr (id, name, slug, type, created_at, updated_at, `group`) VALUES (1, 'Площадь', 'ploschad', 'string', '2020-01-31 16:31:15', '2020-01-31 16:31:20', '');

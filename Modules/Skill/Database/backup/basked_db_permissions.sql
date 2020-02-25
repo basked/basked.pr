@@ -1,0 +1,2 @@
+INSERT INTO basked_db.permissions (id, name, slug, created_at, updated_at) VALUES (1, 'Manage users', 'manage-users', '2020-01-24 11:52:02', '2020-01-24 11:52:02');
+INSERT INTO basked_db.permissions (id, name, slug, created_at, updated_at) VALUES (2, 'Create Tasks', 'create-tasks', '2020-01-24 11:52:02', '2020-01-24 11:52:02');
