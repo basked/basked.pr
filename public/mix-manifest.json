@@ -1,8 +1,8 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css",
-    "/js/directory.js": "/js/directory.js",
-    "/css/directory.css": "/css/directory.css",
+    "/js/app.js": "/js/app.js?id=2478223ebc1231b2295d",
+    "/css/app.css": "/css/app.css?id=2a4461fc35df4e8d0a06",
+    "/js/directory.js": "/js/directory.js?id=64e2fa53770b0d4a2094",
+    "/css/directory.css": "/css/directory.css?id=d41d8cd98f00b204e980",
     "/js/skill.js": "/js/skill.js",
     "/css/skill.css": "/css/skill.css"
 }

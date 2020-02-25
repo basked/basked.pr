@@ -1,0 +1,2 @@
+INSERT INTO basked_db.sk_roadmaps (id, developer_id, name, slug, descr) VALUES (1, 1, 'Roadmap for Andriod developers', 'roadmap-for-andriod-developers', 'Разработка Andriod приложений');
+INSERT INTO basked_db.sk_roadmaps (id, developer_id, name, slug, descr) VALUES (3, 4, 'Roadmap for Front-end developers', 'roadmap-for-front-end-developers', 'Фронтенд');

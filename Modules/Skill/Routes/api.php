@@ -46,12 +46,20 @@ Route::prefix('skill')->group(  function () {
 
 
     /*ROADMAPS API ROUTERS*/
+    Route::get('/roadmaps/{id}/technologies', 'ApiRoadmapController@technologies');
     Route::get('/roadmaps/look-developers', 'ApiRoadmapController@lookDevelopers');
+    Route::get('/roadmaps/look-technologies', 'ApiRoadmapController@lookTechnologies');
     Route::get('/roadmaps/{params?}', 'ApiRoadmapController@index');
     Route::post('/roadmaps/', 'ApiRoadmapController@store');
+     // для работы с pivot таблицей TechnologyRoadmap
+    Route::post('/roadmaps/{id}/insert-technologies', 'ApiRoadmapController@insertTechnology');
+    Route::delete('/roadmaps/{id}/delete-technologies/{technology_id}', 'ApiRoadmapController@deleteTechnology');
+    Route::put('/roadmaps/{id}/update-technologies/{technology_id}', 'ApiRoadmapController@updateTechnology');
+
     Route::put('/roadmaps/{id}', 'ApiRoadmapController@update');
     Route::delete('/roadmaps/{id}', 'ApiRoadmapController@destroy');
     Route::put('/roadmaps/reset-developer/{id}','ApiRoadmapController@resetDeveloper');
+
 
 
 });

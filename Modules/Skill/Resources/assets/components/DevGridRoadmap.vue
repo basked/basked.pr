@@ -23,7 +23,6 @@
                 :width="250"
                 data-field="descr"/>
 
-
             <DxColumn
                 data-field='developer_id'
                 caption="Разработчик"
@@ -38,13 +37,23 @@
                 />
             </DxColumn>
 
-            <
             <DxColumn
                 :width="210"
                 :buttons="editButtons"
                 type="buttons"
             >
             </DxColumn>
+
+            <DxMasterDetail
+                :enabled="true"
+                template="dev-grid-roadmap-technology"
+            />
+            <template #dev-grid-roadmap-technology="roadmapMasterDetail">
+                <DevGridRoadmapTechnology
+                    :roadmapMasterDetailData="roadmapMasterDetail.data"
+                />
+            </template>
+
 
             <DxEditing
                 :allow-updating="true"
@@ -71,13 +80,13 @@
     </div>
 </template>
 <script>
-    import 'devextreme/dist/css/dx.common.css';
-    import 'devextreme/dist/css/dx.darkmoon.css';
+
     import "font-awesome/css/font-awesome.css";
     import {DxCheckBox, DxSelectBox} from 'devextreme-vue';
     import axios from 'axios';
     import {
         DxDataGrid,
+        DxMasterDetail,
         DxColumn,
         DxPaging,
         DxPager,
@@ -89,11 +98,10 @@
         DxSearchPanel,
         DxFilterRow,
         DxHeaderFilter,
-
-
     } from 'devextreme-vue/data-grid';
     import {DxSwitch} from 'devextreme-vue/switch';
     import CustomStore from 'devextreme/data/custom_store';
+    import DevGridRoadmapTechnology from './DevGridRoadmapTechnology';
     import 'whatwg-fetch';
 
     const url = 'http://basked.pr/api/skill';
@@ -174,8 +182,10 @@
     export default {
         name: "DevGridRoadmap",
         components: {
+            DevGridRoadmapTechnology,
             DxSwitch,
             DxDataGrid,
+            DxMasterDetail,
             DxEditing,
             DxCheckBox,
             DxSelectBox,
