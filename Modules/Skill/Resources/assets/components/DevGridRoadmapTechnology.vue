@@ -10,7 +10,6 @@
                 :allow-editing="true"
             >
                 <DxLookup
-
                     :data-source="storeTechnologies"
                     value-expr="id"
                     display-expr="name"

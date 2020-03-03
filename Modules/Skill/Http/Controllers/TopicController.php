@@ -7,7 +7,7 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Modules\Skill\Entities\Technology;
 use Modules\Skill\Entities\Topic;
-use Modules\Skill\Traits\TraitSkillDevModel;
+
 
 class TopicController extends Controller
 {

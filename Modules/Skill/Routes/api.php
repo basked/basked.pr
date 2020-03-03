@@ -68,4 +68,14 @@ Route::prefix('skill')->group(  function () {
     Route::put('/topics/{id}', 'ApiTopicController@update');
     Route::delete('/topics/{id}', 'ApiTopicController@destroy');
 
+    // для работы с pivot таблицей Examples
+    Route::get('/topic/{topic_id}/examples', 'ApiExampleController@examples');
+    Route::post('/topic/{topic_id}/insert-examples', 'ApiExampleController@insertExample');
+    Route::delete('/topic/{topic_id}/delete-examples/{example_id}', 'ApiExampleController@deleteExample');
+    Route::put('/topic/{topic_id}/update-examples/{example_id}', 'ApiExampleController@updateExample');
+
+
+
+
+
 });

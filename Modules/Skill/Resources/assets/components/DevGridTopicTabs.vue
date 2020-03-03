@@ -7,7 +7,7 @@
             />
             <DevGridTopicExamples
                 slot="dev-grid-topic-examples"
-                :topic-id="topicMasterDetailData.key.id"
+                :topicMasterDetailData="topicMasterDetailData"
             />
             <DxItem
                 title="Ссылки для изучения"
@@ -15,7 +15,7 @@
             />
             <DevGridTopicLinks
                 slot="dev-grid-topic-links"
-                :topic-id="topicMasterDetailData.key.id"
+                :topicMasterDetailData="topicMasterDetailData"
             />
 
         </DxTabPanel>

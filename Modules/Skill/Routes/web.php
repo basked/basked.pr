@@ -40,6 +40,9 @@ Route::prefix('skill')->group(function() {
     Route::get('/test-topics/', 'TopicController@test');
 
 
+    /*EXAMPLES  ROUTERS*/
+    Route::get('/examples', 'ExampleController@index');
+    Route::get('/test-examples/', 'ExampleController@test');
 
 
 

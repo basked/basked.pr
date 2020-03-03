@@ -3,7 +3,7 @@
 namespace Modules\Skill\Entities;
 
 use Illuminate\Database\Eloquent\Model;
-use Modules\Skill\Entities\Topic;
+
 /**
  * Modules\Skill\Entities\Topic
  *
@@ -26,6 +26,8 @@ use Modules\Skill\Entities\Topic;
  * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Skill\Entities\Topic whereTechnologyId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Skill\Entities\Topic whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Modules\Skill\Entities\Example[] $examples
+ * @property-read int|null $examples_count
  */
 class Topic extends Model
 {
@@ -36,12 +38,17 @@ class Topic extends Model
     /**
      *  Refer on Technology Model
      *
-     *
      * **/
     public function technology(){
        return $this->belongsTo(Technology::class,'technology_id','id');
     }
-
+    /**
+     *  Refer on Topic Model
+     *
+     * **/
+    public function examples(){
+        return $this->hasMany(Example::class,'topic_id','id');
+    }
 
     /**
      * Names columms for model
