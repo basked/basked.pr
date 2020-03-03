@@ -21,7 +21,14 @@ Vue.component('dev-grid-technology', require('../components/DevGridTechnology.vu
 Vue.component('dev-grid-type', require('../components/DevGridType.vue').default);
 Vue.component('dev-grid-developer', require('../components/DevGridDeveloper.vue').default);
 Vue.component('dev-grid-roadmap', require('../components/DevGridRoadmap.vue').default);
+Vue.component('dev-grid-topic', require('../components/DevGridTopic.vue').default);
+Vue.component('dev-grid-topic-tabs', require('../components/DevGridTopicTabs.vue').default);
+Vue.component('dev-grid-topic-examples', require('../components/DevGridTopicExamples.vue').default);
+Vue.component('dev-grid-topic-links', require('../components/DevGridTopicLinks.vue').default);
+
+
 Vue.component('dev-tree-technology', require('../components/DevTreeTechnology.vue').default);
+
 
 
 

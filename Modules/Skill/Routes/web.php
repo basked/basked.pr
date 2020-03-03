@@ -31,9 +31,21 @@ Route::prefix('skill')->group(function() {
     Route::get('/test-developers/', 'DeveloperController@test');
 
 
-    /*ROADMAPS API ROUTERS*/
+    /*ROADMAPS ROUTERS*/
     Route::get('/roadmaps', 'RoadmapController@index');
     Route::get('/test-roadmaps/', 'RoadmapController@test');
+
+    /*TOPICS  ROUTERS*/
+    Route::get('/topics', 'TopicController@index');
+    Route::get('/test-topics/', 'TopicController@test');
+
+
+
+
+
+
+
+
 
 
 

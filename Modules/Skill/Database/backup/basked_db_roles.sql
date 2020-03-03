@@ -1,2 +1,0 @@
-INSERT INTO basked_db.roles (id, name, slug, created_at, updated_at) VALUES (1, 'Project Manager', 'project-manager', '2020-01-24 11:52:01', '2020-01-24 11:52:01');
-INSERT INTO basked_db.roles (id, name, slug, created_at, updated_at) VALUES (2, 'Web Developer', 'web-developer', '2020-01-24 11:52:01', '2020-01-24 11:52:01');

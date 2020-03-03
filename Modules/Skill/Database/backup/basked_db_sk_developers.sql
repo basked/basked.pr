@@ -1,9 +1,0 @@
-INSERT INTO basked_db.sk_developers (id, name, slug, descr, created_at, updated_at) VALUES (1, 'Andriod developer', 'andriod-developer', 'Разработчик мобильных приложений под Android', '2020-02-18 12:36:23', '2020-02-18 12:37:04');
-INSERT INTO basked_db.sk_developers (id, name, slug, descr, created_at, updated_at) VALUES (2, 'Web developer', 'web-developer', 'Разработчик веб-приложений', '2020-02-18 12:38:26', '2020-02-18 12:39:55');
-INSERT INTO basked_db.sk_developers (id, name, slug, descr, created_at, updated_at) VALUES (3, 'iOS developer', 'ios-developer', 'Разработчик мобильных приложений под iOS', '2020-02-18 12:40:41', '2020-02-18 12:40:41');
-INSERT INTO basked_db.sk_developers (id, name, slug, descr, created_at, updated_at) VALUES (4, 'Front-end developer', 'front-end-developer', 'Front-end разработчик', '2020-02-18 12:45:52', '2020-02-18 12:45:52');
-INSERT INTO basked_db.sk_developers (id, name, slug, descr, created_at, updated_at) VALUES (5, 'Game developer', 'game-developer', 'Разработчик игр', '2020-02-18 12:45:52', '2020-02-18 12:45:52');
-INSERT INTO basked_db.sk_developers (id, name, slug, descr, created_at, updated_at) VALUES (6, 'Back-end developer', 'back-end-developer', 'Back-end разработчик', '2020-02-18 12:45:52', '2020-02-18 12:45:52');
-INSERT INTO basked_db.sk_developers (id, name, slug, descr, created_at, updated_at) VALUES (7, 'Full-stack developer', 'full-stack-developer', 'Full-stack разработчик', '2020-02-18 12:47:15', '2020-02-18 12:47:15');
-INSERT INTO basked_db.sk_developers (id, name, slug, descr, created_at, updated_at) VALUES (8, '1C developer', '1c-developer', '1C программист', '2020-02-18 12:48:11', '2020-02-18 12:48:11');
-INSERT INTO basked_db.sk_developers (id, name, slug, descr, created_at, updated_at) VALUES (9, 'Software engineer', 'software-engineer', 'Инженер-программист', '2020-02-18 12:48:54', '2020-02-18 12:48:54');

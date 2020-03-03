@@ -23,6 +23,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Skill\Entities\Roadmap whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Skill\Entities\Roadmap whereSlug($value)
  * @mixin \Eloquent
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Modules\Skill\Entities\Technology[] $technologies
+ * @property-read int|null $technologies_count
  */
 class Roadmap extends Model
 {

@@ -34,15 +34,12 @@
                 data-field="name"
             />
 
-            <!--            <DxColumn-->
-            <!--                :min-width="250"-->
-            <!--                data-field="Task_Subject"-->
-            <!--            >-->
-            <!--                <DxRequiredRule/>-->
-            <!--            </DxColumn>-->
-
-
-
+            <DxColumn
+                :width="100"
+                :allow-sorting="false"
+                caption="Link"
+                cell-template="cellTemplate"
+            />
             <DxColumn
                 data-field='type_id'
                 caption="Тип"
@@ -57,6 +54,9 @@
                 />
                 <DxRequiredRule/>
             </DxColumn>
+            <template #cellTemplate="cell">
+                <a href="http://basked.pro">basked pro</a>
+            </template>
         </DxTreeList>
     </div>
 </template>

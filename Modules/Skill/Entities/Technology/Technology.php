@@ -34,6 +34,10 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Skill\Entities\Technology whereTypeId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Skill\Entities\Technology whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Modules\Skill\Entities\Roadmap[] $roadmaps
+ * @property-read int|null $roadmaps_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Modules\Skill\Entities\Topic[] $topics
+ * @property-read int|null $topics_count
  */
 class Technology extends Model
 {
@@ -57,6 +61,14 @@ class Technology extends Model
     public function roadmaps()
     {
         return $this->belongsToMany(Roadmap::class, 'sk_technology_roadmap', 'technology_id','roadmap_id');
+    }
+
+    /**
+     *  Relationship to many topics
+     *
+     * */
+    public function topics(){
+        return $this->hasMany(Topic::class,'technology_id','id');
     }
 
     // Each category may have one parent

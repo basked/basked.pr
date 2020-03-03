@@ -1,0 +1,1 @@
+INSERT INTO basked_db.sk_technology_type (id, technology_id, type_id, created_at, updated_at) VALUES (1, 1, 1, null, null);

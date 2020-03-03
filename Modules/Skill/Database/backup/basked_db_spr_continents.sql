@@ -1,1 +1,0 @@
-INSERT INTO basked_db.spr_continents (id, name, slug, descr, url) VALUES (1, 'Азия', 'asia', 'asia', '');
