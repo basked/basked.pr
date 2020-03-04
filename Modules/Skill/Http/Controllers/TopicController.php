@@ -16,11 +16,14 @@ class TopicController extends Controller
      * Display a listing of the resource.
      * @return Response
      */
-    public function index()
+    public function index($technology_id)
     {
+
+//         dd(Technology::find($technology_id)->topics->toArray());
         $columns = Topic::getColumns();
         $captions = Topic::getColumnsWithCaptions();
-        return view('skill::topics.index', ['columns' => $columns,'captions'=>$captions]);
+
+        return view('skill::topics.index', ['columns' => $columns,'captions'=>$captions,'technology_id'=>(int)$technology_id]);
     }
 
     /**

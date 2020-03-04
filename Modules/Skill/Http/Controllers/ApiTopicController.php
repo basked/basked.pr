@@ -14,13 +14,18 @@ use Validator;
 class ApiTopicController extends Controller
 {
     use TraitSkillDevModel;
+
     /**
      * Display a listing of the resource.
      * @return Response
      */
-    public function index(Request $request)
+    public function index(Request $request, $technology_id)
     {
-        return $this->getApiModel($request, Topic::class, []);
+        $params = [
+            ['column' => 'technology_id', 'op' => '=', 'val' => $technology_id],
+        ];
+        return is_null($technology_id)?$this->getApiModel($request, Topic::class, []): $this->getApiModel($request, Topic::class, $params);
+
     }
 
     /**
@@ -102,7 +107,6 @@ class ApiTopicController extends Controller
     {
         Topic::destroy([$id]);
     }
-
 
 
     /**

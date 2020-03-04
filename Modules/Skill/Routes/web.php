@@ -37,6 +37,7 @@ Route::prefix('skill')->group(function() {
 
     /*TOPICS  ROUTERS*/
     Route::get('/topics', 'TopicController@index');
+    Route::get('/technology/{technology_id}/topics', 'TopicController@index');
     Route::get('/test-topics/', 'TopicController@test');
 
 

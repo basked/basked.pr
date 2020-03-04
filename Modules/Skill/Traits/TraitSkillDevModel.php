@@ -105,9 +105,10 @@ trait TraitSkillDevModel
         $c = 0;
         if (!empty($params)) {
             foreach ($params as $key => $v) {
+//                dd($params);
                 if ($c == 0) {
 
-                    $data = $data::where($v['column'],$v['op'],$v['val']);
+                    $data = $data::where((string)$v['column'],(string)$v['op'],$v['val']);
                 } else {
                     $data = $data->where($v['column'],$v['op'],$v['val']);
                 }

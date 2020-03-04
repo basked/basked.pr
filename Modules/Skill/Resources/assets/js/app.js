@@ -17,6 +17,7 @@ const axios = require('axios');
  */
 
 Vue.component('skill-menu', require('../components/SkillMenu.vue').default);
+Vue.component('skill-footer', require('../components/SkillFooter.vue').default);
 Vue.component('dev-grid-technology', require('../components/DevGridTechnology.vue').default);
 Vue.component('dev-grid-type', require('../components/DevGridType.vue').default);
 Vue.component('dev-grid-developer', require('../components/DevGridDeveloper.vue').default);

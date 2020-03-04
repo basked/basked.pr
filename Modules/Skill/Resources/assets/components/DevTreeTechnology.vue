@@ -10,7 +10,9 @@
             key-expr="id"
             parent-id-expr="technology_id"
             has-items-expr="true"
+            :focusedRowEnabled="true"
             @initNewRow="initNewRow($event)"
+            @FocusedRowChanged="onFocusedRowChanged"
         >
             <!--            <DxRemoteOperations-->
             <!--                :filtering="true"-->
@@ -24,6 +26,7 @@
                 :allow-updating="true"
                 :allow-deleting="true"
                 mode="row"
+
             />
             <DxSelection
                 :recursive="true"
@@ -37,6 +40,7 @@
             <DxColumn
                 :width="100"
                 :allow-sorting="false"
+                data-field="name"
                 caption="Link"
                 cell-template="cellTemplate"
             />
@@ -54,8 +58,15 @@
                 />
                 <DxRequiredRule/>
             </DxColumn>
+
+            <DxColumn
+                :width="210"
+                :buttons="editButtons"
+                type="buttons"
+            >
+            </DxColumn>
             <template #cellTemplate="cell">
-                <a href="http://basked.pro">basked pro</a>
+                <a href="http://basked.pro/">basked pro</a>
             </template>
         </DxTreeList>
     </div>
@@ -77,6 +88,8 @@
     import axios from "axios";
 
     const url = 'http://basked.pr/api/skill';
+    const url_href = 'http://basked.pr/skill';
+
 
     function handleErrors(response) {
         if (!response.ok)
@@ -195,13 +208,30 @@
             return {
                 storeType,
                 dataSource: treeDataSource,
+                technology_id:Number,
+                editButtons: ['delete','edit', '|', {
+                    hint: 'Go to topic',
+                    icon: 'fa fa-list',
+                    // visible: this.isCloneIconVisible,
+                    onClick: this.goToTopics
+                },
+                ],
             };
         },
         methods: {
             initNewRow(e) {
+                console.log(e)
                 // e.data.Task_Status = 'Not Started';
                 // e.data.Task_Start_Date = new Date();
                 // e.data.Task_Due_Date = new Date();
+            },
+            onFocusedRowChanged(e){
+                this.technology_id=e.row.data.id;
+                console.log('onFocusedRowChanged',e.row.data)
+            },
+            goToTopics(){
+
+                location.href = `${url_href}/technology/${this.technology_id}/topics`;
             }
         }
     };

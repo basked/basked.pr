@@ -4,10 +4,12 @@
             :data-source="dataSource"
             :remote-operations="remoteOperations"
             :columns="columns"
+
             :show-borders="true"
             :allow-column-resizing="true"
             :allow-column-reordering="true"
             @initialized="saveGridInstance"
+            @row-click="onRowClick"
         >
 
             <DxColumn
@@ -26,9 +28,7 @@
             <DxColumn
                 data-field='technology_id'
                 caption="Технология"
-                data-type="number"
-                :allow-grouping="true"
-                :allow-editing="true"
+
             >
                 <DxLookup
                     :data-source="storeTechnology"
@@ -133,6 +133,7 @@
     const gridDataSource = {
         store: new CustomStore({
             load: (loadOptions) => {
+
                 let params = "?";
                 [
                     "skip",
@@ -170,7 +171,7 @@
                 return axios.delete(`${url}/topics/` + encodeURIComponent(key.id), {method: "DELETE"});//.then(handleErrors);
             },
             update: (key, values) => {
-                return axios.put(`${url}/topics/` + encodeURIComponent(key.id),  values, {method: "PUT"});//.then(handleErrors);
+                return axios.put(`${url}/topics/` + encodeURIComponent(key.id), values, {method: "PUT"});//.then(handleErrors);
             },
             onUpdating: function (key, values) {
                 console.log('onUpdating');
@@ -201,11 +202,63 @@
             DxFilterRow,
             DxHeaderFilter
         },
-        props: ['propsColumns', 'propsCaptions'],
+        props:{propsColumns:String, propsCaptions:String,propsTechnology_id:Number},
         data() {
             return {
-                storeTechnology ,
-                dataSource: gridDataSource,
+                storeTechnology,
+                // dataSource: gridDataSource,
+                dataSource: new CustomStore({
+                    load: (loadOptions) => {
+
+                        let params = "?";
+                        [
+                            "skip",
+                            "take",
+                            "requireTotalCount",
+                            "requireGroupCount",
+                            "sort",
+                            "filter",
+                            "totalSummary",
+                            "group",
+                            "groupSummary"
+                        ].forEach(function (i) {
+                            if (i in loadOptions && isNotEmpty(loadOptions[i]))
+                                params += `${i}=${JSON.stringify(loadOptions[i])}&`;
+                        });
+                        params = params.slice(0, -1);
+                        let url_topics = ``;
+                        if (this.propsTechnology_id === null) {
+                            url_topics = `${url}/topics${params}`
+                        } else {
+                            url_topics = url+'/topics/'+this.propsTechnology_id+'/'+`${params}`
+                        }
+                        ;
+                        console.log(url_topics);
+                        return fetch( url_topics)
+                            .then(handleErrors)
+                            .then(response => response.json())
+                            .then((result) => {
+                                return {
+                                    key: result.data.id,
+                                    data: result.data,
+                                    totalCount: result.totalCount,
+                                    summary: result.summary,
+                                    groupCount: result.groupCount
+                                }
+                            });
+                    },
+                    insert: (values) => {
+                        return axios.post(`${url}/topics`, values, {method: "POST"});//.then());
+                    },
+                    remove: (key) => {
+                        return axios.delete(`${url}/topics/` + encodeURIComponent(key.id), {method: "DELETE"});//.then(handleErrors);
+                    },
+                    update: (key, values) => {
+                        return axios.put(`${url}/topics/` + encodeURIComponent(key.id), values, {method: "PUT"});//.then(handleErrors);
+                    }
+                }),
+
+
                 columns: JSON.parse(this.getCaptions()),
                 select: this.getColumns(),
                 keyExpr: 'id',
@@ -219,7 +272,7 @@
                     groupPaging: true,
                 },
                 pageSizes: [15, 30, 50],
-                editButtons: ['delete','|',
+                editButtons: ['delete', '|',
                     {
                         hint: 'Reset category',
                         icon: 'fa fa-minus-square',
@@ -238,6 +291,7 @@
         },
         methods: {
             saveGridInstance: function (e) {
+                console.log(e.component);
                 this.dataGridInstance = e.component;
             },
             refresh: function () {
@@ -257,7 +311,11 @@
             },
             getCaptions() {
                 return JSON.parse(this.propsCaptions);
+            },
+            onRowClick(e) {
+                console.log('ROWClick', e);
             }
+
         }
     };
 </script>

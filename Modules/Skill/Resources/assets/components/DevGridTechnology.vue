@@ -31,7 +31,7 @@
                 :allow-grouping="true"
                 :allow-editing="true"
             >
-               <DxLookup
+                <DxLookup
                     :data-source="storeType"
                     value-expr="id"
                     display-expr="name"
@@ -136,7 +136,6 @@
         }
         return res;
     }
-
 
 
     const storeType = new CustomStore({
@@ -253,12 +252,12 @@
                     groupPaging: true,
                 },
                 pageSizes: [15, 30, 50],
-                editButtons: ['delete','|',{
+                editButtons: ['delete', '|', {
                     hint: 'Reset type',
                     icon: 'fa fa-minus-circle',
                     // visible: this.isCloneIconVisible,
                     onClick: this.resetTypeClick
-                },'|',
+                }, '|',
                     {
                         hint: 'Reset category',
                         icon: 'fa fa-minus-square',
