@@ -64,17 +64,22 @@ Route::prefix('skill')->group(  function () {
     /*TOPICS PI ROUTERS*/
     Route::get('/topics/look-technologies', 'ApiTopicController@lookTechnologies');
     Route::get('/topics/{params?}', 'ApiTopicController@index');
+    Route::get('/technology/{technology_id}/topics', 'ApiTopicController@topicsWithTechnology');
     Route::post('/topics/', 'ApiTopicController@store');
     Route::put('/topics/{id}', 'ApiTopicController@update');
     Route::delete('/topics/{id}', 'ApiTopicController@destroy');
 
-    // для работы с pivot таблицей Examples
+    // для работы с detail таблицей Examples
     Route::get('/topic/{topic_id}/examples', 'ApiExampleController@examples');
     Route::post('/topic/{topic_id}/insert-examples', 'ApiExampleController@insertExample');
     Route::delete('/topic/{topic_id}/delete-examples/{example_id}', 'ApiExampleController@deleteExample');
     Route::put('/topic/{topic_id}/update-examples/{example_id}', 'ApiExampleController@updateExample');
 
-
+    // для работы с detail таблицей Links
+    Route::get('/topic/{topic_id}/links', 'ApiLinkController@links');
+    Route::post('/topic/{topic_id}/insert-links', 'ApiLinkController@insertLink');
+    Route::delete('/topic/{topic_id}/delete-links/{link_id}', 'ApiLinkController@deleteLink');
+    Route::put('/topic/{topic_id}/update-links/{link_id}', 'ApiLinkController@updateLink');
 
 
 

@@ -1,0 +1,1 @@
+INSERT INTO basked_db.sk_links (id, topic_id, name, url, slug, descr, created_at, updated_at) VALUES (1, 1, 'Переменные', 'http://kotlin.org/variables', null, null, null, null);

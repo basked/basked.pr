@@ -36,14 +36,21 @@ Route::prefix('skill')->group(function() {
     Route::get('/test-roadmaps/', 'RoadmapController@test');
 
     /*TOPICS  ROUTERS*/
-    Route::get('/topics', 'TopicController@index');
-    Route::get('/technology/{technology_id}/topics', 'TopicController@index');
-    Route::get('/test-topics/', 'TopicController@test');
+    Route::get('/topics/', 'TopicController@index');
+    Route::get('/technology/{technology_id}/topics', 'TopicController@topicsWithTechnology');
+    Route::get('/test-topics/{technology_id}', 'TopicController@test');
 
 
     /*EXAMPLES  ROUTERS*/
     Route::get('/examples', 'ExampleController@index');
     Route::get('/test-examples/', 'ExampleController@test');
+
+
+
+
+    /*EXAMPLES  ROUTERS*/
+    Route::get('/links', 'LinkController@index');
+    Route::get('/test-links/', 'LinkController@test');
 
 
 

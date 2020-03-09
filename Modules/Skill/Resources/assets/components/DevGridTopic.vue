@@ -130,57 +130,6 @@
         },
     });
 
-    const gridDataSource = {
-        store: new CustomStore({
-            load: (loadOptions) => {
-
-                let params = "?";
-                [
-                    "skip",
-                    "take",
-                    "requireTotalCount",
-                    "requireGroupCount",
-                    "sort",
-                    "filter",
-                    "totalSummary",
-                    "group",
-                    "groupSummary"
-                ].forEach(function (i) {
-                    if (i in loadOptions && isNotEmpty(loadOptions[i]))
-                        params += `${i}=${JSON.stringify(loadOptions[i])}&`;
-                });
-                params = params.slice(0, -1);
-
-                return fetch(`${url}/topics${params}`)
-                    .then(handleErrors)
-                    .then(response => response.json())
-                    .then((result) => {
-                        return {
-                            key: result.data.id,
-                            data: result.data,
-                            totalCount: result.totalCount,
-                            summary: result.summary,
-                            groupCount: result.groupCount
-                        }
-                    });
-            },
-            insert: (values) => {
-                return axios.post(`${url}/topics`, values, {method: "POST"});//.then());
-            },
-            remove: (key) => {
-                return axios.delete(`${url}/topics/` + encodeURIComponent(key.id), {method: "DELETE"});//.then(handleErrors);
-            },
-            update: (key, values) => {
-                return axios.put(`${url}/topics/` + encodeURIComponent(key.id), values, {method: "PUT"});//.then(handleErrors);
-            },
-            onUpdating: function (key, values) {
-                console.log('onUpdating');
-            },
-            onUpdated: function (key, values) {
-                console.log('onUpdated');
-            }
-        })
-    };
     export default {
         name: "DevGridTopic",
         components: {
@@ -202,7 +151,13 @@
             DxFilterRow,
             DxHeaderFilter
         },
-        props:{propsColumns:String, propsCaptions:String,propsTechnology_id:Number},
+        props: {
+            propsColumns: String,
+            propsCaptions: String,
+            propsTechnology_id: {
+                type: String,
+                required: true
+            },},
         data() {
             return {
                 storeTechnology,
@@ -227,14 +182,15 @@
                         });
                         params = params.slice(0, -1);
                         let url_topics = ``;
-                        if (this.propsTechnology_id === null) {
+                        console.log(this.propsTechnology_id);
+                        // this.propsTechnology_id == -1 - если из маршрута /topics
+                        // иначе если из маршрута url_topics = url+'/technology/'+this.propsTechnology_id+'/topics'
+                        if (this.propsTechnology_id == 0) {
                             url_topics = `${url}/topics${params}`
                         } else {
-                            url_topics = url+'/topics/'+this.propsTechnology_id+'/'+`${params}`
-                        }
-                        ;
-                        console.log(url_topics);
-                        return fetch( url_topics)
+                            url_topics = url + '/technology/' + this.propsTechnology_id + '/topics' + `${params}`
+                        };
+                        return fetch(url_topics)
                             .then(handleErrors)
                             .then(response => response.json())
                             .then((result) => {

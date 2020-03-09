@@ -51,6 +51,13 @@ class Topic extends Model
     }
 
     /**
+     *  Refer on Topic Model
+     *
+     * **/
+    public function links(){
+        return $this->hasMany(Link::class,'topic_id','id');
+    }
+    /**
      * Names columms for model
      * @return array
      */

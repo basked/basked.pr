@@ -19,13 +19,9 @@ class ApiTopicController extends Controller
      * Display a listing of the resource.
      * @return Response
      */
-    public function index(Request $request, $technology_id)
+    public function index(Request $request)
     {
-        $params = [
-            ['column' => 'technology_id', 'op' => '=', 'val' => $technology_id],
-        ];
-        return is_null($technology_id)?$this->getApiModel($request, Topic::class, []): $this->getApiModel($request, Topic::class, $params);
-
+        return $this->getApiModel($request, Topic::class, []);
     }
 
     /**
@@ -118,5 +114,18 @@ class ApiTopicController extends Controller
     {
         $data['data'] = Technology::all('id', 'name')->toArray();
         return $data;
+    }
+
+    /**
+     * Display a listing of the resource.
+     * @return Response
+     */
+    public function topicsWithTechnology(Request $request, $technology_id)
+    {
+        $params = [
+            ['column' => 'technology_id', 'op' => '=', 'val' => $technology_id],
+        ];
+        return $this->getApiModel($request, Topic::class, $params);
+
     }
 }

@@ -16,15 +16,24 @@ class TopicController extends Controller
      * Display a listing of the resource.
      * @return Response
      */
-    public function index($technology_id)
+    public function index()
     {
-
-//         dd(Technology::find($technology_id)->topics->toArray());
         $columns = Topic::getColumns();
         $captions = Topic::getColumnsWithCaptions();
-
-        return view('skill::topics.index', ['columns' => $columns,'captions'=>$captions,'technology_id'=>(int)$technology_id]);
+        return view('skill::topics.index', ['columns' => $columns,'captions'=>$captions,'technology_id'=>0]);
     }
+
+    /**
+     * Display a listing of the resource if route technology/{technology_id}/topics.
+     * @return Response
+     */
+    public function topicsWithTechnology($technology_id){
+        $columns = Topic::getColumns();
+        $captions = Topic::getColumnsWithCaptions();
+        return view('skill::topics.index', ['columns' => $columns,'captions'=>$captions,'technology_id'=>$technology_id]);
+    }
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -86,11 +95,14 @@ class TopicController extends Controller
         //
     }
 
+
+
     /**
      *  Test function for Topic Model
      *
      * */
-    public function test(){
+    public function test(Request $technology_id){
+        dd($technology_id);
         $topic_techs=Technology::find(118)->topics;
         foreach ($topic_techs as $tech){
            echo $tech->name.'<br>';
