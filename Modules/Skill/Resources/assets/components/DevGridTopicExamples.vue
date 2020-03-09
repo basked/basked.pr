@@ -1,5 +1,15 @@
 <template>
     <div id="dev-grid-topic-examples">
+        <vue-code-highlight>
+
+            <div v-highlight >
+               if(){
+                prinln("");
+                }
+            </div>
+
+        </vue-code-highlight>
+
         <DxDataGrid
             :data-source="dataSource"
         >
@@ -43,7 +53,7 @@
 </template>
 
 <script>
-
+    import { component as VueCodeHighlight } from 'vue-code-highlight';
     import CustomStore from 'devextreme/data/custom_store';
     import axios from 'axios';
     import {
@@ -84,7 +94,7 @@
 
     export default {
         name: "DevGridTopicExamples",
-        components: {DxDataGrid, DxColumn, DxLookup, DxPaging, DxEditing,DxFormItem, DxSearchPanel},
+        components: { VueCodeHighlight,DxDataGrid, DxColumn, DxLookup, DxPaging, DxEditing,DxFormItem, DxSearchPanel},
         props: {
             propsColumns: {
                 type: Object,

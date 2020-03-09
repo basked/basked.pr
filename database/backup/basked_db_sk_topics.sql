@@ -1,4 +1,6 @@
 INSERT INTO basked_db.sk_topics (id, technology_id, name, slug, descr, created_at, updated_at) VALUES (1, 118, 'Переменные', 'perem', 'Переменные', null, null);
 INSERT INTO basked_db.sk_topics (id, technology_id, name, slug, descr, created_at, updated_at) VALUES (2, 118, 'Циклы', 'cikly', 'Циклы', null, null);
+INSERT INTO basked_db.sk_topics (id, technology_id, name, slug, descr, created_at, updated_at) VALUES (3, 118, 'Корутины', 'korutiny', null, '2020-03-03 11:20:57', '2020-03-03 11:32:25');
 INSERT INTO basked_db.sk_topics (id, technology_id, name, slug, descr, created_at, updated_at) VALUES (4, 118, 'Функции', 'funktsii', null, '2020-03-03 18:14:31', '2020-03-03 18:14:31');
 INSERT INTO basked_db.sk_topics (id, technology_id, name, slug, descr, created_at, updated_at) VALUES (5, 118, 'Операторы', 'operatory', 'Все операторы в kotlin', '2020-03-03 20:56:46', '2020-03-03 20:56:46');
+INSERT INTO basked_db.sk_topics (id, technology_id, name, slug, descr, created_at, updated_at) VALUES (6, 118, 'Условные операторы', 'uslovnye-operatory', null, '2020-03-09 13:29:38', '2020-03-09 13:29:38');
