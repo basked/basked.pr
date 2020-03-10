@@ -116,7 +116,7 @@ class ApiLinkController extends Controller
         $link->name = is_null($request->name) ? $link->name : $request->name;
         $link->slug = Str::slug(is_null($request->name) ? $link->name : $request->name);
         $link->topic_id = is_null($topic_id) ? $link->topic_id : $topic_id;
-        $link->url = is_null($request->code) ? $link->url : $request->url;
+        $link->url = is_null($request->url) ? $link->url : $request->url;
         $link->descr = is_null($request->descr) ? $link->descr : $request->descr;
         $link->save();
     }
