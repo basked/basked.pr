@@ -7,6 +7,7 @@ import 'bootstrap'
 
 
 window.Vue = require('vue');
+
 const axios = require('axios');
 /**
  * The following block of code may be used to automatically register your
@@ -26,12 +27,8 @@ Vue.component('dev-grid-topic', require('../components/DevGridTopic.vue').defaul
 Vue.component('dev-grid-topic-tabs', require('../components/DevGridTopicTabs.vue').default);
 Vue.component('dev-grid-topic-examples', require('../components/DevGridTopicExamples.vue').default);
 Vue.component('dev-grid-topic-links', require('../components/DevGridTopicLinks.vue').default);
-
-
 Vue.component('dev-tree-technology', require('../components/DevTreeTechnology.vue').default);
-
-
-
+Vue.component('block-code', require('../components/BlockCode.vue').default);
 
 
 

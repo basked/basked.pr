@@ -54,9 +54,10 @@ Route::prefix('skill')->group(function() {
 
 
 
-
-
-
+    /*BLOCK CODE  ROUTERS*/
+    Route::get('/test-block-code/', function (){
+        return view('skill::tests.index');
+    });
 
 
 

@@ -1,15 +1,20 @@
 <template>
     <div id="dev-grid-topic-examples">
-        <vue-code-highlight>
+        <block-code prop-code='/*
+ Create a POJO with getters, setters, `equals()`, `hashCode()`, `toString()` and `copy()` in a single line:
+*/
 
-            <div v-highlight >
-               if(){
-                prinln("");
-                }
-            </div>
+data class Customer(val name: String, val email: String, val company: String)
 
-        </vue-code-highlight>
+// Or filter a list using a lambda expression:
 
+val positiveNumbers = list.filter { it > 0 }
+
+// Want a singleton? Create an object:
+
+object ThisIsASingleton {
+    val companyName: String = "JetBrains"
+}'></block-code>
         <DxDataGrid
             :data-source="dataSource"
         >
