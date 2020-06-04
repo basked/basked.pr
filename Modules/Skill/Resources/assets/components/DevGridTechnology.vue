@@ -34,7 +34,7 @@
                 :allow-editing="true"
             >
                 <DxLookup
-                    :data-source="storeType"
+                    :data-source="arrayLookTypes"
                     value-expr="id"
                     display-expr="name"
                 />
@@ -223,14 +223,14 @@
             onUpdating: function (key, values) {
                 console.log('onUpdating');
             },
-            onInserted(v,k){
+            onInserted(v, k) {
                 console.log('onInserted');
             },
             onUpdated: function (key, values) {
                 console.log('onUpdated');
             },
-            onRemoved:function (key) {
-                console.log('onRemoved'+key)
+            onRemoved: function (key) {
+                console.log('onRemoved' + key)
             }
         })
     };
@@ -259,7 +259,8 @@
                 storeType,
                 storeTechnology,
                 dataSource: gridDataSource,
-                arrayLookTechnology:[],
+                arrayLookTechnology: [],
+                arrayLookTypes: [],
                 columns: JSON.parse(this.getCaptions()),
                 select: this.getColumns(),
                 keyExpr: 'id',
@@ -291,23 +292,33 @@
         },
         mounted() {
             this.getLookUpTechnologies()
-          /*  axios.get(`${url}/technologies/look-technologies`).then(response => {
-                this.arrayTech = response.data.data
-                 console.log(this.arrayTech);
-            });*/
+          this.getLookUpTypes()
+            /*  axios.get(`${url}/technologies/look-technologies`).then(response => {
+                  this.arrayTech = response.data.data
+                   console.log(this.arrayTech);
+              });*/
         },
         methods: {
+
+
             // Переводим в массив для корректной фильтрации в dxLookUp
             getLookUpTechnologies() {
                 console.log('GET TECHNOLOGIES')
                 axios.get(`${url}/technologies/look-technologies`).then(response => {
-                  this.arrayLookTechnology = response.data.data
+                    this.arrayLookTechnology = response.data.data
                 });
             },
 
-            rowIns:function(e){
-                console.log("ROWINSERTED "+e)
-              this.getLookUpTechnologies()
+            getLookUpTypes() {
+                axios.get(`${url}/types/look-types`).then(response => {
+                    this.arrayLookTypes = response.data.data
+                })
+            },
+
+            rowIns: function (e) {
+                console.log("ROWINSERTED " + e)
+                this.getLookUpTechnologies()
+                this.getLookUpTypes()
             },
 
 
