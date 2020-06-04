@@ -2891,7 +2891,7 @@
       <workItem from="1586170288775" duration="599000" />
       <workItem from="1591169425712" duration="11111000" />
       <workItem from="1591247641495" duration="14776000" />
-      <workItem from="1591273268164" duration="4971000" />
+      <workItem from="1591273268164" duration="5624000" />
     </task>
     <task id="LOCAL-00001" summary="Commit on work">
       <created>1579082528866</created>
@@ -3173,7 +3173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591277435836</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Изменен метод обновления во всех Api-контроллерах">
+      <created>1591278380447</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1591278380447</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -3224,9 +3231,9 @@
     <MESSAGE value="Backup tables" />
     <MESSAGE value="Topics, Links, Examples" />
     <MESSAGE value="Ссылки и примеры на топики" />
-    <MESSAGE value="Изменен метод обновления во всех Api-контроллерах" />
     <MESSAGE value="Изменён метод обновдения dxLookUp&#10;см. Категория2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Изменён метод обновдения dxLookUp&#10;см. Категория2" />
+    <MESSAGE value="Изменен метод обновления во всех Api-контроллерах" />
+    <option name="LAST_COMMIT_MESSAGE" value="Изменен метод обновления во всех Api-контроллерах" />
   </component>
   <component name="WindowStateProjectService">
     <state x="540" y="142" key="#CLI_Interpreters" timestamp="1591256364573">
@@ -3241,12 +3248,12 @@
       <screen x="0" y="0" width="1920" height="944" />
     </state>
     <state x="690" y="226" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.944@0.0.1920.944" timestamp="1583758281307" />
-    <state x="655" y="10" width="1130" height="823" key="CommitChangelistDialog2" timestamp="1591277423552">
+    <state x="655" y="10" width="1130" height="823" key="CommitChangelistDialog2" timestamp="1591278378133">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
     <state x="650" y="9" key="CommitChangelistDialog2/0.0.1904.806@0.0.1904.806" timestamp="1583749976911" />
     <state x="650" y="10" key="CommitChangelistDialog2/0.0.1904.928@0.0.1904.928" timestamp="1583330013991" />
-    <state x="655" y="10" width="1242" height="934" key="CommitChangelistDialog2/0.0.1920.944@0.0.1920.944" timestamp="1591277423552" />
+    <state x="655" y="10" width="1242" height="934" key="CommitChangelistDialog2/0.0.1920.944@0.0.1920.944" timestamp="1591278378133" />
     <state x="737" y="355" width="446" height="278" key="ComposerInitDialogKey" timestamp="1591256480808">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
@@ -3300,11 +3307,11 @@
     </state>
     <state x="457" y="101" key="SettingsEditor/0.0.1904.928@0.0.1904.928" timestamp="1583322347904" />
     <state x="461" y="103" key="SettingsEditor/0.0.1920.944@0.0.1920.944" timestamp="1584348816596" />
-    <state x="625" y="235" key="Vcs.Push.Dialog.v2" timestamp="1591277452107">
+    <state x="625" y="235" key="Vcs.Push.Dialog.v2" timestamp="1591278384554">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
     <state x="620" y="231" key="Vcs.Push.Dialog.v2/0.0.1904.928@0.0.1904.928" timestamp="1583330033571" />
-    <state x="625" y="235" key="Vcs.Push.Dialog.v2/0.0.1920.944@0.0.1920.944" timestamp="1591277452107" />
+    <state x="625" y="235" key="Vcs.Push.Dialog.v2/0.0.1920.944@0.0.1920.944" timestamp="1591278384554" />
     <state x="800" y="361" width="326" height="238" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1583231868671">
       <screen x="0" y="0" width="1920" height="944" />
     </state>

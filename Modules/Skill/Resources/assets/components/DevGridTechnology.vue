@@ -300,7 +300,6 @@
         },
         methods: {
 
-
             // Переводим в массив для корректной фильтрации в dxLookUp
             getLookUpTechnologies() {
                 console.log('GET TECHNOLOGIES')
