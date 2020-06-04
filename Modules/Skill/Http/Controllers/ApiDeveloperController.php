@@ -5,6 +5,7 @@ namespace Modules\Skill\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Collection;
 use Modules\Skill\Entities\Developer;
 use Modules\Skill\Traits\TraitSkillDevModel;
 use Illuminate\Support\Str;
@@ -22,6 +23,7 @@ class ApiDeveloperController extends Controller
     {
         return $this->getApiModel($request, Developer::class, []);
     }
+
 
 
     /**

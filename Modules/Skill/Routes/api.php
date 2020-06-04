@@ -39,11 +39,10 @@ Route::prefix('skill')->group(  function () {
 
 
     /*DEVELOPERS API ROUTERS*/
-    Route::get('/developers/{params?}', 'ApiDeveloperController@index');
+    Route::get('/developers/{params?}/', 'ApiDeveloperController@index');
     Route::post('/developers/', 'ApiDeveloperController@store');
     Route::put('/developers/{id}', 'ApiDeveloperController@update');
     Route::delete('/developers/{id}', 'ApiDeveloperController@destroy');
-
 
     /*ROADMAPS API ROUTERS*/
     Route::get('/roadmaps/{id}/technologies', 'ApiRoadmapController@technologies');

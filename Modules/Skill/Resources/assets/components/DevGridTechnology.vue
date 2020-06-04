@@ -1,4 +1,5 @@
 <template>
+
     <div id="data-grid-technology">
         <DxDataGrid
             :data-source="dataSource"
@@ -8,6 +9,7 @@
             :allow-column-resizing="true"
             :allow-column-reordering="true"
             @initialized="saveGridInstance"
+            @rowInserted="rowIns"
         >
 
             <DxColumn
@@ -42,13 +44,25 @@
             <DxColumn
                 data-field='technology_id'
                 caption="Категория"
-                data-type="number"
+
                 :allow-grouping="true"
                 :allow-editing="true"
-
             >
                 <DxLookup
                     :data-source="storeTechnology"
+                    value-expr="id"
+                    display-expr="name"
+                />
+            </DxColumn>
+            <DxColumn
+                data-field='technology_id'
+                caption="Категория2"
+                data-type="string"
+                :allow-grouping="true"
+                :allow-editing="true"
+            >
+                <DxLookup
+                    :data-source="arrayLookTechnology"
                     value-expr="id"
                     display-expr="name"
                 />
@@ -162,9 +176,11 @@
         },
     });
 
+
     const gridDataSource = {
         store: new CustomStore({
             load: (loadOptions) => {
+                console.log(loadOptions)
                 let params = "?";
                 [
                     "skip",
@@ -207,8 +223,14 @@
             onUpdating: function (key, values) {
                 console.log('onUpdating');
             },
+            onInserted(v,k){
+                console.log('onInserted');
+            },
             onUpdated: function (key, values) {
                 console.log('onUpdated');
+            },
+            onRemoved:function (key) {
+                console.log('onRemoved'+key)
             }
         })
     };
@@ -234,11 +256,10 @@
         props: ['propsColumns', 'propsCaptions'],
         data() {
             return {
-                // gridDataSourceTypes,
                 storeType,
                 storeTechnology,
                 dataSource: gridDataSource,
-                // dsTypes: gridDataSourceTypes,
+                arrayLookTechnology:[],
                 columns: JSON.parse(this.getCaptions()),
                 select: this.getColumns(),
                 keyExpr: 'id',
@@ -269,18 +290,36 @@
             }
         },
         mounted() {
-            // var a=JSON.parse(this.getColumns())
-            // console.log( a);
-            // var a1=JSON.parse(this.getColumns2())
-            // console.log(a1);
+            this.getLookUpTechnologies()
+          /*  axios.get(`${url}/technologies/look-technologies`).then(response => {
+                this.arrayTech = response.data.data
+                 console.log(this.arrayTech);
+            });*/
         },
         methods: {
+            // Переводим в массив для корректной фильтрации в dxLookUp
+            getLookUpTechnologies() {
+                console.log('GET TECHNOLOGIES')
+                axios.get(`${url}/technologies/look-technologies`).then(response => {
+                  this.arrayLookTechnology = response.data.data
+                });
+            },
+
+            rowIns:function(e){
+                console.log("ROWINSERTED "+e)
+              this.getLookUpTechnologies()
+            },
+
+
             saveGridInstance: function (e) {
                 this.dataGridInstance = e.component;
             },
+
             refresh: function () {
                 this.dataGridInstance.refresh();
+                this.dataGridInstance.getLookUpTechnologies()
             },
+
             // Обнуляем тип
             resetTypeClick(e) {
                 return axios.put(`${url}/technologies/reset-type/` + encodeURIComponent(e.row.key.id), {method: "PUT"}).then(
