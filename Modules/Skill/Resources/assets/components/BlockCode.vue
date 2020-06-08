@@ -8,6 +8,7 @@
 <script>
 
     import VueHighlightJS from 'vue-highlightjs'
+
     Vue.use(VueHighlightJS)
     export default {
         name: "BlockCode",
@@ -18,7 +19,7 @@
             },
             propLang:{
                 type: String,
-                default: () => ("javascript")
+                default: () => ("vue")
             }
         },
         data(){

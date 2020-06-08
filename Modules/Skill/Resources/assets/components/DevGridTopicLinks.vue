@@ -33,7 +33,11 @@
                 data-field="name"/>
             <DxColumn
             :width="500"
-            data-field="url"/>
+            data-field="url"
+            cell-template="cell_url"/>
+            <template #cell_url="{ data }">
+                <a :href="data.value" target="_blank">{{data.value}}</a>
+            </template>
             <DxColumn
                 :width="250"
                 :visible="false"

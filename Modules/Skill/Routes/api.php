@@ -80,6 +80,7 @@ Route::prefix('skill')->group(  function () {
     Route::delete('/topic/{topic_id}/delete-links/{link_id}', 'ApiLinkController@deleteLink');
     Route::put('/topic/{topic_id}/update-links/{link_id}', 'ApiLinkController@updateLink');
 
-
+    // для работы с тестовыми данными
+    Route::get('/test-list-links', 'ApiTestController@listLinks');
 
 });

@@ -10,6 +10,8 @@
             :allow-column-reordering="true"
             @initialized="saveGridInstance"
             @rowInserted="rowIns"
+            @rowUpdated="rowUpd"
+            @rowRemoved="rowDel"
         >
 
             <DxColumn
@@ -41,22 +43,10 @@
             </DxColumn>
 
             <
+
             <DxColumn
                 data-field='technology_id'
                 caption="Категория"
-
-                :allow-grouping="true"
-                :allow-editing="true"
-            >
-                <DxLookup
-                    :data-source="storeTechnology"
-                    value-expr="id"
-                    display-expr="name"
-                />
-            </DxColumn>
-            <DxColumn
-                data-field='technology_id'
-                caption="Категория2"
                 data-type="string"
                 :allow-grouping="true"
                 :allow-editing="true"
@@ -119,8 +109,6 @@
         DxSearchPanel,
         DxFilterRow,
         DxHeaderFilter,
-
-
     } from 'devextreme-vue/data-grid';
     import {DxSwitch} from 'devextreme-vue/switch';
     import CustomStore from 'devextreme/data/custom_store';
@@ -152,7 +140,9 @@
     }
 
 
-    const storeType = new CustomStore({
+    // Раньше использовались эти методы но в них некорректная фильтрация
+    //
+    /*const storeType = new CustomStore({
         key: 'id',
         byKey: function (key) {
             return {id: key};
@@ -174,7 +164,7 @@
                 return response.data
             });
         },
-    });
+    });*/
 
 
     const gridDataSource = {
@@ -256,8 +246,8 @@
         props: ['propsColumns', 'propsCaptions'],
         data() {
             return {
-                storeType,
-                storeTechnology,
+                // storeType,
+                // storeTechnology,
                 dataSource: gridDataSource,
                 arrayLookTechnology: [],
                 arrayLookTypes: [],
@@ -291,33 +281,42 @@
             }
         },
         mounted() {
-            this.getLookUpTechnologies()
-          this.getLookUpTypes()
-            /*  axios.get(`${url}/technologies/look-technologies`).then(response => {
-                  this.arrayTech = response.data.data
-                   console.log(this.arrayTech);
-              });*/
+            this.updateLookUps();
         },
         methods: {
 
-            // Переводим в массив для корректной фильтрации в dxLookUp
-            getLookUpTechnologies() {
-                console.log('GET TECHNOLOGIES')
+            // Переводим в массив для корректной фильтрации категорий в dxLookUp
+            updateLookUpTechnologies() {
                 axios.get(`${url}/technologies/look-technologies`).then(response => {
                     this.arrayLookTechnology = response.data.data
                 });
             },
-
-            getLookUpTypes() {
+            // Переводим в массив для корректной фильтрации типов в dxLookUp
+            updateLookUpTypes() {
                 axios.get(`${url}/types/look-types`).then(response => {
                     this.arrayLookTypes = response.data.data
                 })
             },
+            // Обновляем значения LookUp ов
+            updateLookUps() {
+                this.updateLookUpTechnologies();
+                this.updateLookUpTypes();
+            },
+
 
             rowIns: function (e) {
-                console.log("ROWINSERTED " + e)
-                this.getLookUpTechnologies()
-                this.getLookUpTypes()
+                console.log('Lookup Row Insert')
+                this.updateLookUps()
+            },
+
+            rowUpd: function (e) {
+                console.log('Lookup Row Update')
+                this.updateLookUps()
+            },
+
+            rowDel: function (e) {
+                console.log('Lookup Row Delete')
+                this.updateLookUps()
             },
 
 
@@ -327,7 +326,6 @@
 
             refresh: function () {
                 this.dataGridInstance.refresh();
-                this.dataGridInstance.getLookUpTechnologies()
             },
 
             // Обнуляем тип

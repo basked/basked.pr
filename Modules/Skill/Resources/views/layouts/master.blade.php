@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Module Skill</title>
     <link rel="stylesheet"  href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
+
     {{-- Laravel Mix - CSS File --}}
     <link rel="stylesheet" href="{{ mix('css/skill.css') }}">
 

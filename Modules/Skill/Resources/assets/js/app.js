@@ -29,6 +29,7 @@ Vue.component('dev-grid-topic-examples', require('../components/DevGridTopicExam
 Vue.component('dev-grid-topic-links', require('../components/DevGridTopicLinks.vue').default);
 Vue.component('dev-tree-technology', require('../components/DevTreeTechnology.vue').default);
 Vue.component('block-code', require('../components/BlockCode.vue').default);
+Vue.component('list-links', require('../components/ListLinks.vue').default);
 
 
 
