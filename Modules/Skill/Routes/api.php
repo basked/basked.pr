@@ -82,5 +82,6 @@ Route::prefix('skill')->group(  function () {
 
     // для работы с тестовыми данными
     Route::get('/test-list-links', 'ApiTestController@listLinks');
+    Route::get('/test-search-lookup/{key}', 'ApiTestController@searchLookup');
 
 });

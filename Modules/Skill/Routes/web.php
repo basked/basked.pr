@@ -82,5 +82,7 @@ Route::prefix('skill')->group(function() {
   /*TEST */
     Route::get('/test','TestController@index');
     Route::get('/test-list-links','TestController@listLinks');
+    Route::get('/test-devextreme','TestController@testDevExtreme');
+
 
 });

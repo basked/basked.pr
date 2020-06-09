@@ -40,3 +40,4 @@ INSERT INTO basked_db.migrations (id, migration, batch) VALUES (49, '2020_02_24_
 INSERT INTO basked_db.migrations (id, migration, batch) VALUES (51, '2020_03_03_095239_create_sk_topics_table', 22);
 INSERT INTO basked_db.migrations (id, migration, batch) VALUES (52, '2020_03_03_183527_create_sk_examples_table', 23);
 INSERT INTO basked_db.migrations (id, migration, batch) VALUES (53, '2020_03_09_100322_create_sk_links_table', 24);
+INSERT INTO basked_db.migrations (id, migration, batch) VALUES (54, '2020_06_08_081221_create_sk_test_table', 25);

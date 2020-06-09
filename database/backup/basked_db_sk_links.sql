@@ -1,1 +1,2 @@
-INSERT INTO basked_db.sk_links (id, topic_id, name, url, slug, descr, created_at, updated_at) VALUES (1, 1, 'Переменные', 'http://kotlin.org/variables', null, null, null, null);
+INSERT INTO basked_db.sk_links (id, topic_id, name, url, slug, descr, created_at, updated_at) VALUES (1, 1, 'Переменные', 'http://kotlin.org/variables', 'peremennye', null, null, '2020-06-08 07:04:24');
+INSERT INTO basked_db.sk_links (id, topic_id, name, url, slug, descr, created_at, updated_at) VALUES (3, 7, 'Параметры функций', 'https://play.kotlinlang.org/koans/Introduction/Default%20arguments/Task.kt', 'parametry-funktsiy', null, '2020-03-10 10:18:26', '2020-03-10 10:20:18');

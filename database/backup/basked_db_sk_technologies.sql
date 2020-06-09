@@ -457,3 +457,5 @@ INSERT INTO basked_db.sk_technologies (id, name, slug, descr, created_at, update
 INSERT INTO basked_db.sk_technologies (id, name, slug, descr, created_at, updated_at, type_id, technology_id) VALUES (469, 'Telecome(SIM Card)', 'telecomesim-card', null, '2020-02-26 05:15:42', '2020-02-26 05:15:42', 21, 468);
 INSERT INTO basked_db.sk_technologies (id, name, slug, descr, created_at, updated_at, type_id, technology_id) VALUES (470, 'Bluetooth', 'bluetooth', null, '2020-02-26 05:15:58', '2020-02-26 05:15:58', 21, 468);
 INSERT INTO basked_db.sk_technologies (id, name, slug, descr, created_at, updated_at, type_id, technology_id) VALUES (471, 'NFC', 'nfc', null, '2020-02-26 05:16:12', '2020-02-26 05:16:12', 21, 468);
+INSERT INTO basked_db.sk_technologies (id, name, slug, descr, created_at, updated_at, type_id, technology_id) VALUES (489, 'DataBas', 'databas', null, '2020-06-08 05:36:53', '2020-06-08 05:40:04', 6, 468);
+INSERT INTO basked_db.sk_technologies (id, name, slug, descr, created_at, updated_at, type_id, technology_id) VALUES (490, 'sd', 'sd', null, '2020-06-08 05:37:29', '2020-06-08 05:37:29', 21, 489);

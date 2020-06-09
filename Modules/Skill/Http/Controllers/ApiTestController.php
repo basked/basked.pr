@@ -7,6 +7,7 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Modules\Skill\Entities\Test;
 use Modules\Skill\Traits\TraitSkillDevModel;
+use function MongoDB\BSON\toJSON;
 
 class ApiTestController extends Controller
 {
@@ -23,14 +24,27 @@ class ApiTestController extends Controller
      */
     public function index(Request $request)
     {
-        dd($request);
-        return $this->getApiModel($request, Test::class, []);
+      return $this->getApiModel($request, Test::class, []);
     }
+
+
 
     public function listLinks(Request $request)
     {
-        return $this->getApiModel($request, Test::class, []);
+//        $test_data=Test::all()->toJson();
+//        return $test_data;
+  return $this->getApiModel($request, Test::class, []);
+//        return Test::all()->toJson();
     }
+    // Поиск для Lookup
+    public function searchLookup($key){
+      return Test::where('descr','like','%' . $key . '%')->get(['id','descr'])->toJson();
+    }
+
+
+
+
+
     /**
      * Show the form for creating a new resource.
      * @return Response

@@ -4,3 +4,5 @@ INSERT INTO basked_db.sk_topics (id, technology_id, name, slug, descr, created_a
 INSERT INTO basked_db.sk_topics (id, technology_id, name, slug, descr, created_at, updated_at) VALUES (4, 118, 'Функции', 'funktsii', null, '2020-03-03 18:14:31', '2020-03-03 18:14:31');
 INSERT INTO basked_db.sk_topics (id, technology_id, name, slug, descr, created_at, updated_at) VALUES (5, 118, 'Операторы', 'operatory', 'Все операторы в kotlin', '2020-03-03 20:56:46', '2020-03-03 20:56:46');
 INSERT INTO basked_db.sk_topics (id, technology_id, name, slug, descr, created_at, updated_at) VALUES (6, 118, 'Условные операторы', 'uslovnye-operatory', null, '2020-03-09 13:29:38', '2020-03-09 13:29:38');
+INSERT INTO basked_db.sk_topics (id, technology_id, name, slug, descr, created_at, updated_at) VALUES (7, 118, 'Функции. Параметры по умочанию', 'funktsii-parametry-po-umochaniyu', null, '2020-03-10 10:17:05', '2020-03-10 10:17:05');
+INSERT INTO basked_db.sk_topics (id, technology_id, name, slug, descr, created_at, updated_at) VALUES (8, 118, 'Дизайн приложения', 'dizayn-prilozheniya', 'Вопросы при проектировании дизайна приложения', '2020-06-03 07:33:36', '2020-06-03 07:33:36');

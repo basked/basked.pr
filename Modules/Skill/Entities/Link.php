@@ -4,6 +4,31 @@ namespace Modules\Skill\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Modules\Skill\Entities\Link
+ *
+ * @property int $id
+ * @property int $topic_id Тема
+ * @property string|null $name Наименование
+ * @property string|null $url Код программы
+ * @property string|null $slug slug
+ * @property string|null $descr Описание
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Modules\Skill\Entities\Topic $topic
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Skill\Entities\Link newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Skill\Entities\Link newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Skill\Entities\Link query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Skill\Entities\Link whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Skill\Entities\Link whereDescr($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Skill\Entities\Link whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Skill\Entities\Link whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Skill\Entities\Link whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Skill\Entities\Link whereTopicId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Skill\Entities\Link whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\Modules\Skill\Entities\Link whereUrl($value)
+ * @mixin \Eloquent
+ */
 class Link extends Model
 {
     const captions = ['ID', 'Тема', 'Наименование','Ссылка', 'slug', 'Описание'];

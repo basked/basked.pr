@@ -21,22 +21,22 @@ class TestController extends Controller
 
     public function listLinks()
     {
-
-
         $test_data =Test::all()->toJson();
         return view('skill::tests.listLinks',['test_data'=>$test_data]);
     }
 
+    public function testDevExtreme()
+    {
+        return view('skill::tests.testDevExtreme');
+    }
 
     /**
-     * Show the form for creating a new resource.
      * @return Response
+     * Show the form for creating a new resource.
      */
     public function create()
     {
-        /*TEST */
-        Route::get('/test','TestController@index');
-        Route::get('/test-list-links','TestController@listLinks');
+
     }
 
     /**

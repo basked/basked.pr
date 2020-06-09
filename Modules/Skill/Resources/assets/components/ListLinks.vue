@@ -3,7 +3,7 @@
         <h1>TEST DxLink</h1>
         <div class="list-container">
             <DxList
-               :items="arrayData"
+                :data-source="arrayData"
                 height="600"
                 selection-mode="multiple"
                 page-load-mode="scrollBottom"
@@ -27,6 +27,8 @@
     import BlockCode from "./BlockCode.vue"
 
     const url = 'http://basked.pr/api/skill';
+
+
     export default {
         name: "ListLinks",
         components: {
@@ -43,10 +45,20 @@
             return {
                 arrayData: [],
                 searchMode: 'contains',
+                // dataSource1 : new DevExpress.data.DataSource({
+                //     store: {
+                //         type: "array",
+                //         key: "id",
+                //         data:  [
+                //             { id: 1, name: "Item 1" }
+                //         ]
+                //     }
+                // })
             }
         },
         mounted() {
             this.arrayData = JSON.parse(this.propsList);
+            console.log(this._data);
             this.updateLookUpTechnologies();
             // console.log(this.arrayData[0].name)
         },

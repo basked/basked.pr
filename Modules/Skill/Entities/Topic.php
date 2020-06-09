@@ -28,6 +28,8 @@ use Illuminate\Database\Eloquent\Model;
  * @mixin \Eloquent
  * @property-read \Illuminate\Database\Eloquent\Collection|\Modules\Skill\Entities\Example[] $examples
  * @property-read int|null $examples_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Modules\Skill\Entities\Link[] $links
+ * @property-read int|null $links_count
  */
 class Topic extends Model
 {
