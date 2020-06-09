@@ -1,4 +1,4 @@
-INSERT INTO basked_db.sk_test (id, name, descr, created_at, updated_at) VALUES (1, '<?php
+INSERT INTO basked_db.sk_test (id, name, descr, created_at, updated_at, id_bas) VALUES (1, '<?php
 
 use Illuminate\\Support\\Facades\\Schema;
 use Illuminate\\Database\\Schema\\Blueprint;
@@ -31,8 +31,8 @@ class CreateSkTestTable extends Migration
         Schema::dropIfExists(''sk_test'');
     }
 }
-', 'file1.php', null, null);
-INSERT INTO basked_db.sk_test (id, name, descr, created_at, updated_at) VALUES (2, '/**
+', 'file1.php', null, null, 1);
+INSERT INTO basked_db.sk_test (id, name, descr, created_at, updated_at, id_bas) VALUES (2, '/**
  * First we will load all of this project''s JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
@@ -75,4 +75,4 @@ Vue.component(''block-code'', require(''../components/BlockCode.vue'').default);
 const app = new Vue({
     el: ''#app'',
 });
-', 'app.js', null, null);
+', 'app.js', null, null, 2);

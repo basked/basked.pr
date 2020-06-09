@@ -27,3 +27,4 @@ INSERT INTO basked_db.sk_examples (id, topic_id, name, code, slug, descr, create
 
  val healthStatus = if (healthPoints == 100)', 'uslovnoe-vyrazhenie', null, '2020-03-13 05:12:03', '2020-03-13 05:12:03');
 INSERT INTO basked_db.sk_examples (id, topic_id, name, code, slug, descr, created_at, updated_at) VALUES (9, 8, 'Как убрать  Header в приложении', null, 'kak-ubrat-header-v-prilozhenii', null, '2020-06-03 07:34:07', '2020-06-03 07:34:07');
+INSERT INTO basked_db.sk_examples (id, topic_id, name, code, slug, descr, created_at, updated_at) VALUES (10, 9, 'Вывод данных по компоненту в консоль', 'При создании компонента в mounted можно вызвать console.log(this) , тем самым вывести в консоль все свойства, методы обработчики событий', 'vyvod-dannykh-po-komponentu-v-konsol', null, '2020-06-09 05:52:06', '2020-06-09 05:52:06');
