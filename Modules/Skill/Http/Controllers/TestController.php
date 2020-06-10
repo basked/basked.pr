@@ -89,4 +89,15 @@ class TestController extends Controller
     {
         //
     }
+
+
+
+   // TESTING DEV EXTREME
+   // -=ArrayLayer-
+      public function testArrayData(){
+        return view('skill::tests.dataLayerArray');
+      }
+   // TESTING DEV EXTREME
+
+
 }

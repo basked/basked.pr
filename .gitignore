@@ -15,3 +15,5 @@ yarn-error.log
 /node_modules/
 /Modules/Directory/node_modules/
 /.idea/
+/storage/
+/vendor/

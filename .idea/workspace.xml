@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f788dab-3701-43fb-b5b5-774d748e6479" name="Default Changelist" comment="Изменен метод обновления во всех Api-контроллерах">
-      <change afterPath="$PROJECT_DIR$/Modules/Skill/Resources/assets/components/test/TestDevExtreme.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/Skill/Resources/views/tests/testDevExtreme.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Skill/Resources/assets/components/test/DataLayers/testArrayLayer.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/Skill/Resources/views/tests/dataLayerArray.blade.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/vendor/cocur/slugify/README.md" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/vendor/composer/composer/src/Composer/Command/FundCommand.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/tests/Listeners/DoNotAbortSlugging.php" afterDir="false" />
@@ -182,22 +182,16 @@
       <change afterPath="$PROJECT_DIR$/vendor/symfony/dom-crawler/UriResolver.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/vendor/symfony/service-contracts/CHANGELOG.md" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/vendor/symfony/translation-contracts/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a5f6867-1aa7-456d-bd33-b73daca010d4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6a5f6867-1aa7-456d-bd33-b73daca010d4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Skill/Entities/Link.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Skill/Entities/Link.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Skill/Entities/Test.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Skill/Entities/Test.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Skill/Entities/Topic.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Skill/Entities/Topic.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Skill/Http/Controllers/ApiTestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Skill/Http/Controllers/ApiTestController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Skill/Http/Controllers/TestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Skill/Http/Controllers/TestController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Skill/Resources/assets/components/ListLinks.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Skill/Resources/assets/components/ListLinks.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Skill/Resources/assets/components/SkillMenu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Skill/Resources/assets/components/SkillMenu.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Skill/Resources/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Skill/Resources/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/Skill/Routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Skill/Routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modules/Skill/Routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Skill/Routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/backup/basked_db_migrations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/backup/basked_db_migrations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/backup/basked_db_sk_examples.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/backup/basked_db_sk_examples.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/backup/basked_db_sk_links.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/backup/basked_db_sk_links.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/backup/basked_db_sk_technologies.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/backup/basked_db_sk_technologies.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/backup/basked_db_sk_topics.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/backup/basked_db_sk_topics.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Skill/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Skill/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/Skill/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/Skill/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/skill.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/skill.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/skill.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/skill.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/44/d1/44d142505dd1a3b497197e2f459d2aec779e9ed6" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/44/d1/44d142505dd1a3b497197e2f459d2aec779e9ed6" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/framework/cache/data/c2/4f/c24f92750673b2169c8cb7bfbc999cfa8457dc7c" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/cache/data/c2/4f/c24f92750673b2169c8cb7bfbc999cfa8457dc7c" afterDir="false" />
@@ -351,6 +345,7 @@
       <change beforePath="$PROJECT_DIR$/vendor/composer/spdx-licenses/res/spdx-exceptions.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/spdx-licenses/res/spdx-exceptions.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/spdx-licenses/res/spdx-licenses.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/spdx-licenses/res/spdx-licenses.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/xdebug-handler/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/xdebug-handler/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/xdebug-handler/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/xdebug-handler/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/xdebug-handler/src/XdebugHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/xdebug-handler/src/XdebugHandler.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/.semver" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/.semver" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/cviebrock/eloquent-sluggable/.travis.yml" afterDir="false" />
@@ -494,6 +489,7 @@
       <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Container/Util.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Container/Util.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/Auth/Factory.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/Auth/Factory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/Events/Dispatcher.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Contracts/Events/Dispatcher.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Concerns/BuildsQueries.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Concerns/BuildsQueries.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Connection.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/FreshCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/FreshCommand.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/RefreshCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/RefreshCommand.php" afterDir="false" />
@@ -502,6 +498,7 @@
       <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/DetectsLostConnections.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/DetectsLostConnections.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Collection.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Collection.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasAttributes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasEvents.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/HasEvents.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/QueriesRelationships.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Concerns/QueriesRelationships.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/FactoryBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/FactoryBuilder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php" afterDir="false" />
@@ -908,7 +905,9 @@
       <change beforePath="$PROJECT_DIR$/vendor/nikic/php-parser/lib/PhpParser/PrettyPrinter/Standard.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nikic/php-parser/lib/PhpParser/PrettyPrinter/Standard.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/nikic/php-parser/lib/PhpParser/PrettyPrinterAbstract.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/nikic/php-parser/lib/PhpParser/PrettyPrinterAbstract.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/opis/closure/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/opis/closure/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/opis/closure/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/opis/closure/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/opis/closure/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/opis/closure/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/opis/closure/src/Analyzer.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/opis/closure/src/Analyzer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/opis/closure/src/ReflectionClosure.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/opis/closure/src/ReflectionClosure.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/opis/closure/src/SerializableClosure.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/opis/closure/src/SerializableClosure.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/php-curl-class/php-curl-class/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/php-curl-class/php-curl-class/README.md" afterDir="false" />
@@ -981,6 +980,7 @@
       <change beforePath="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver/src/Types/ContextFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver/src/Types/ContextFactory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver/src/Types/Iterable_.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver/src/Types/Iterable_.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpoption/phpoption/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpoption/phpoption/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpoption/phpoption/src/PhpOption/Option.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpoption/phpoption/src/PhpOption/Option.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/CHANGES.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/CHANGES.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/PhpDocumentor/ClassTagRetriever.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpspec/prophecy/src/Prophecy/PhpDocumentor/ClassTagRetriever.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/.editorconfig" beforeDir="false" />
@@ -2506,13 +2506,6 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="basked_db: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="MySQL for 5.1 - bas_db@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="basked_db: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="sk_test: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
     </expand>
     <select />
   </component>
@@ -2877,17 +2870,7 @@
         <serviceView>
           <option name="contentProportion" value="0.10503519" />
           <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:MySQL for 5.1 - bas_db@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:MySQL for 5.1 - bas_db@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@43b981ee" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </treeState>
         </serviceView>
@@ -2933,7 +2916,8 @@
       <workItem from="1591247641495" duration="14776000" />
       <workItem from="1591273268164" duration="23488000" />
       <workItem from="1591615215991" duration="7911000" />
-      <workItem from="1591678551504" duration="26677000" />
+      <workItem from="1591678551504" duration="38445000" />
+      <workItem from="1591786310015" duration="8824000" />
     </task>
     <task id="LOCAL-00001" summary="Commit on work">
       <created>1579082528866</created>
@@ -3243,7 +3227,21 @@
       <option name="project" value="LOCAL" />
       <updated>1591624371223</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Изменен метод обновления во всех Api-контроллерах">
+      <created>1591710538471</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1591710538472</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Изменен метод обновления во всех Api-контроллерах">
+      <created>1591710631810</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1591710631810</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -3312,12 +3310,12 @@
       <screen x="0" y="0" width="1920" height="944" />
     </state>
     <state x="690" y="226" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.944@0.0.1920.944" timestamp="1591616865530" />
-    <state x="655" y="10" width="1130" height="823" key="CommitChangelistDialog2" timestamp="1591624396796">
+    <state x="655" y="10" width="1130" height="823" key="CommitChangelistDialog2" timestamp="1591710630734">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
     <state x="650" y="9" key="CommitChangelistDialog2/0.0.1904.806@0.0.1904.806" timestamp="1583749976911" />
     <state x="650" y="10" key="CommitChangelistDialog2/0.0.1904.928@0.0.1904.928" timestamp="1583330013991" />
-    <state x="655" y="10" width="1242" height="934" key="CommitChangelistDialog2/0.0.1920.944@0.0.1920.944" timestamp="1591624396796" />
+    <state x="655" y="10" width="1242" height="934" key="CommitChangelistDialog2/0.0.1920.944@0.0.1920.944" timestamp="1591710630734" />
     <state x="737" y="355" width="446" height="278" key="ComposerInitDialogKey" timestamp="1591256480808">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
@@ -3326,52 +3324,52 @@
       <screen x="0" y="0" width="1920" height="944" />
     </state>
     <state x="758" y="173" key="ExecutionTargetDialog/0.0.1920.944@0.0.1920.944" timestamp="1583299073927" />
-    <state x="739" y="212" key="FileChooserDialogImpl" timestamp="1591624327097">
+    <state x="739" y="212" key="FileChooserDialogImpl" timestamp="1591710567565">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
-    <state x="739" y="212" key="FileChooserDialogImpl/0.0.1920.944@0.0.1920.944" timestamp="1591624327097" />
-    <state width="1876" height="195" key="GridCell.Tab.0.bottom" timestamp="1591705373854">
-      <screen x="0" y="0" width="1920" height="944" />
+    <state x="739" y="212" key="FileChooserDialogImpl/0.0.1920.944@0.0.1920.944" timestamp="1591710567565" />
+    <state width="1860" height="482" key="GridCell.Tab.0.bottom" timestamp="1591786547813">
+      <screen x="0" y="0" width="1904" height="928" />
     </state>
     <state width="1860" height="200" key="GridCell.Tab.0.bottom/0.0.1904.806@0.0.1904.806" timestamp="1583748666890" />
-    <state width="1860" height="175" key="GridCell.Tab.0.bottom/0.0.1904.928@0.0.1904.928" timestamp="1583403600991" />
-    <state width="1876" height="195" key="GridCell.Tab.0.bottom/0.0.1920.944@0.0.1920.944" timestamp="1591705373854" />
-    <state width="1876" height="195" key="GridCell.Tab.0.center" timestamp="1591705373854">
-      <screen x="0" y="0" width="1920" height="944" />
+    <state width="1860" height="482" key="GridCell.Tab.0.bottom/0.0.1904.928@0.0.1904.928" timestamp="1591786547813" />
+    <state width="1876" height="195" key="GridCell.Tab.0.bottom/0.0.1920.944@0.0.1920.944" timestamp="1591769019131" />
+    <state width="1860" height="482" key="GridCell.Tab.0.center" timestamp="1591786547813">
+      <screen x="0" y="0" width="1904" height="928" />
     </state>
     <state width="1860" height="200" key="GridCell.Tab.0.center/0.0.1904.806@0.0.1904.806" timestamp="1583748666889" />
-    <state width="1860" height="175" key="GridCell.Tab.0.center/0.0.1904.928@0.0.1904.928" timestamp="1583403600990" />
-    <state width="1876" height="195" key="GridCell.Tab.0.center/0.0.1920.944@0.0.1920.944" timestamp="1591705373854" />
-    <state width="1876" height="195" key="GridCell.Tab.0.left" timestamp="1591705373853">
-      <screen x="0" y="0" width="1920" height="944" />
+    <state width="1860" height="482" key="GridCell.Tab.0.center/0.0.1904.928@0.0.1904.928" timestamp="1591786547813" />
+    <state width="1876" height="195" key="GridCell.Tab.0.center/0.0.1920.944@0.0.1920.944" timestamp="1591769019131" />
+    <state width="1860" height="482" key="GridCell.Tab.0.left" timestamp="1591786547812">
+      <screen x="0" y="0" width="1904" height="928" />
     </state>
     <state width="1860" height="200" key="GridCell.Tab.0.left/0.0.1904.806@0.0.1904.806" timestamp="1583748666889" />
-    <state width="1860" height="175" key="GridCell.Tab.0.left/0.0.1904.928@0.0.1904.928" timestamp="1583403600990" />
-    <state width="1876" height="195" key="GridCell.Tab.0.left/0.0.1920.944@0.0.1920.944" timestamp="1591705373853" />
-    <state width="1876" height="195" key="GridCell.Tab.0.right" timestamp="1591705373854">
-      <screen x="0" y="0" width="1920" height="944" />
+    <state width="1860" height="482" key="GridCell.Tab.0.left/0.0.1904.928@0.0.1904.928" timestamp="1591786547812" />
+    <state width="1876" height="195" key="GridCell.Tab.0.left/0.0.1920.944@0.0.1920.944" timestamp="1591769019131" />
+    <state width="1860" height="482" key="GridCell.Tab.0.right" timestamp="1591786547813">
+      <screen x="0" y="0" width="1904" height="928" />
     </state>
     <state width="1860" height="200" key="GridCell.Tab.0.right/0.0.1904.806@0.0.1904.806" timestamp="1583748666890" />
-    <state width="1860" height="175" key="GridCell.Tab.0.right/0.0.1904.928@0.0.1904.928" timestamp="1583403600990" />
-    <state width="1876" height="195" key="GridCell.Tab.0.right/0.0.1920.944@0.0.1920.944" timestamp="1591705373854" />
+    <state width="1860" height="482" key="GridCell.Tab.0.right/0.0.1904.928@0.0.1904.928" timestamp="1591786547813" />
+    <state width="1876" height="195" key="GridCell.Tab.0.right/0.0.1920.944@0.0.1920.944" timestamp="1591769019131" />
     <state x="672" y="187" key="MultipleFileMergeDialog" timestamp="1583298984483">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
     <state x="672" y="187" key="MultipleFileMergeDialog/0.0.1920.944@0.0.1920.944" timestamp="1583298984483" />
-    <state x="795" y="394" key="NewPhpFileDialog" timestamp="1591606120065">
+    <state x="795" y="394" key="NewPhpFileDialog" timestamp="1591777156903">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
-    <state x="795" y="394" key="NewPhpFileDialog/0.0.1920.944@0.0.1920.944" timestamp="1591606120065" />
+    <state x="795" y="394" key="NewPhpFileDialog/0.0.1920.944@0.0.1920.944" timestamp="1591777156903" />
     <state x="461" y="103" key="SettingsEditor" timestamp="1584348816596">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
     <state x="457" y="101" key="SettingsEditor/0.0.1904.928@0.0.1904.928" timestamp="1583322347904" />
     <state x="461" y="103" key="SettingsEditor/0.0.1920.944@0.0.1920.944" timestamp="1584348816596" />
-    <state x="625" y="235" key="Vcs.Push.Dialog.v2" timestamp="1591624412137">
+    <state x="625" y="235" key="Vcs.Push.Dialog.v2" timestamp="1591710639995">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
     <state x="620" y="231" key="Vcs.Push.Dialog.v2/0.0.1904.928@0.0.1904.928" timestamp="1583330033571" />
-    <state x="625" y="235" key="Vcs.Push.Dialog.v2/0.0.1920.944@0.0.1920.944" timestamp="1591624412137" />
+    <state x="625" y="235" key="Vcs.Push.Dialog.v2/0.0.1920.944@0.0.1920.944" timestamp="1591710639995" />
     <state x="800" y="361" width="326" height="238" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1583231868671">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
@@ -3380,10 +3378,10 @@
       <screen x="0" y="0" width="1920" height="944" />
     </state>
     <state x="669" y="112" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.944@0.0.1920.944" timestamp="1591698459108" />
-    <state x="655" y="294" key="com.intellij.ide.util.TipDialog" timestamp="1591678583925">
-      <screen x="0" y="0" width="1920" height="944" />
+    <state x="650" y="289" key="com.intellij.ide.util.TipDialog" timestamp="1591786312547">
+      <screen x="0" y="0" width="1904" height="928" />
     </state>
-    <state x="650" y="289" key="com.intellij.ide.util.TipDialog/0.0.1904.928@0.0.1904.928" timestamp="1583747149632" />
+    <state x="650" y="289" key="com.intellij.ide.util.TipDialog/0.0.1904.928@0.0.1904.928" timestamp="1591786312547" />
     <state x="655" y="294" key="com.intellij.ide.util.TipDialog/0.0.1920.944@0.0.1920.944" timestamp="1591678583925" />
     <state x="769" y="388" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583298955575">
       <screen x="0" y="0" width="1920" height="944" />
@@ -3393,11 +3391,11 @@
       <screen x="0" y="0" width="1904" height="928" />
     </state>
     <state x="649" y="69" width="606" height="789" key="find.popup/0.0.1904.928@0.0.1904.928" timestamp="1583329872659" />
-    <state x="741" y="167" width="672" height="677" key="run.anything.popup" timestamp="1591705373868">
+    <state x="741" y="167" width="672" height="677" key="run.anything.popup" timestamp="1591768328539">
       <screen x="0" y="0" width="1920" height="944" />
     </state>
     <state x="735" y="143" width="672" height="579" key="run.anything.popup/0.0.1904.806@0.0.1904.806" timestamp="1583748666905" />
-    <state x="741" y="167" width="672" height="677" key="run.anything.popup/0.0.1920.944@0.0.1920.944" timestamp="1591705373868" />
+    <state x="741" y="167" width="672" height="677" key="run.anything.popup/0.0.1920.944@0.0.1920.944" timestamp="1591768328539" />
     <state x="623" y="201" width="678" height="679" key="search.everywhere.popup" timestamp="1591605288412">
       <screen x="0" y="0" width="1920" height="944" />
     </state>

@@ -21,8 +21,10 @@
                             <a class="dropdown-item" href="http://basked.pr/skill/types">Types</a>
                             <a class="dropdown-item" href="http://basked.pr/skill/technologies/print-tree">Print
                                 tree</a>
-                            <a class="dropdown-item" href="http://basked.pr/skill/technologies/print-tree-template">Print tree in template</a>
-                            <a class="dropdown-item" href="http://basked.pr/skill/technologies/print-tree-data">Tree DATA</a>
+                            <a class="dropdown-item" href="http://basked.pr/skill/technologies/print-tree-template">Print
+                                tree in template</a>
+                            <a class="dropdown-item" href="http://basked.pr/skill/technologies/print-tree-data">Tree
+                                DATA</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item"
                                href="http://basked.pr/skill/technologies/test-technologies">Test</a>
@@ -31,6 +33,18 @@
                     <a class="nav-item nav-link" href="http://basked.pr/skill/developers">Developers</a>
                     <a class="nav-item nav-link" href="http://basked.pr/skill/roadmaps">Roadmaps</a>
                     <a class="nav-item nav-link" href="http://basked.pr/skill/topics">Topics</a>
+                    <!--                    TEST ROUTERS MENU-->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle bg-dark" href="http://basked.pr/skill/technologies"
+                           id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                           aria-expanded="false">
+                            DATA LAYERS
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="http://basked.pr/skill/test-data-layer-array">Arrays</a>
+                        </div>
+                        <!--                    TEST ROUTERS MENU-->
+                    </li>
                 </div>
             </div>
         </nav>

@@ -31,6 +31,7 @@ Vue.component('dev-tree-technology', require('../components/DevTreeTechnology.vu
 Vue.component('block-code', require('../components/BlockCode.vue').default);
 Vue.component('list-links', require('../components/ListLinks.vue').default);
 Vue.component('dev-extreme-test', require('../components/test/TestDevExtreme.vue').default);
+Vue.component('dev-data-layer-array-data', require('../components/test/DataLayers/testArrayLayer.vue').default);
 
 
 
