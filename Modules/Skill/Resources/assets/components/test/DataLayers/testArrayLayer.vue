@@ -2,22 +2,12 @@
     <DxDataGrid
         :dataSource="dataSource"
         :allowSearch="true"
-
     >
         <DxColumn
-            data-field='id'
-            caption="id"/>
-        <DxColumn
-            data-field='name'
-            caption="name"/>
-        <DxColumn
-            data-field='kind'
-            caption="kind"/>
-
-        <DxColumn
-            data-field='type_id'
-            caption="types"/>
-
+            v-for="column in columnsArrays"
+            :dataField="column.dataField"
+            :caption="column.caption">
+        </DxColumn>
 
         <DxColumn
             data-field='type_id'
@@ -27,7 +17,7 @@
             :allow-editing="true"
         >
             <DxColumnLookup
-                :data-source="dataSourseTypes"
+                :data-source="dataSourceTypes"
                 value-expr="id"
                 display-expr="name"
             />
@@ -43,13 +33,23 @@
 
 <script>
     const bboysArray = [
-        {'id': 1, 'name': 'basket', 'kind': 'powermove', 'type_id': 1}, {
-            'id': 2, 'name': 'sony', 'kind': 'style', 'type_id': 1},
+        {'id': 1, 'name': 'basket', 'kind': 'powermove', 'type_id': 1},
+        {'id': 2, 'name': 'sony', 'kind': 'style', 'type_id': 1},
         {'id': 3, 'name': 'ice', 'kind': 'powermove', 'type_id': 2},
         {'id': 4, 'name': 'hip', 'kind': 'style', 'type_id': 3}
     ];
 
-    const typeArray = [{'id': 1, 'name': 'mover'}, {'id': 2, 'name': 'styler'}, {'id': 3, 'name': 'freeser'}];
+    const typeArray = [
+        {'id': 1, 'name': 'mover'},
+        {'id': 2, 'name': 'styler'},
+        {'id': 3, 'name': 'freeser'}
+    ];
+
+    const columnsArray = [
+        {'dataField': 'id', 'caption': 'id'},
+        {'dataField': 'name', 'caption': 'name'},
+        {'dataField': 'kind', 'caption': 'kind'},
+    ];
 
     import ArrayStore from 'devextreme/data/array_store'
     import {
@@ -112,16 +112,19 @@
         data() {
             return {
                 dataSource: store,
-                dataSourseTypes: typeArray
+                dataSourceTypes: typeArray,
+                columnsArrays: columnsArray
             }
         },
         beforeCreate() {
+            myStorage = window.localStorage;
+            myStorage.
             console.log('beforeCreate')
         },
 
         mounted() {
             console.log('mounted')
-            this.insertBBoys();
+             this.insertBBoys();
             /*this.queryBBoys();
             this.getBBoy(1);
             this.updateBBoy(8, {'name': 'XoXoL'});
@@ -131,12 +134,12 @@
             // test insert() method
             insertBBoys() {
                 console.log('Test insert() method')
-                store.insert({'id': 5, 'name': 'shake', 'kind': 'freezes'});
-                store.insert({'id': 6, 'name': 'scope', 'kind': 'powermove'});
-                store.insert({'id': 7, 'name': 'cap', 'kind': 'powermove'});
-                store.insert({'id': 7, 'name': 'cap', 'kind': 'powermove'});
-                store.insert({'id': 8, 'name': 'xoxoL', 'kind': 'freezes'});
-                store.insert({'id': 9, 'name': 'EBANAT', 'kind': 'freezes'});
+                store.insert({'id': 5, 'name': 'shake', 'kind': 'freezes','type_id':3});
+                store.insert({'id': 6, 'name': 'scope', 'kind': 'powermove','type_id':1});
+                store.insert({'id': 7, 'name': 'cap', 'kind': 'powermove','type_id':1});
+                store.insert({'id': 8, 'name': 'xoxoL', 'kind': 'freezes','type_id':1});
+                store.insert({'id': 9, 'name': 'EBANAT', 'kind': 'freezes','type_id':2});
+                store.insert({'id': 10, 'name': 'tarzan', 'kind': 'freezes','type_id':3});
             },
             updateBBoy(key, updateData) {
                 console.log('Test update() method')
