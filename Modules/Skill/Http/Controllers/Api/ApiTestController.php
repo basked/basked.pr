@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Skill\Http\Controllers;
+namespace Modules\Skill\Http\Controllers\Api;;
 //загружаем скрипт для работы с php
 
 //

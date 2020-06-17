@@ -1,23 +1,26 @@
 <?php
 
-namespace Modules\Skill\Http\Controllers;
+namespace Modules\Skill\Http\Controllers\Api;;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
-use Modules\Skill\Entities\Link;
+use Modules\Skill\Entities\Example;
 use Modules\Skill\Entities\Topic;
+use Modules\Skill\Traits\TraitSkillDevModel;
 use Illuminate\Support\Str;
 
-class ApiLinkController extends Controller
+class ApiExampleController extends Controller
 {
+    use TraitSkillDevModel;
+
     /**
      * Display a listing of the resource.
      * @return Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('skill::index');
+
     }
 
     /**
@@ -80,11 +83,11 @@ class ApiLinkController extends Controller
         //
     }
 
-    /// для detail таблицы
+/// для detail таблицы
 ///
-    public function links($id)
+    public function examples($id)
     {
-        $data['data'] = Topic::find($id)->links()->get()->toArray();
+        $data['data'] = Topic::find($id)->examples()->get()->toArray();
         return $data;
     }
 
@@ -92,41 +95,42 @@ class ApiLinkController extends Controller
     /** Сохраняем  в технологию для дорожной карты
      *
      * ***/
-    public function insertLink(Request $request, $topic_id)
+    public function insertExample(Request $request, $topic_id)
     {
-        $link = new Link();
-        $link->id = $request->id;
-        $link->name = $request->name;
-        $link->slug = Str::slug($request->name);
-        $link->topic_id = $topic_id;
-        $link->url = $request->code;
-        $link->descr = $request->descr;
-        $link->save();
+        $example = new Example();
+        $example->id = $request->id;
+        $example->name = $request->name;
+        $example->slug = Str::slug($request->name);
+        $example->topic_id = $topic_id;
+        $example->code = $request->code;
+        $example->descr = $request->descr;
+        $example->save();
     }
 
 
     /** Обновляем технологию для дорожной карты
      *
      * ***/
-    public function updateLink(Request $request, $topic_id, $link_id)
+    public function updateExample(Request $request, $topic_id, $example_id)
     {
-        $link = Link::find($link_id);
-        $link->update();
-        $link->id = is_null($request->id) ? $link->id : $request->id;
-        $link->name = is_null($request->name) ? $link->name : $request->name;
-        $link->slug = Str::slug(is_null($request->name) ? $link->name : $request->name);
-        $link->topic_id = is_null($topic_id) ? $link->topic_id : $topic_id;
-        $link->url = is_null($request->url) ? $link->url : $request->url;
-        $link->descr = is_null($request->descr) ? $link->descr : $request->descr;
-        $link->save();
+        $example = Example::find($example_id);
+        $example->update();
+        $example->id = is_null($request->id) ? $example->id : $request->id;
+        $example->name = is_null($request->name) ? $example->name : $request->name;
+        $example->slug = Str::slug(is_null($request->name) ? $example->name : $request->name);
+        $example->topic_id = is_null($topic_id) ? $example->topic_id : $topic_id;
+        $example->code = is_null($request->code) ? $example->code : $request->code;
+        $example->descr = is_null($request->descr) ? $example->descr : $request->descr;
+        $example->save();
     }
 
     /** Удаляем  в технологию для дорожной карты
      *
      * ***/
-    public function deleteLink($topic_id, $link_id)
+    public function deleteExample($topic_id, $example_id)
     {
-        Link::destroy([$link_id]);
+        Example::destroy([$example_id]);
     }
+
 
 }
