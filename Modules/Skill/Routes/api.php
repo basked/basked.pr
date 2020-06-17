@@ -31,7 +31,7 @@ Route::prefix('skill')->group(  function () {
     Route::put('/technologies/reset-category/{id}','ApiTechnologyController@resetCategory');
 
     /*TYPES API ROUTERS*/
-    Route::get('/types/look-types', 'ApiTypeController@lookTypes');
+    Route::get('/types/look-types/{params?}', 'ApiTypeController@lookTypes');
     Route::get('/types/{params?}', 'ApiTypeController@index');
     Route::post('/types/', 'ApiTypeController@store');
     Route::put('/types/{id}', 'ApiTypeController@update');
@@ -83,5 +83,11 @@ Route::prefix('skill')->group(  function () {
     // для работы с тестовыми данными
     Route::get('/test-list-links', 'ApiTestController@listLinks');
     Route::get('/test-search-lookup/{key}', 'ApiTestController@searchLookup');
+    Route::get('/test-search-lookup/{key}', 'ApiTestController@searchLookup');
+    /*для тестирования devextreme for php*/
+
+    Route::resource('/test-dev-php-load','ApiTestController');
+
+
 
 });

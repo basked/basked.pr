@@ -56,25 +56,6 @@ class ApiTypeController extends Controller
         }
     }
 
-    /**
-     * Show the specified resource.
-     * @param int $id
-     * @return Response
-     */
-    public function show($id)
-    {
-        return view('skill::show');
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     * @param int $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-        return view('skill::edit');
-    }
 
     /**
      * Update the specified resource in storage.
@@ -104,9 +85,13 @@ class ApiTypeController extends Controller
     }
 
 
-    public function lookTypes()
+    public function lookTypes( $params='')
     {
-        $data['data'] = Type::all('id', 'name')->toArray();
+        if ($params=="") {
+            $data['data'] = Type::all('id', 'name')->toArray();
+        } else {
+            $data['data'] = Type::where('name', 'like', '%' . $params . '%')->get(['id', 'name'])->toArray();
+        }
         return $data;
     }
 }

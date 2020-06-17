@@ -86,6 +86,7 @@ Route::prefix('skill')->group(function() {
     Route::get('/test-devextreme','TestController@testDevExtreme');
     //Data Layers
     Route::get('/test-data-layer-array','TestController@testArrayData');
+    Route::get('/test-data-layer-php','TestController@testPHPData');
 
 
 });

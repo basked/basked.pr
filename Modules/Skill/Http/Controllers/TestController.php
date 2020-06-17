@@ -7,6 +7,7 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Modules\Skill\Entities\Test;
 
+
 class TestController extends Controller
 {
     /**
@@ -15,7 +16,6 @@ class TestController extends Controller
      */
     public function index()
     {
-
         return view('skill::tests.index');
     }
 
@@ -29,6 +29,7 @@ class TestController extends Controller
     {
         return view('skill::tests.testDevExtreme');
     }
+
 
     /**
      * @return Response
@@ -97,6 +98,10 @@ class TestController extends Controller
       public function testArrayData(){
         return view('skill::tests.dataLayerArray');
       }
+    public function testPHPData(){
+        return view('skill::tests.dataLayerPHP');
+    }
+
    // TESTING DEV EXTREME
 
 

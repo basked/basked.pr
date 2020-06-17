@@ -4,7 +4,7 @@
         :allowSearch="true"
     >
         <DxColumn
-            v-for="column in columnsArrays"
+            v-for="column in columnsArrays" :key="column.dataField"
             :dataField="column.dataField"
             :caption="column.caption">
         </DxColumn>
@@ -117,29 +117,27 @@
             }
         },
         beforeCreate() {
-            myStorage = window.localStorage;
-            myStorage.
             console.log('beforeCreate')
         },
 
         mounted() {
             console.log('mounted')
-             this.insertBBoys();
-            /*this.queryBBoys();
+            this.insertBBoys();
+            this.queryBBoys();
             this.getBBoy(1);
             this.updateBBoy(8, {'name': 'XoXoL'});
-            this.removeBBoy(9)*/
+            this.removeBBoy(9)
         },
         methods: {
             // test insert() method
             insertBBoys() {
                 console.log('Test insert() method')
-                store.insert({'id': 5, 'name': 'shake', 'kind': 'freezes','type_id':3});
-                store.insert({'id': 6, 'name': 'scope', 'kind': 'powermove','type_id':1});
-                store.insert({'id': 7, 'name': 'cap', 'kind': 'powermove','type_id':1});
-                store.insert({'id': 8, 'name': 'xoxoL', 'kind': 'freezes','type_id':1});
-                store.insert({'id': 9, 'name': 'EBANAT', 'kind': 'freezes','type_id':2});
-                store.insert({'id': 10, 'name': 'tarzan', 'kind': 'freezes','type_id':3});
+                store.insert({'id': 5, 'name': 'shake', 'kind': 'freezes', 'type_id': 3});
+                store.insert({'id': 6, 'name': 'scope', 'kind': 'powermove', 'type_id': 1});
+                store.insert({'id': 7, 'name': 'cap', 'kind': 'powermove', 'type_id': 1});
+                store.insert({'id': 8, 'name': 'xoxoL', 'kind': 'freezes', 'type_id': 1});
+                store.insert({'id': 9, 'name': 'EBANAT', 'kind': 'freezes', 'type_id': 2});
+                store.insert({'id': 10, 'name': 'tarzan', 'kind': 'freezes', 'type_id': 3});
             },
             updateBBoy(key, updateData) {
                 console.log('Test update() method')
@@ -151,6 +149,7 @@
             removeBBoy(bboy) {
                 store.remove(bboy);
             },
+
             //test createQuery() method
             queryBBoys() {
                 console.log('Test createQuery() method')

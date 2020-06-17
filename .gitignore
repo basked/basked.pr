@@ -17,3 +17,6 @@ yarn-error.log
 /.idea/
 /storage/
 /vendor/
+/storage/
+/vendor/
+/.idea/
