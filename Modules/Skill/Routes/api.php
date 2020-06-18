@@ -84,6 +84,12 @@ Route::prefix('skill')->group(  function () {
     Route::get('/test-list-links', 'Api\ApiTestController@listLinks');
     Route::get('/test-search-lookup/{key}', 'Api\ApiTestController@searchLookup');
     Route::get('/test-search-lookup/{key}', 'Api\ApiTestController@searchLookup');
+
+    // GANTT COMPONENT
+    Route::get('/test-task', 'Api\ApiTaskController@index');
+    Route::get('/test-dependency', 'Api\ApiDependencyController@index');
+    Route::get('/test-resource-assignment', 'Api\ApiResourceAssignmentsController@index');
+    Route::get('/test-resource', 'Api\ApiResourceController@index');
     /*для тестирования devextreme for php*/
 
     Route::resource('/test-dev-php-load','Api\ApiTestController');

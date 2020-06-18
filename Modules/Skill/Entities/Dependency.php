@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Dependency extends Model
 {
-    protected $table='sk_dependency';
-    protected $fillable = [];
+    protected $table='sk_dependencies';
+    protected $fillable = ['id', 'predecessorId', 'successorId', 'type'];
 }

@@ -53,11 +53,20 @@ Route::prefix('skill')->group(function() {
     Route::get('/test-links/', 'LinkController@test');
 
 
+    /*BLOCK CODE  ROUTERS*/
+    Route::get('/gant', function (){
+        return view('skill::gantt.index');
+    });
+
+
+
 
     /*BLOCK CODE  ROUTERS*/
     Route::get('/test-block-code/', function (){
         return view('skill::tests.index');
     });
+
+
 
 
 

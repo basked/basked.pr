@@ -33,6 +33,7 @@
                     <a class="nav-item nav-link" href="http://basked.pr/skill/developers">Developers</a>
                     <a class="nav-item nav-link" href="http://basked.pr/skill/roadmaps">Roadmaps</a>
                     <a class="nav-item nav-link" href="http://basked.pr/skill/topics">Topics</a>
+                    <a class="nav-item nav-link" href="http://basked.pr/skill/gant">Gantt</a>
                     <!--                    TEST ROUTERS MENU-->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle bg-dark" href="http://basked.pr/skill/technologies"

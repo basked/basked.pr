@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Resource extends Model
 {
-    protected $fillable = [];
+    protected $fillable = ['id', 'text'];
     protected $table='sk_resources';
 }

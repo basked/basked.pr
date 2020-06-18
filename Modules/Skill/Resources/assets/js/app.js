@@ -33,6 +33,8 @@ Vue.component('list-links', require('../components/ListLinks.vue').default);
 Vue.component('dev-extreme-test', require('../components/test/TestDevExtreme.vue').default);
 Vue.component('dev-data-layer-array-data', require('../components/test/DataLayers/testArrayLayer.vue').default);
 Vue.component('dev-data-layer-php-data', require('../components/test/DataLayers/testCustomStore.vue').default);
+//GANTT COMPONENT
+  Vue.component('dev-gantt', require('../components/DevGantt.vue').default);
 
 
 
