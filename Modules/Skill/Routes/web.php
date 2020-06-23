@@ -55,7 +55,8 @@ Route::prefix('skill')->group(function() {
 
     /*BLOCK CODE  ROUTERS*/
     Route::get('/gant', function (){
-        return view('skill::gantt.index');
+    return view('skill::gantt.index');
+
     });
 
 

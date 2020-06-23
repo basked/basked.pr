@@ -5,7 +5,7 @@
         scale-type="weeks"
     >
 
-        <DxTasks :data-source="tasks"/>
+        <DxTasks :data-source="tasks" keyExpr="id"/>
         <DxDependencies :data-source="dependencies"/>
         <DxResources :data-source="resources"/>
         <DxResourceAssignments :data-source="resourceAssignments"/>
@@ -44,7 +44,7 @@
 </template>
 <script>
     import 'devextreme/dist/css/dx.common.css';
-    import 'devextreme/dist/css/dx.darkmoon.compact.css';
+    // import 'devextreme/dist/css/dx.darkmoon.compact.css';
     import 'devexpress-gantt/dist/dx-gantt.css';
 
     import {
@@ -59,8 +59,8 @@
         DxToolbar,
         DxItem
     } from 'devextreme-vue/gantt';
-    import 'devextreme-vue/diagram';
 
+    import 'devextreme-vue/diagram';
     import DataSource from 'devextreme/data/data_source';
     import CustomStore from 'devextreme/data/custom_store';
     import axios from 'axios';
@@ -70,17 +70,23 @@
         store: new CustomStore({
                 key: 'id',
                 load: (loadOptions) => {
-                    return axios.get(`${url}/test-task`)
+                    return axios.get(`${url}/tasks`)
                 },
                 insert: (values) => {
-                    console.log(values)
+                    values.id=axios.get(`${url}/tasks/getId`).data;
+                    console.log('values',values);
+                    return axios.post(`${url}/tasks`,values);
                 },
                 update: (id, values) => {
                     console.log(id, values)
                 },
                 remove: (id) => {
-                    console.log(id)
+                    return axios.delete(`${url}/tasks/` + encodeURIComponent(id), {method: "DELETE"})
                 }
+
+
+
+
             }
         )
     };
@@ -126,8 +132,7 @@
             key: 'id',
             load: (loadOptions) => {
                 return axios.get(`${url}/test-resource`)
-            }
-            ,
+            },
             insert: (values) => {
                 console.log(values)
             },

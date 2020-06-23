@@ -80,6 +80,12 @@ Route::prefix('skill')->group(  function () {
     Route::delete('/topic/{topic_id}/delete-links/{link_id}', 'Api\ApiLinkController@deleteLink');
     Route::put('/topic/{topic_id}/update-links/{link_id}', 'Api\ApiLinkController@updateLink');
 
+    Route::get('/tasks/getId','Api\ApiTaskController@getId');
+    Route::resource('/tasks','Api\ApiTaskController');
+
+
+
+
     // для работы с тестовыми данными
     Route::get('/test-list-links', 'Api\ApiTestController@listLinks');
     Route::get('/test-search-lookup/{key}', 'Api\ApiTestController@searchLookup');
@@ -94,6 +100,8 @@ Route::prefix('skill')->group(  function () {
 
     Route::resource('/test-dev-php-load','Api\ApiTestController');
 
+
+    Route::resource('/test-task', 'Api\ApiTaskController');
 
 
 });

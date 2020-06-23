@@ -34,6 +34,8 @@ Route::prefix('directory')->group(function() {
     Route::get('/test-continent', 'ContinentController@test');
     Route::get('/test-country', 'CountryController@test');
     Route::get('/test-unit', 'UnitController@test');
+    Route::get('/test-currency', 'CurrencyController@test');
+
 
 
 });
