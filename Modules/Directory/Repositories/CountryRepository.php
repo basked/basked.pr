@@ -117,7 +117,7 @@ class CountryRepository implements CountryRepositoryInterface
         } else {
             $crawler = new Crawler($curl->response);
             $data['descr'] = $crawler->filter('#main > article > div > table > thead > tr.intro > td > span')->text();
-            $data['img_flag'] =self::BASE_URL.$crawler->filter('.flag')->attr('src');
+            $data['img_flag'] = self::BASE_URL . $crawler->filter('.flag')->attr('src');
             return collect($data);
         }
     }
@@ -158,5 +158,18 @@ class CountryRepository implements CountryRepositoryInterface
             return false;
         }
         return true;
+    }
+
+    /**
+     * @param $name
+     * @return mixed|string
+     */
+    public static function getIdFromNameCountry($name)
+    {
+        $res = Country::where('name', '=', $name)->value('name');
+        if (is_null($res)){
+            $res = '';
+        }
+        return $res;
     }
 }

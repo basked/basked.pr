@@ -93,12 +93,21 @@ return array(
 
     'model_locations' => array(
         'app',
-        'Modules/Skill/Entities',
-        'Modules/Directory/Entities',
-        'Modules/Directory/Entities/Continent',
-        'Modules/Directory/Entities/Country',
+        'Modules/Skill/Entities'
     ),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Models to ignore
+    |--------------------------------------------------------------------------
+    |
+    | Define which models should be ignored.
+    |
+    */
+
+    'ignored_models' => array(
+
+    ),
 
     /*
     |--------------------------------------------------------------------------

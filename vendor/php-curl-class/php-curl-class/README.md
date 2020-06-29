@@ -34,7 +34,7 @@ For latest commit version:
 
 ### Requirements
 
-PHP Curl Class works with PHP 5.3, 5.4, 5.5, 5.6, 7.0, 7.1, 7.2, 7.3, and HHVM.
+PHP Curl Class works with PHP 5.3, 5.4, 5.5, 5.6, 7.0, 7.1, 7.2, 7.3, 7.4, and HHVM.
 
 ### Quick Start and Examples
 
@@ -43,7 +43,7 @@ More examples are available under [/examples](https://github.com/php-curl-class/
 ```php
 require __DIR__ . '/vendor/autoload.php';
 
-use \Curl\Curl;
+use Curl\Curl;
 
 $curl = new Curl();
 $curl->get('https://www.example.com/');
@@ -156,7 +156,7 @@ curl_close($curl->curl);
 ```php
 require __DIR__ . '/vendor/autoload.php';
 
-use \Curl\MultiCurl;
+use Curl\MultiCurl;
 
 // Requests in parallel with callback functions.
 $multi_curl = new MultiCurl();
@@ -265,8 +265,10 @@ Curl::setDefaultTimeout()
 Curl::setDefaultUserAgent()
 Curl::setDefaultXmlDecoder()
 Curl::setDigestAuthentication($username, $password = '')
+Curl::setFile($file)
 Curl::setHeader($key, $value)
 Curl::setHeaders($headers)
+Curl::setInterface($interface)
 Curl::setJsonDecoder($mixed)
 Curl::setMaxFilesize($bytes)
 Curl::setOpt($option, $value)
@@ -276,6 +278,7 @@ Curl::setProxy($proxy, $port = null, $username = null, $password = null)
 Curl::setProxyAuth($auth)
 Curl::setProxyTunnel($tunnel = true)
 Curl::setProxyType($type)
+Curl::setRange($range)
 Curl::setReferer($referer)
 Curl::setReferrer($referrer)
 Curl::setRetry($mixed)
@@ -286,7 +289,7 @@ Curl::setXmlDecoder($mixed)
 Curl::success($callback)
 Curl::unsetHeader($key)
 Curl::unsetProxy()
-Curl::verbose($on = true, $output = STDERR)
+Curl::verbose($on = true, $output = 'STDERR')
 MultiCurl::__construct($base_url = null)
 MultiCurl::__destruct()
 MultiCurl::addCurl(Curl $curl)
@@ -314,8 +317,10 @@ MultiCurl::setCookieJar($cookie_jar)
 MultiCurl::setCookieString($string)
 MultiCurl::setCookies($cookies)
 MultiCurl::setDigestAuthentication($username, $password = '')
+MultiCurl::setFile($file)
 MultiCurl::setHeader($key, $value)
 MultiCurl::setHeaders($headers)
+MultiCurl::setInterface($interface)
 MultiCurl::setJsonDecoder($mixed)
 MultiCurl::setOpt($option, $value)
 MultiCurl::setOpts($options)
@@ -325,6 +330,7 @@ MultiCurl::setProxy($proxy, $port = null, $username = null, $password = null)
 MultiCurl::setProxyAuth($auth)
 MultiCurl::setProxyTunnel($tunnel = true)
 MultiCurl::setProxyType($type)
+MultiCurl::setRange($range)
 MultiCurl::setReferer($referer)
 MultiCurl::setReferrer($referrer)
 MultiCurl::setRetry($mixed)

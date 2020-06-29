@@ -15,7 +15,7 @@ class CreateSprCurrenciesTable extends Migration
     {
         Schema::create('spr_currencies', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('country_id')->comment('Основные сведения о валюте.ID страны');
+            $table->unsignedBigInteger('country_id')->nullable(true)->comment('Основные сведения о валюте.ID страны');
             $table->foreign('country_id')->references('id')->on('spr_countries')->onDelete('cascade');
             $table->string('name')->comment('Основные сведения о валюте.Название валюты');
             $table->string('emission_center')->comment('Основные сведения о валюте.Эмиссионный центр');
