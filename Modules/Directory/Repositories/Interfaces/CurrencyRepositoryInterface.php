@@ -12,7 +12,7 @@ interface CurrencyRepositoryInterface
      * Данные из интернета по континентам
      *
      * */
-    public static function getDataSite() :Collection;
+    public static function getDataSite():Collection;
     public static function reloadDataSite() :bool ;
 
 

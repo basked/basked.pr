@@ -7,12 +7,24 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Str;
 use Modules\Directory\Entities\Unit;
+use Modules\Directory\Repositories\CurrencyRepository;
+use Modules\Directory\Repositories\Interfaces\CurrencyRepositoryInterface;
 use Symfony\Component\Console\Helper\Helper;
 use Illuminate\Database\Eloquent\Builder;
 use  Illuminate\Database\Eloquent\Collection;
 
 class UnitController extends Controller
 {
+
+    private $currencyRepository;
+
+    function __construct(CurrencyRepositoryInterface $currencyRepository)
+    {
+        // внедряем continentRepository
+        $this->$currencyRepository = $currencyRepository;
+    }
+
+
     /**
      * Display a listing of the resource.
      * @return Response

@@ -41,3 +41,8 @@ INSERT INTO basked_db.migrations (id, migration, batch) VALUES (51, '2020_03_03_
 INSERT INTO basked_db.migrations (id, migration, batch) VALUES (52, '2020_03_03_183527_create_sk_examples_table', 23);
 INSERT INTO basked_db.migrations (id, migration, batch) VALUES (53, '2020_03_09_100322_create_sk_links_table', 24);
 INSERT INTO basked_db.migrations (id, migration, batch) VALUES (54, '2020_06_08_081221_create_sk_test_table', 25);
+INSERT INTO basked_db.migrations (id, migration, batch) VALUES (55, '2020_06_17_120839_create_sk_tasks_table', 26);
+INSERT INTO basked_db.migrations (id, migration, batch) VALUES (56, '2020_06_17_131022_create_sk_dependencies_table', 27);
+INSERT INTO basked_db.migrations (id, migration, batch) VALUES (57, '2020_06_17_133602_create_sk_resources_table', 28);
+INSERT INTO basked_db.migrations (id, migration, batch) VALUES (58, '2020_06_17_134403_create_sk_resource_assignments_table', 29);
+INSERT INTO basked_db.migrations (id, migration, batch) VALUES (59, '2020_06_23_103315_create_spr_currencies_table', 30);

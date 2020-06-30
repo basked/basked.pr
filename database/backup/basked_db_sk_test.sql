@@ -31,7 +31,7 @@ class CreateSkTestTable extends Migration
         Schema::dropIfExists(''sk_test'');
     }
 }
-', 'file1.php', null, null, 1);
+', 'file1.php1', null, '2020-06-17 10:32:22', 8);
 INSERT INTO basked_db.sk_test (id, name, descr, created_at, updated_at, id_bas) VALUES (2, '/**
  * First we will load all of this project''s JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -75,4 +75,7 @@ Vue.component(''block-code'', require(''../components/BlockCode.vue'').default);
 const app = new Vue({
     el: ''#app'',
 });
-', 'app.js', null, null, 2);
+', 'app.js', null, '2020-06-16 11:30:49', 1);
+INSERT INTO basked_db.sk_test (id, name, descr, created_at, updated_at, id_bas) VALUES (3, 'ASD7', 'ASD5', '2020-06-16 07:50:30', '2020-06-16 07:56:05', 1);
+INSERT INTO basked_db.sk_test (id, name, descr, created_at, updated_at, id_bas) VALUES (4, 'asdfgsdfg', '666', '2020-06-16 07:52:23', '2020-06-16 12:43:31', 18);
+INSERT INTO basked_db.sk_test (id, name, descr, created_at, updated_at, id_bas) VALUES (7, '234', '234', '2020-06-16 12:39:24', '2020-06-16 12:39:24', 5);

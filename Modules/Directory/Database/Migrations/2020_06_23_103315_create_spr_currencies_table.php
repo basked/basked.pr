@@ -26,6 +26,7 @@ class CreateSprCurrenciesTable extends Migration
             $table->string('iso_code_name')->nullable()->comment('ISO 4217.Название кода(аббревиатура)');
             $table->string('currency_unit')->nullable()->comment('Разменная денежная единица.Название');
             $table->string('currency_unit_sample_url')->nullable()->comment('Разменная денежная единица.Образец');
+            $table->string('descr')->nullable()->comment('Примечание');
             $table->timestamps();
         });
     }

@@ -4,6 +4,7 @@ namespace Modules\Directory\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use Modules\Directory\Database\Seeders\CurencyTableSeeder;
 
 class DirectoryDatabaseSeeder extends Seeder
 {
@@ -14,8 +15,9 @@ class DirectoryDatabaseSeeder extends Seeder
      */
     public function run()
     {
+
         Model::unguard();
 
-        // $this->call("OthersTableSeeder");
+        $this->call("CurrencyTableSeeder");
     }
 }

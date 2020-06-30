@@ -16,6 +16,6 @@ class SprContinentsTableSeeder extends Seeder
     {
         Model::unguard();
 
-        // $this->call("OthersTableSeeder");
+//          $this->call("CurrencyTableSeeder");
     }
 }

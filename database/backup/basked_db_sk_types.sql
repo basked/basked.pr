@@ -19,3 +19,4 @@ INSERT INTO basked_db.sk_types (id, name, slug, descr, created_at, updated_at) V
 INSERT INTO basked_db.sk_types (id, name, slug, descr, created_at, updated_at) VALUES (19, 'Animation', 'animation', 'Анимация', '2020-02-26 05:00:44', '2020-02-26 05:00:44');
 INSERT INTO basked_db.sk_types (id, name, slug, descr, created_at, updated_at) VALUES (20, 'Public applications', 'public-applications', 'Развертывание приложения', '2020-02-26 05:02:56', '2020-02-26 05:02:56');
 INSERT INTO basked_db.sk_types (id, name, slug, descr, created_at, updated_at) VALUES (21, 'Android technologies', 'android-technologies', 'Дополнительные технологии для Android', '2020-02-26 05:09:20', '2020-02-26 05:09:20');
+INSERT INTO basked_db.sk_types (id, name, slug, descr, created_at, updated_at) VALUES (22, '456', null, '546', '2020-06-16 07:49:33', '2020-06-16 07:49:33');

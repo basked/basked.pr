@@ -31,9 +31,9 @@ class CurrencyRepository implements CurrencyRepositoryInterface
     {
         try {
             if ($isLink) {
-                $res = 'https://ru.wikipedia.org' . strip_tags($node->filter('td')->eq($pos)->filter('a')->attr('href'));
+                $res = 'https://ru.wikipedia.org' . trim($node->filter('td')->eq($pos)->filter('a')->attr('href'), " \t\n\r\0\x0B\xC2\xA0");
             } else {
-                $res = strip_tags($node->filter('td')->eq($pos)->text());
+                $res = trim($node->filter('td')->eq($pos)->text(), " \t\n\r\0\x0B\xC2\xA0");
             }
         } catch (Exception $e) {
             self::$errors[sizeof(self::$errors) + 1] = 'Строка №' . $row . ' Позиция #' . $pos . '. ' . $e->getMessage();
@@ -45,7 +45,6 @@ class CurrencyRepository implements CurrencyRepositoryInterface
 
     public static function getDataSite(): Collection
     {
-
         ini_set('max_execution_time', 1200);
         $curl = new Curl();
         $curl->setTimeout(1200);
@@ -72,11 +71,11 @@ class CurrencyRepository implements CurrencyRepositoryInterface
                         'iso_code_name' => self::getDataFromUrl($node, $i, 7, false),
                         'currency_unit' => self::getDataFromUrl($node, $i, 8, false),
                         'currency_unit_sample_url' => self::getDataFromUrl($node, $i, 10, true),
+                        'descr' => $n,
                     ];
                 }
             });
-            $res_data = collect($data);
-            return $res_data->filter(null);
+            return collect(json_decode(json_encode($data, JSON_UNESCAPED_UNICODE | JSON_INVALID_UTF8_IGNORE)));;
         }
     }
 
