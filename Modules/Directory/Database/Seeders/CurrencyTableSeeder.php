@@ -16,23 +16,24 @@ class CurrencyTableSeeder extends Seeder
      */
     public function run()
     {
+        Model::unguard();
         $currencies = CurrencyRepository::getDataSite();
         foreach ($currencies as $currency) {
+          if (!is_null($currency)) {
             DB::table('spr_currencies')->insert([
-                'country_id' => $currency.country_id,
-                'name' => $currency.name,
-                'emission_center' => $currency . emission_center,
-                'symbol' => $currency . symbol,
-                'sample_url' => $currency . sample_url,
-                'iso_name' => $currency . iso_name,
-                'iso_code' => $currency . iso_code,
-                'iso_code_name' => $currency . iso_code_name,
-                'currency_unit' => $currency . currency_unit,
-                'currency_unit_sample_url' => $currency . currency_unit_sample_url,
-                'descr' => $currency . descr,
+                'country_id' => $currency->country_id,
+                'name' => $currency->name,
+                'emission_center' => $currency->emission_center,
+                'symbol' => $currency->symbol,
+                'sample_url' => $currency->sample_url,
+                'iso_name' => $currency->iso_name,
+                'iso_code' => $currency->iso_code,
+                'iso_code_name' => $currency->iso_code_name,
+                'currency_unit' => $currency->currency_unit,
+                'currency_unit_sample_url' => $currency->currency_unit_sample_url,
+                'descr' => $currency->descr,
             ]);
+          }
         }
-
-        // $this->call("OthersTableSeeder");
     }
 }

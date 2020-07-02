@@ -80,6 +80,6 @@ class CurrencyController extends Controller
 
 
     public function test(){
-        return CurrencyRepository::getDataSite();
+        return CurrencyRepository::reloadDataSite();
     }
 }

@@ -167,12 +167,12 @@ class CountryRepository implements CountryRepositoryInterface
     public static function getIdFromNameCountry($name)
     {
         if (is_null($name)) {
-            $res = 0;
+            $res = null;
 
         } else
             $res = Country::where('name', '=', $name)->value('id');
         if (is_null($res)) {
-            $res = 0;
+            $res = null;
         }
         return $res;
     }

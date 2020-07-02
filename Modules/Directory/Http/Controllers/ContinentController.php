@@ -121,7 +121,6 @@ class ContinentController extends Controller
 
     public function test()
     {
-        dd('df');
         dd($this->continentRepository->getContinentData());
     }
 }

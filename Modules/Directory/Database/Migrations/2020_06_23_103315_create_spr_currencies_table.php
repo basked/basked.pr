@@ -20,7 +20,7 @@ class CreateSprCurrenciesTable extends Migration
             $table->string('name')->comment('Основные сведения о валюте.Название валюты');
             $table->string('emission_center')->comment('Основные сведения о валюте.Эмиссионный центр');
             $table->string('symbol')->nullable()->comment('Основные сведения о валюте.Знак');
-            $table->string('sample_url')->nullable()->comment('Основные сведения о валюте.Образец');
+            $table->text('sample_url')->nullable()->comment('Основные сведения о валюте.Образец');
             $table->string('iso_name')->nullable()->comment('ISO 4217.Название');
             $table->string('iso_code')->nullable()->comment('ISO 4217.Код');
             $table->string('iso_code_name')->nullable()->comment('ISO 4217.Название кода(аббревиатура)');
