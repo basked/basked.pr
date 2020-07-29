@@ -11,7 +11,7 @@
 |
 */
 
-Route::prefix('directory')->group(function() {
+Route::prefix('directory')->group(function () {
 
 
     /*UNIT ROUTERS*/
@@ -29,17 +29,13 @@ Route::prefix('directory')->group(function() {
     Route::get('/autor', 'AutorController@index');
 
 
-
 //  функции тестирования
     Route::get('/test-continent', 'ContinentController@test');
     Route::get('/test-country', 'CountryController@test');
     Route::get('/test-unit', 'UnitController@test');
     Route::get('/test-currency', 'CurrencyController@test');
-    Route::get('/test-realt', function (){
-       dd(\Modules\Directory\Repositories\RealtRepository::getDataSite());
+    Route::get('/test-realt', function () {
+        return \Modules\Directory\Repositories\RealtRepository::getDataSite()->toJson();
     });
-
-
-
 
 });
