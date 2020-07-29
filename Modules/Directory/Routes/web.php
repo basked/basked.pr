@@ -35,6 +35,10 @@ Route::prefix('directory')->group(function() {
     Route::get('/test-country', 'CountryController@test');
     Route::get('/test-unit', 'UnitController@test');
     Route::get('/test-currency', 'CurrencyController@test');
+    Route::get('/test-realt', function (){
+       dd(\Modules\Directory\Repositories\RealtRepository::getDataSite());
+    });
+
 
 
 
