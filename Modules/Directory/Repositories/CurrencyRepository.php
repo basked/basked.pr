@@ -192,33 +192,22 @@ class CurrencyRepository implements CurrencyRepositoryInterface
             ['name_curr' => 'Внешние малые острова', 'name' => '', 'country_id' => null],
             ['name_curr' => 'Маршалловы Острова', 'name' => '', 'country_id' => null],
         ];
-        try{
-
-
-        foreach ($emptyCountryID as $country) {
-            if (!is_null($country["name_curr"])) {
-
-//                $currency = Currency::where('descr',$country['name_curr'])->getModel();
-//                $currency->update(['country_id'=>CountryRepository::getIdFromNameCountry($country['name'])]);
-//                $currency->name= "yyy";
-//                $currency->country_id=CountryRepository::getIdFromNameCountry( $country['name']);
-//                $currency->descr= $country['name'];
-//                $currency->save();
-
-
-
-//                dd($country['name_curr'],$country['name'], $currency );
-
-//                $currency->country_id=CountryRepository::getIdFromNameCountry( $country['name']);
-//                $currency->descr= $country['name'];
-//                $currency->save();
+        try {
+            foreach ($emptyCountryID as $country) {
+                if (!is_null($country["name_curr"]) && !is_null($country["name"]) && !is_null($country["country_id"])) {
+                    $currency = Currency::where('descr', $country['name_curr'])->getModel();
+                    if (!is_null($currency)) {
+                        $currency->update(['country_id' => CountryRepository::getIdFromNameCountry($country['name'])]);
+                        $currency->name = "yyy";
+                        $currency->country_id = CountryRepository::getIdFromNameCountry($country['name']);
+                        $currency->descr = $country['name'];
+                        $currency->save();
+                    }
+                }
             }
-
-        }
-        } catch (Exception $e){
+        } catch (Exception $e) {
             echo $e->getMessage();
         }
-
     }
 }
 
