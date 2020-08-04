@@ -66,6 +66,7 @@ class RealtRepository implements RealtRepositoryInterface
                         /*общая инфа*/
                         'code' => (int)trim(str_replace('Код объекта - ', '', $node_content->filter('.g-c-item.g-c-code')->text())),
                         'type' => trim($node_content->filter('.g-c-item.g-c-type')->text()),
+                        'usd' => self::del_name_val($node_valutes->filter('div.g-img > div.g-cost-w > div > span.g-cost-other')->attr('data-usd')),
                         'area_info' => [
                             'area' => $node_area->filter('.g-p-item')->eq(0)->text(),
                             'floor' => $node_area->filter('.g-p-item')->eq(1)->text(),
@@ -88,11 +89,9 @@ class RealtRepository implements RealtRepositoryInterface
                                 'rub' => self::del_name_val($node_valutes->filter('div.g-img > div.g-cost-w > div > span.g-cost-other')->attr('data-rub'))],
                         ]]);
                 });
-//                $res_data->add($data);
             }
         };
-//        return $res_data->where('price.cost.usd', '<=', 9000)->sortByDesc('price.cost.usd')->values()->collect();
-        return $res_data->where('price.cost.usd', '<=', 9000)->sortBy('code')->unique()->values()->collect();
+        return $res_data->where('price.cost.usd', '<=', 10000)->sortBy('code')->unique()->values()->collect();
       }
 
     public static function reloadDataSite(): bool

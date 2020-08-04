@@ -1,0 +1,13 @@
+{
+    "name": "Pars",
+    "alias": "pars",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Modules\\Pars\\Providers\\ParsServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
