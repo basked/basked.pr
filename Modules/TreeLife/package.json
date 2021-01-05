@@ -15,7 +15,7 @@
         "laravel-mix-merge-manifest": "^0.1.2"
     },
     "dependencies": {
-        "axios": "^0.19.2",
+        "axios": "^0.21.1",
         "devextreme": "19.2.5",
         "devextreme-vue": "19.2.5",
         "whatwg-fetch": "^3.0.0"
